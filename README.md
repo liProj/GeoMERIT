@@ -1,8 +1,6 @@
-﻿# GeoMERIT
+# GeoMERIT
 
-GeoMERIT is a CPU-friendly lithology prediction pipeline for real well-log data
-with non-random missingness, inter-well acquisition heterogeneity, long-tailed
-lithology labels, boundary ambiguity, and asymmetric geological error costs.
+GeoMERIT is a CPU-friendly lithology prediction pipeline for real well-log data with non-random missingness, inter-well acquisition heterogeneity, long-tailed lithology labels, boundary ambiguity, and asymmetric geological error costs.
 
 The code accompanies the manuscript:
 
@@ -10,11 +8,7 @@ The code accompanies the manuscript:
 
 ## What This Repository Contains
 
-This repository is a paper-reference release. It contains source code, model
-configuration files, plotting scripts, lightweight result summaries, and the
-LaTeX manuscript assets needed to understand and reproduce the reported
-experiments. Large raw datasets, out-of-fold probability arrays, model caches,
-and full per-row prediction tables are intentionally excluded from GitHub.
+This repository is a paper-reference release. It contains source code, model configuration files, plotting scripts, lightweight result summaries, and the LaTeX manuscript assets needed to understand and reproduce the reported experiments. Large raw datasets, out-of-fold probability arrays, model caches, and full per-row prediction tables are intentionally excluded from GitHub.
 
 ```text
 .
@@ -49,18 +43,10 @@ and full per-row prediction tables are intentionally excluded from GitHub.
 
 GeoMERIT is built around four robustness layers:
 
-1. **Missingness-aware representation**: missing curves, anomalous values,
-   within-well robust normalization, depth-window context, and curve-suite
-   identity are encoded explicitly instead of being imputed away.
-2. **Long-tail and boundary-aware learning**: class weights, boundary weights,
-   and label-confidence weights reshape the training objective toward rare
-   lithologies and stratigraphic transitions.
-3. **Structured posterior modeling**: LightGBM, XGBoost, and CatBoost
-   posteriors are fused with a coarse-to-fine geological hierarchy and
-   one-vs-rest tail experts.
-4. **Penalty-guided decision layer**: final lithology labels are selected by
-   logit adjustment and Bayes-risk decoding over the FORCE 2020 geological
-   penalty matrix, rather than plain posterior argmax.
+1. **Missingness-aware representation**: missing curves, anomalous values, within-well robust normalization, depth-window context, and curve-suite identity are encoded explicitly instead of being imputed away.
+2. **Long-tail and boundary-aware learning**: class weights, boundary weights, and label-confidence weights reshape the training objective toward rare lithologies and stratigraphic transitions.
+3. **Structured posterior modeling**: LightGBM, XGBoost, and CatBoost posteriors are fused with a coarse-to-fine geological hierarchy and one-vs-rest tail experts.
+4. **Penalty-guided decision layer**: final lithology labels are selected by logit adjustment and Bayes-risk decoding over the FORCE 2020 geological penalty matrix, rather than plain posterior argmax.
 
 ## Reported 10-Fold Results
 
@@ -85,9 +71,7 @@ Tail-class F1:
 | Anhydrite | 0.651306 |
 | Basement | 0.000000 |
 
-Basement remains unresolved under strict held-out-well validation because its
-141 labeled samples are concentrated in very few wells, and some GroupKFold
-training folds contain no supervised Basement examples.
+Basement remains unresolved under strict held-out-well validation because its 141 labeled samples are concentrated in very few wells, and some GroupKFold training folds contain no supervised Basement examples.
 
 ## Quick Start
 
@@ -99,8 +83,7 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-Build the feature table after downloading the FORCE 2020 data and placing the
-auxiliary NPD Excel files according to `configs/data.yaml`:
+Build the feature table after downloading the FORCE 2020 data and placing the auxiliary NPD Excel files according to `configs/data.yaml`:
 
 ```bash
 python scripts/00_build_dataset.py \
@@ -136,14 +119,11 @@ python scripts/02_predict_decode.py \
 
 ## Data
 
-The FORCE 2020 well-log and lithofacies dataset is publicly available from
-Zenodo:
+The FORCE 2020 well-log and lithofacies dataset is publicly available from Zenodo:
 
 https://doi.org/10.5281/zenodo.4351156
 
-Raw LAS files, large feature tables, model arrays, and full per-row OOF
-prediction tables are not included in this repository. This keeps the repository
-small and avoids redistributing the benchmark data.
+Raw LAS files, large feature tables, model arrays, and full per-row OOF prediction tables are not included in this repository. This keeps the repository small and avoids redistributing the benchmark data.
 
 ## Paper Figures
 
@@ -154,9 +134,7 @@ cd paper/scripts
 python make_figures.py
 ```
 
-The `paper/data/` folder contains the small CSV files needed for representative
-well-track figures in the manuscript. Other figure data are derived from the
-reported result summaries and public FORCE 2020 metadata.
+The `paper/data/` folder contains the small CSV files needed for representative well-track figures in the manuscript. Other figure data are derived from the reported result summaries and public FORCE 2020 metadata.
 
 ## Citation
 
@@ -174,14 +152,6 @@ If this code supports your research, please cite the accompanying manuscript:
 
 ## Reproducibility Notes
 
-- Validation is always grouped by well; random row-wise splits are not used for
-  headline results because they leak local depth context and well-specific
-  acquisition signatures.
-- The main experiments are CPU-only. The reported full 10-fold run used a
-  112-core CPU server with approximately 251 GB RAM.
-- The repository contains lightweight result summaries in `results/`. Full OOF
-  predictions and probability tensors can be regenerated with the scripts above.
-
-
-
-
+- Validation is always grouped by well; random row-wise splits are not used for headline results because they leak local depth context and well-specific acquisition signatures.
+- The main experiments are CPU-only. The reported full 10-fold run used a 112-core CPU server with approximately 251 GB RAM.
+- The repository contains lightweight result summaries in `results/`. Full OOF predictions and probability tensors can be regenerated with the scripts above.
