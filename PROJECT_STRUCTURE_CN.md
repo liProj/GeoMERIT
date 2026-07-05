@@ -1,54 +1,67 @@
-﻿# GeoMERIT 宸ョ▼缁撴瀯涓庝唬鐮佺畝浠?
-鏈粨搴撴槸 GeoMERIT 璁烘枃鐨?GitHub 寮曠敤鐗堜唬鐮佸寘锛岀敤浜庢敮鎾戣鏂囦腑鐨勬柟娉曞疄鐜般€佸疄楠屽鐜板拰鍥捐〃鐢熸垚銆備粨搴撳彧鍖呭惈浠ｇ爜銆侀厤缃€佽交閲忕粨鏋滄憳瑕佸拰璁烘枃鍥捐〃璧勪骇锛涗笉鍖呭惈 FORCE 2020 鍘熷 LAS 鏁版嵁銆佸ぇ鍨嬬壒寰佽〃銆佸畬鏁?OOF 姒傜巼鐭╅樀鍜屾ā鍨嬬紦瀛樸€?
-## 鐩綍缁撴瀯
+# GeoMERIT 工程结构与代码简介
+
+本文配套代码仓库用于支撑以下投稿论文：
+
+**GeoMERIT: Missingness-Aware and Geological-Cost-Guided Lithology Prediction across Field Wells**
+
+该仓库是论文投稿与同行评审用的轻量发布版，包含核心方法代码、实验脚本、配置文件、轻量结果摘要、论文图表和 LaTeX 资产。仓库不包含 FORCE 2020 原始 LAS 数据、完整特征表、大型 OOF 概率矩阵、模型缓存或服务器环境凭据。
+
+## 目录结构
 
 ```text
 GeoMERIT-GitHub-Release
-鈹溾攢鈹€ geomerit/              # 鏍稿績鏂规硶浠ｇ爜
-鈹溾攢鈹€ scripts/               # 瀹為獙杩愯鑴氭湰
-鈹溾攢鈹€ configs/               # 鏁版嵁銆佺壒寰併€佹ā鍨嬨€佹儵缃氱煩闃甸厤缃?鈹溾攢鈹€ results/               # 杞婚噺瀹為獙缁撴灉鎽樿
-鈹溾攢鈹€ paper/                 # 鏈€鏂拌鏂?LaTeX銆佸浘琛ㄥ拰浣滃浘鑴氭湰
-鈹溾攢鈹€ requirements.txt       # Python 渚濊禆
-鈹溾攢鈹€ README.md              # GitHub 棣栭〉璇存槑
-鈹斺攢鈹€ CITATION.cff           # GitHub 寮曠敤鍏冩暟鎹?```
+|-- geomerit/              # 核心方法代码
+|-- scripts/               # 实验运行与画图脚本
+|-- configs/               # 数据、特征、模型和惩罚矩阵配置
+|-- results/               # 轻量实验结果摘要
+|-- paper/                 # 论文 LaTeX、图表、数据和作图脚本
+|-- requirements.txt       # Python 依赖
+|-- README.md              # GitHub 首页说明
+`-- PROJECT_STRUCTURE_CN.md # 中文工程说明
+```
 
-## 鏍稿績浠ｇ爜妯″潡
+## 核心方法代码
 
-| 鏂囦欢 | 浣滅敤 |
+| 文件 | 作用 |
 |---|---|
-| `geomerit/io_las.py` | 璇诲彇 FORCE 2020 LAS 鏂囦欢鍜?NPD 杈呭姪 Excel 琛?|
-| `geomerit/features.py` | 鏋勯€犵己澶辨劅鐭ャ€佸紓甯告劅鐭ャ€佺獥鍙ｄ笂涓嬫枃鍜屾搴︾壒寰?|
-| `geomerit/labels.py` | 12 绫诲博鎬ф爣绛炬槧灏勩€佸湴璐ㄧ矖绫绘槧灏勩€侀暱灏剧被瀹氫箟 |
-| `geomerit/weights.py` | 绫诲埆鏉冮噸銆佽竟鐣屾潈閲嶃€佹爣绛剧疆淇″害鏉冮噸 |
-| `geomerit/models.py` | LightGBM/XGBoost/CatBoost 铻嶅悎銆佺矖鍒扮粏鍒嗙被銆佸熬绫讳笓瀹?|
-| `geomerit/decode.py` | logit adjustment銆丅ayes-risk penalty 瑙ｇ爜銆侀棬鎺х瓥鐣?|
-| `geomerit/metrics.py` | Weighted F1銆丮acro F1銆丅oundary F1銆丳enalty銆乀ail F1 |
-| `geomerit/cv.py` | 鎸変簳鍒嗙粍鐨?GroupKFold 楠岃瘉宸ュ叿 |
+| `geomerit/io_las.py` | 读取 FORCE 2020 LAS 文件和 NPD 辅助 Excel 表 |
+| `geomerit/features.py` | 构造缺失感知、异常感知、滑动窗口上下文和梯度特征 |
+| `geomerit/labels.py` | 12 类岩性标签映射、地质粗类映射和长尾类定义 |
+| `geomerit/weights.py` | 类别权重、边界权重和标签置信度权重 |
+| `geomerit/models.py` | LightGBM/XGBoost/CatBoost 融合、粗到细分类和尾类专家 |
+| `geomerit/decode.py` | logit adjustment、Bayes-risk geological-cost 解码和门控策略 |
+| `geomerit/metrics.py` | Weighted F1、Macro F1、Boundary F1、Penalty 和 Tail F1 |
+| `geomerit/cv.py` | 按井分组的 GroupKFold 验证工具 |
 
-## 瀹為獙鑴氭湰
+## 实验脚本
 
-| 鑴氭湰 | 浣滅敤 |
+| 脚本 | 作用 |
 |---|---|
-| `scripts/00_build_dataset.py` | 浠庡師濮?LAS 鍜?Excel 鏂囦欢鏋勫缓鐗瑰緛琛?|
-| `scripts/01_train.py` | 杩愯 10 鎶?GroupKFold 璁粌 |
-| `scripts/02_predict_decode.py` | 浣跨敤鎯╃綒鐭╅樀杩涜 Bayes-risk 瑙ｇ爜骞惰瘎浼?|
-| `scripts/03_ablation.py` | 娑堣瀺瀹為獙鍏ュ彛 |
-| `scripts/04_georacs_oof.py` | GeoRACS/OOF 鍚庡鐞嗕笌璇婃柇瀹為獙 |
-| `scripts/04_make_figures.py` | 鍩虹璁烘枃鍥捐〃鐢熸垚 |
-| `scripts/05_make_paper_figures.py` | 璁烘枃椋庢牸鍥捐〃鐢熸垚 |
+| `scripts/00_build_dataset.py` | 从原始 LAS 和 Excel 文件构建特征表 |
+| `scripts/01_train.py` | 运行 10 折 GroupKFold 训练 |
+| `scripts/02_predict_decode.py` | 使用地质惩罚矩阵进行 Bayes-risk 解码并评估 |
+| `scripts/03_ablation.py` | 消融实验入口 |
+| `scripts/04_georacs_oof.py` | GeoRACS/OOF 后处理与诊断实验 |
+| `scripts/04_make_figures.py` | 基础论文图表生成 |
+| `scripts/05_make_paper_figures.py` | 论文风格图表生成 |
 
-## 璁烘枃寮曠敤寤鸿
+## 投稿代码说明
 
-璁烘枃涓彲鍐欙細
+论文中可写：
 
 > The source code, configuration files, lightweight result summaries, and figure-generation scripts are publicly available at: `https://github.com/liProj/GeoMERIT`.
 
-濡傛灉闇€瑕佹洿姝ｅ紡锛屽彲浠ュ啓锛?
-> We release the GeoMERIT implementation as a paper-reference repository, including the core Python package, experiment entry points, model configurations, decoding settings, lightweight result summaries, and manuscript figure-generation scripts.
+也可以写成更正式的投稿表述：
 
-## 涓嶄笂浼犵殑澶ф枃浠?
-浠ヤ笅鍐呭娌℃湁鏀惧叆 GitHub 浠撳簱锛?
-- FORCE 2020 鍘熷 LAS 鏁版嵁锛?- `feature_table.parquet` 瀹屾暣鐗瑰緛琛紱
-- 瀹屾暣 `decode_report.csv` 閫愯 OOF 棰勬祴锛?- `.npy` 姒傜巼鐭╅樀銆佹绱㈠厛楠屻€乻tacking 杈撳嚭锛?- 杩滅▼鏈嶅姟鍣ㄥ畬鏁村揩鐓э紱
-- 浠讳綍 API key銆佹湇鍔″櫒瀵嗙爜鎴栨湰鍦扮幆澧冨嚟鎹€?
+> We provide a paper-reference implementation of GeoMERIT, including the core Python package, experiment entry points, model configurations, decoding settings, lightweight result summaries, and manuscript figure-generation scripts.
 
+## 未上传的大文件
+
+以下内容没有放入 GitHub 仓库：
+
+- FORCE 2020 原始 LAS 数据；
+- `feature_table.parquet` 完整特征表；
+- 完整 `decode_report.csv` 逐行 OOF 预测；
+- `.npy` 概率矩阵、检索先验和 stacking 输出；
+- 远程服务器完整快照；
+- 任何 API key、服务器密码或本地环境凭据。

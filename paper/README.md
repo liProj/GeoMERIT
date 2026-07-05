@@ -9,5 +9,4 @@ This folder contains the latest manuscript assets used for the GeoMERIT paper.
 
 The current manuscript title is:
 
-**GeoMERIT: Missingness-Aware and Penalty-Guided Robust Lithology Prediction from Well Logs**
-
+**GeoMERIT: Missingness-Aware and Geological-Cost-Guided Lithology Prediction across Field Wells**

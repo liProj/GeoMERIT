@@ -4,7 +4,7 @@ GeoMERIT is a CPU-friendly lithology prediction pipeline for real well-log data 
 
 The code accompanies the manuscript:
 
-**GeoMERIT: Missingness-Aware and Penalty-Guided Robust Lithology Prediction from Well Logs**
+**GeoMERIT: Missingness-Aware and Geological-Cost-Guided Lithology Prediction across Field Wells**
 
 ## What This Repository Contains
 
@@ -136,19 +136,15 @@ python make_figures.py
 
 The `paper/data/` folder contains the small CSV files needed for representative well-track figures in the manuscript. Other figure data are derived from the reported result summaries and public FORCE 2020 metadata.
 
-## Citation
+## Manuscript Submission
 
-If this code supports your research, please cite the accompanying manuscript:
+This repository accompanies a manuscript prepared for submission to **Big Data and Cognitive Computing**.
 
-```bibtex
-@article{geomerit2026,
-  title   = {GeoMERIT: Missingness-Aware and Penalty-Guided Robust Lithology Prediction from Well Logs},
-  author  = {Anonymous Author},
-  journal = {Big Data and Cognitive Computing},
-  year    = {2026},
-  note    = {Manuscript under review}
-}
-```
+Manuscript title:
+
+**GeoMERIT: Missingness-Aware and Geological-Cost-Guided Lithology Prediction across Field Wells**
+
+The repository is provided as supplementary code and reproducibility material for peer review and editorial assessment.
 
 ## Reproducibility Notes
 

@@ -1,6 +1,10 @@
-# GitHub Upload Instructions
+# GitHub Upload Notes
 
-The repository is already initialized locally and committed on branch `main`.
+The repository has already been created and pushed to GitHub:
+
+```text
+https://github.com/liProj/GeoMERIT
+```
 
 Local repository path:
 
@@ -8,58 +12,26 @@ Local repository path:
 H:\胜利油田新实验\GeoMERIT-GitHub-Release
 ```
 
-Current commit:
+Current branch:
+
+```bash
+main
+```
+
+To check the current commit:
 
 ```bash
 git log --oneline -1
 ```
 
-## Option 1: Create the GitHub repository in the browser
-
-1. Open GitHub and create a new empty repository, for example:
-   `GeoMERIT`
-2. Do not initialize it with README, license, or `.gitignore`, because this
-   local repository already has those files.
-3. Push:
+To push future edits:
 
 ```bash
 cd /d H:\胜利油田新实验\GeoMERIT-GitHub-Release
-git remote add origin https://github.com/<your-username>/GeoMERIT.git
-git push -u origin main
-```
-
-## Option 2: Use a GitHub personal access token
-
-If a token is available, create the remote repository with the GitHub API:
-
-```powershell
-$env:GITHUB_TOKEN = "<your-token>"
-curl.exe -H "Authorization: Bearer $env:GITHUB_TOKEN" `
-  -H "Accept: application/vnd.github+json" `
-  https://api.github.com/user/repos `
-  -d "{\"name\":\"GeoMERIT\",\"private\":false,\"description\":\"Missingness-aware and penalty-guided robust lithology prediction from well logs\"}"
-```
-
-Then push:
-
-```bash
-git remote add origin https://github.com/<your-username>/GeoMERIT.git
-git push -u origin main
-```
-
-## After Upload
-
-Update `CITATION.cff`:
-
-```yaml
-repository-code: "https://github.com/<your-username>/GeoMERIT"
-```
-
-Then commit and push:
-
-```bash
-git add CITATION.cff
-git commit -m "Update repository citation URL"
+git status
+git add README.md PROJECT_STRUCTURE_CN.md paper
+git commit -m "Update manuscript submission materials"
 git push
 ```
 
+This release intentionally does not include a GitHub citation metadata file. The repository is described as supplementary code and reproducibility material for the manuscript submission.
