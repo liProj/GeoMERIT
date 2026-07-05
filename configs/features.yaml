@@ -1,0 +1,24 @@
+missing_rate_drop_threshold: 0.90
+outlier_z_threshold: 5.0
+sentinel_missing: -999.0
+sentinel_outlier: -777.0
+depth_epsilon: 1.0e-6
+
+window_radii:
+  - 2
+  - 5
+  - 10
+
+window_stats:
+  - mean
+  - std
+  - min
+  - max
+  - delta
+
+robust_normalize: true
+add_curve_suite_id: true
+add_diagnostic_ratios: true
+add_spatial_features: true
+add_stratigraphy_features: true
+add_casing_features: true

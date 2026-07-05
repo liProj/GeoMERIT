@@ -1,0 +1,45 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local data and model artifacts
+/data/
+runs/
+catboost_info/
+*.parquet
+*.npy
+*.npz
+*.pkl
+*.joblib
+*.cbm
+*.model
+
+# Large or generated reports
+*.zip
+*.7z
+*.tar
+*.gz
+*.log
+
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.out
+*.synctex.gz
+*.toc
+
+# Secrets
+.env
+*.key
+secrets.*
+credentials.*
+
+

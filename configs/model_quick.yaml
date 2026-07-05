@@ -1,0 +1,54 @@
+seed: 2026
+class_count: 12
+
+training:
+  folds: 3
+  validation_fraction: 0.15
+  early_stopping_rounds: 50
+  max_rows_per_fold: null
+
+weights:
+  rho: 0.9995
+  cap: 8.0
+  boundary_weight: 1.2
+  interior_weight: 0.7
+  confidence_map:
+    1: 1.0
+    2: 0.8
+    3: 0.6
+
+models:
+  lightgbm:
+    enabled: true
+    params:
+      objective: multiclass
+      metric: multi_logloss
+      num_class: 12
+      learning_rate: 0.06
+      num_leaves: 96
+      feature_fraction: 0.80
+      bagging_fraction: 0.80
+      bagging_freq: 1
+      min_data_in_leaf: 120
+      max_bin: 255
+      num_boost_round: 450
+      num_threads: -1
+      verbosity: -1
+  xgboost:
+    enabled: false
+    params: {}
+  catboost:
+    enabled: false
+    params: {}
+
+ensemble:
+  alpha:
+    lightgbm: 1.0
+
+decode:
+  tau_grid: [0.0, 0.1, 0.2, 0.3]
+  beta_grid: [0.0, 0.2, 0.5, 0.8]
+  lambda_grid: [1.0]
+  tail_min_transition: 1.0e-4
+  tail_gamma: 0.5
+  tail_threshold: 0.5

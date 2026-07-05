@@ -1,0 +1,13 @@
+numpy
+pandas
+pyarrow
+scikit-learn
+lightgbm
+xgboost
+catboost
+lasio
+openpyxl
+pyyaml
+tqdm
+matplotlib
+seaborn

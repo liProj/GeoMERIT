@@ -1,0 +1,1120 @@
+% GeoMERIT - BDCC academic-language revision.
+% Built on the official MDPI LaTeX template (Definitions/mdpi.cls).
+% Language and argumentation revised against the supplied reference-paper corpus.
+% Section 3 figures updated: Figure 1 now combines the new well-location map,
+% the long-tail class distribution panel, and the new family-grouped missingness matrix.
+\documentclass[bdcc,article,submit,pdftex,moreauthors]{Definitions/mdpi}
+
+% Compatibility for MiKTeX installations where colortbl is newer than array.
+\makeatletter
+\providecommand\insert@pcolumn{\insert@column}
+\makeatother
+
+\firstpage{1}
+\makeatletter
+\setcounter{page}{\@firstpage}
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2026}
+\copyrightyear{2026}
+\datereceived{ }
+\daterevised{ }
+\dateaccepted{ }
+\datepublished{ }
+
+\Title{GeoMERIT: Missingness-Aware and Penalty-Guided Robust Lithology Prediction from Well Logs}
+
+\newcommand{\orcidauthorA}{0000-0000-0000-000X}
+\Author{Anonymous Author $^{1,}$*\orcidA{}}
+\AuthorNames{Anonymous Author}
+\address{$^{1}$ \quad Affiliation 1; email@example.com}
+\corres{Correspondence: email@example.com}
+
+\abstract{Robust lithology prediction from well logs is complicated by structured variation
+in curve availability and acquisition conditions, severe class imbalance, label ambiguity
+near formation boundaries, and asymmetric geological misclassification costs. These factors
+can produce optimistic estimates under random row-wise splits and reduce predictive stability
+when a model is applied to unseen wells. We propose GeoMERIT, a missingness-aware and
+penalty-guided method that addresses these factors at the representation, learning,
+posterior-modeling, and decision stages. The representation encodes missing curves, anomalous
+responses, curve-suite identity, within-well normalized responses, and local depth context
+without first reconstructing absent measurements. The learning objective combines class,
+boundary, and label-confidence weights. Posterior estimates are obtained from a
+three-backend gradient-boosted ensemble and refined using a coarse-to-fine geological
+hierarchy and rare-class experts. Final labels are selected by minimizing expected geological
+cost under the FORCE penalty matrix after long-tail logit adjustment. On the FORCE 2020 dataset
+(118 wells, 12 lithology classes, 1{,}431{,}383 valid labeled samples), under strict 10-fold
+well-grouped validation that simulates prediction on unseen wells, GeoMERIT reaches
+Weighted F1 $=0.7526$, Boundary F1 $=0.4567$, and Penalty $=-0.5886$, improving on the
+published RFE+XGBoost reference by $+3.5\%$, $+11.4\%$, and $+6.4\%$ simultaneously, with a
+tail-class mean F1 of $0.5061$. The three gains correspond to three distinct facets of
+robustness---overall prediction quality, boundary stability, and the geological severity of
+errors. The results indicate that jointly modeling data quality, class imbalance, boundary
+uncertainty, and geological cost can improve lithology prediction under heterogeneous
+well-log conditions.}
+
+\keyword{robust lithology prediction; well logs; missing data; long-tailed learning;
+boundary samples; cost-sensitive decision; gradient-boosted decision trees; FORCE 2020}
+
+
+% Center short figure captions under the corresponding figure without moving detailed explanations into captions.
+\newcommand{\ShortCenteredFigCaption}[2]{%
+  \refstepcounter{figure}%
+  \label{#2}%
+  \vspace{0.08cm}%
+  \begin{center}
+  \small\textbf{Figure~\thefigure.}~#1
+  \end{center}%
+}
+
+\begin{document}
+\sloppy
+
+\section{Introduction}
+\label{sec:intro}
+Lithology prediction is a fundamental task in reservoir characterization, geological
+modeling, and hydrocarbon development evaluation~\cite{rider2011,ellis2007,doveton2014}. Each
+well log records formation responses to a suite of physical measurements---gamma ray
+(GR), bulk density (RHOB), neutron porosity (NPHI), photoelectric factor (PEF), sonic transit
+time (DTC), resistivity (RDEP), and others---along depth, and machine learning methods are
+now routinely used to map these curves to lithology labels at
+scale~\cite{hall2016facies,merembayev2021,dev2019formation,carvalho2026benchmark}. Many
+learning workflows nevertheless rely on standard supervised-classification assumptions, including
+complete inputs, reasonably balanced classes, identically distributed training and test samples,
+and equally costly errors. These assumptions are often violated in operational well-log
+collections.
+
+Curve availability is commonly structured by tool selection, vendor, acquisition period,
+and borehole conditions, while calibration and environmental effects introduce inter-well
+shifts in measured responses. The associated labels are strongly imbalanced, and samples
+near formation boundaries are often ambiguous. In addition, the geological consequence of
+an error depends on the true and predicted lithologies. The FORCE 2020
+benchmark~\cite{bormann2020force} exhibits all of these conditions in a public
+dataset. Among its 1{,}431{,}383 valid labeled samples from 118 Norwegian North Sea wells,
+Shale accounts for 61.3\% of labels while Basement contributes 141 rows (0.01\%). This
+head-to-tail ratio of roughly $6220{:}1$ coexists with entire log families missing in specific wells
+(Figure~\ref{fig:missingness_matrix}). The benchmark also provides a
+$12{\times}12$ penalty matrix in which predicting Sandstone/Shale for true Sandstone incurs
+a smaller cost than predicting Halite for the same sample. Together, these properties can
+reduce cross-well generalization. Random row-wise splits may produce optimistic results because
+well-specific acquisition signatures and local stratigraphic continuity leak between training
+and test rows~\cite{rosenblatt2024,roberts2017cv,mila2022nndm}. Models evaluated in this way
+may subsequently degrade on unseen wells, incomplete curve suites, rare lithologies, and
+boundary intervals.
+
+Most existing approaches focus on individual aspects of this problem, leaving their joint
+effect less thoroughly studied. Imputation-centered workflows~\cite{vanbuuren2011mice,stekhoven2012missforest,liu2025wellgan,xie2024cgan}
+reconstruct plausible curve values but erase the missingness pattern itself, which in well
+logs is informative because the decision to run a curve reflects vintage, vendor, borehole
+condition, and operational choices that correlate with geology~\cite{chen2026rfe,little2019stats,josse2024missing}.
+Class-imbalance remedies re-weight or over-sample rare
+classes~\cite{chawla2002smote,lin2017focal,cui2019classbalanced,he2024imbalanced} but generally do not
+distinguish boundary samples from formation-interior samples. Deep
+architectures can learn rich representations but typically require complete curve suites and
+large labeled corpora, and have not demonstrated consistent superiority over tree ensembles
+when evaluation is strictly grouped by
+well~\cite{wang2024dnnlitho,grinsztajn2022trees,shwartzziv2022tabular,mcelfresh2024benchmark}.
+Most published systems also decode by posterior argmax, which does not account for
+asymmetric costs even when an official penalty matrix is
+available~\cite{elkan2001cost,berger1985decision}. A recent robust-feature-engineering (RFE)
+study with quality-aware XGBoost~\cite{chen2026rfe} established the value of treating
+missingness as signal at the feature level, raising Weighted F1 from $0.6640$ to $0.7272$ on
+FORCE 2020 under well-grouped validation. Building on that result, this study evaluates
+whether robustness can be improved further by treating data quality, long-tail structure,
+boundary uncertainty, and geological cost jointly in the representation, training objective,
+posterior model, and decision rule.
+
+We present GeoMERIT (Missingness-encoding, Ensembling, Robust-features,
+Imbalance-aware, Tail-correction), a robust lithology prediction method for incomplete,
+heterogeneous, and long-tailed well-log data. GeoMERIT comprises four components that act at
+successive stages of the prediction workflow
+(Section~\ref{sec:method}, Figure~\ref{fig:framework}, Table~\ref{tab:layers}). Curve absence,
+anomalous responses, curve-suite combinations, within-well normalized responses, and local
+depth context form a missingness-aware state representation. Joint class, boundary, and
+confidence weighting increases the influence of rare lithologies and formation transitions
+during training. A three-backend tree ensemble, a coarse-to-fine geological hierarchy, and
+dedicated tail experts are then used to estimate class posteriors under severe imbalance.
+The final prediction minimizes expected geological cost under the FORCE penalty matrix after
+logit adjustment. Well-grouped validation evaluates stability on wells excluded from training
+and is used as the experimental protocol rather than as part of the method definition. Under
+this protocol, GeoMERIT improves on the RFE+XGBoost reference
+simultaneously on Weighted F1 ($0.7272\!\to\!0.7526$, $+3.5\%$), Boundary F1
+($0.4100\!\to\!0.4567$, $+11.4\%$), and FORCE Penalty ($-0.6289\!\to\!-0.5886$, $+6.4\%$),
+while raising the tail-class mean F1 to $0.5061$.
+
+The main contribution is an integrated prediction framework that treats
+missingness, acquisition heterogeneity, long-tailed supervision, boundary ambiguity, and
+asymmetric geological cost as explicit modeling considerations. The framework contains four
+design components with corresponding empirical evaluations.
+\begin{enumerate}
+\item \textbf{A missingness-aware robust geologic state representation.} Curve absence,
+anomalous responses, curve-suite identity, well-specific normalization, local depth context,
+and stratigraphic metadata are encoded in a unified state vector. This representation retains
+information about both observed responses and curve availability, and its behavior is evaluated
+on feature-deficient wells
+(Sections~\ref{sec:repr} and \ref{sec:rq3}).
+\item \textbf{A long-tail- and boundary-enhanced learning mechanism.} A multiplicative sample
+weight combining effective-number class weighting, boundary up-weighting, and label-confidence
+discounting increases the contribution of rare lithologies and formation-transition samples
+to the objective. Tail-class and boundary performance are evaluated in
+Sections~\ref{sec:learning} and \ref{sec:rq4}.
+\item \textbf{Structured posterior lithology modeling.} GeoMERIT geometrically fuses the
+posteriors of LightGBM, XGBoost, and CatBoost, combines them with a
+coarse-to-fine geological hierarchy over six super-classes, and gates six one-vs-rest tail
+experts. These components provide separate estimates for geological groups and tail classes
+before posterior combination (Sections~\ref{sec:posterior} and \ref{sec:rq2}).
+\item \textbf{A geological-cost-guided decision layer.} Logit adjustment addresses the
+long-tailed training prior, and Bayes-risk decoding over the official FORCE penalty matrix
+selects the class with the lowest expected geological cost. The decision-layer settings and
+their sensitivity are examined in Sections~\ref{sec:decision} and \ref{sec:rq5}.
+\end{enumerate}
+
+The remainder of the paper is organized as follows. Section~\ref{sec:related} positions
+GeoMERIT against four families of prior work. Section~\ref{sec:data} describes the dataset,
+the metrics, and the well-grouped robustness protocol. Section~\ref{sec:method} formalizes
+the four robustness layers. Section~\ref{sec:setup} details the experimental setup and
+comparison fairness. Section~\ref{sec:results} reports results, moving from overall
+held-out-well performance through the sources of the gains to behavior on feature-deficient
+wells, rare lithologies, and the decision layer. Section~\ref{sec:discussion} analyzes failure
+modes and limitations, and
+Section~\ref{sec:conclusion} concludes.
+
+\section{Related Work}
+\label{sec:related}
+Prior work is reviewed in four groups according to the aspect of well-log prediction it
+addresses: classification and benchmarking, missingness and data quality, long-tailed and
+boundary-aware learning, and cost-sensitive decision-making.
+
+\subsection{Well-Log Lithology Classification and Benchmarking}
+Machine learning lithology classification has progressed from early facies
+challenges~\cite{hall2016facies} through systematic algorithm
+comparisons~\cite{merembayev2021,dev2019formation} to deep architectures including CNNs,
+recurrent models, transformers, diffusion-based augmentation, and multi-scale hierarchical
+networks~\cite{wang2024dnnlitho,chen2025geological,zhao2025diffusion,zhan2025mchgeo}.
+Interpretability-oriented hybrids such as SHAP-based meta-learning
+transformers~\cite{sun2024shapmeta,lundberg2017shap} and refined-lithology
+pipelines~\cite{shi2023refined} demonstrate strong within-dataset accuracy. Benchmark studies
+make the comparability problem explicit. Published scores are frequently incomparable because
+splits, label sets, and metrics differ, and reported performance can swing by 10--20 absolute
+F1 points with the validation protocol alone, because the unit of geological generalization
+is the well, not the row~\cite{carvalho2026benchmark,rosenblatt2024}. These findings motivate
+methods that explicitly account for the data conditions responsible for cross-well
+variability. GeoMERIT adopts well-grouped evaluation and incorporates corresponding
+mechanisms in its representation, learning, posterior, and decision stages.
+
+\subsection{Missingness and Data-Quality Modeling in Well Logs}
+The dominant response to incomplete logs is reconstruction, most commonly through chained-equation
+and forest imputation~\cite{vanbuuren2011mice,stekhoven2012missforest} or through generative
+imputation with sequence GANs and conditional GANs~\cite{liu2025wellgan,xie2024cgan}. Reconstruction is
+appropriate when missingness is ignorable. Well-log missingness, however, is structurally
+non-random because whole curves are absent as a result of tool-string choices that correlate
+with vintage, operator, and target formation~\cite{chen2026rfe}. Statistical learning theory shows
+that supervised learners can remain consistent when missingness is encoded as input rather
+than repaired~\cite{little2019stats,josse2024missing}, and the RFE
+study~\cite{chen2026rfe} demonstrated the practical value of this position on FORCE 2020.
+The present study examines whether explicit missingness modeling can be combined with class
+weighting, structured posterior estimation, and cost-sensitive decoding in a unified
+framework.
+
+\subsection{Long-Tailed and Boundary-Aware Learning}
+General-purpose remedies for class imbalance include synthetic
+oversampling~\cite{chawla2002smote}, focal loss~\cite{lin2017focal}, margin-based
+losses~\cite{cao2019ldam}, effective-number class weighting~\cite{cui2019classbalanced}, and
+prior-corrected logit adjustment~\cite{menon2021logit}; surveys document their
+trade-offs~\cite{he2024imbalanced}. Two domain constraints restrict their transfer to well
+logs. First, synthetic interpolation of log rows can violate depth continuity and
+stratigraphic consistency, generating physically implausible samples; we therefore avoid
+synthetic oversampling entirely. Second, lithology boundaries concentrate both label
+ambiguity and practical interest, so imbalance handling must not sacrifice boundary
+fidelity---a requirement most imbalance methods never examine. GeoMERIT combines
+effective-number weighting~\cite{cui2019classbalanced} with explicit boundary up-weighting and
+treats logit adjustment~\cite{menon2021logit} as a prior-shift correction applied at decision
+time, where its temperature can be tuned against the geological cost directly.
+
+\subsection{Cost-Sensitive and Geology-Aware Decision Making}
+Cost-sensitive learning theory establishes that when misclassification costs are asymmetric,
+the optimal decision minimizes expected cost rather than maximizing posterior
+probability~\cite{elkan2001cost,berger1985decision,andrade2019bayes,zadrozny2002multiclass}.
+FORCE 2020 operationalizes geological cost in its penalty matrix, yet most published
+systems---including the RFE reference~\cite{chen2026rfe}---still decode by argmax and report
+the penalty only as an evaluation metric. Sequence decoders such as Viterbi smoothing and
+(semi-)Markov CRFs~\cite{viterbi1967,lafferty2001crf,sarawagi2004semimarkov} optimize label
+continuity but not geological cost. To our knowledge, GeoMERIT is the first FORCE 2020 system
+whose headline predictions are produced by Bayes-risk decoding over the official penalty
+matrix, coupled with logit adjustment in a single, jointly tuned decision layer.
+
+\section{Dataset and Evaluation Protocol}
+\label{sec:data}
+
+\subsection{Dataset}
+\label{sec:dataset}
+We use the public FORCE 2020 lithofacies dataset~\cite{bormann2020force}, which contains
+$1{,}431{,}383$ valid labeled samples from 118 wells and 12 lithology classes. Each sample is
+indexed by measured depth and may contain up to 20 well-log curves, including GR, SGR, RHOB,
+DRHO, NPHI, PEF, DTC, DTS, RDEP, RSHA, RMED, RXO, RMIC, SP, CALI, BS, DCAL, ROP, ROPA, and
+MUDWEIGHT. We also use well-head coordinates and NPD stratigraphic tables, including GROUP,
+FORMATION, and casing-depth information. These variables define a realistic lithology
+prediction setting in which the model must infer rock type from heterogeneous curve suites,
+uneven sample support, and geological labels whose errors have unequal consequences.
+
+The first source of heterogeneity is spatial and operational. The 118 wells are distributed
+across multiple North Sea blocks, and the available curve suites differ across those blocks.
+Figure~\ref{fig:well_locations} therefore serves as the entry point to the dataset. It shows
+where the wells are located, how many labeled samples each well contributes, and how much of
+its log suite is missing on average.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\linewidth]{figures/fig01_well_locations_v3.pdf}
+\ShortCenteredFigCaption{Spatial distribution of FORCE 2020 wells.}{fig:well_locations}
+\end{figure}
+
+In Figure~\ref{fig:well_locations}, marker color represents the per-well mean missing rate,
+and marker size represents the number of labeled samples in each well. The figure shows that
+data quality is not uniformly distributed across the basin. Nearby wells can share similar
+missingness patterns, while different blocks exhibit different acquisition regimes. This
+Consequently, a held-out well may represent a different acquisition regime with a new
+combination of available and unavailable curves.
+
+The second source of difficulty is the label distribution. Even when curves are present, a
+model trained to optimize aggregate performance can be dominated by the most frequent
+lithologies. Figure~\ref{fig:lithology_longtail} summarizes this imbalance.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\linewidth]{figures/fig02_lithology_distribution_line.pdf}
+\ShortCenteredFigCaption{Long-tailed lithology class distribution.}{fig:lithology_longtail}
+\end{figure}
+
+Figure~\ref{fig:lithology_longtail} shows a long-tailed distribution spanning roughly four
+orders of magnitude. Shale contains $877{,}043$ samples, accounting for 61.3\% of all valid
+labels, whereas Basement contains only 141 samples, or about 0.01\%. The resulting
+head-to-tail ratio is approximately $6220{:}1$, and the distribution has a Gini coefficient
+of about 0.77. This imbalance explains why ordinary classifiers tend to over-optimize thick,
+head-class intervals while under-learning rare lithologies and thin stratigraphic events.
+
+In addition to the spatial heterogeneity in Figure~\ref{fig:well_locations} and the label
+imbalance in Figure~\ref{fig:lithology_longtail}, curve availability varies jointly across
+wells and log families. Figure~\ref{fig:missingness_matrix} summarizes this structure as a
+well-by-curve missing-fraction matrix.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/fig03_missingness_vAB_merged.pdf}
+\ShortCenteredFigCaption{Well-by-curve missing-fraction matrix.}{fig:missingness_matrix}
+\end{figure}
+
+Figure~\ref{fig:missingness_matrix} groups the curves into the petrophysical families Gamma,
+Density/Neutron, Sonic, Resistivity, SP, Caliper, and Drilling/mud. Wells are sorted by their
+mean missing rate, while the marginal bars summarize per-curve and per-well missingness. The
+block patterns show that missingness is structured by both well and curve family. Entire log
+families, such as Sonic or Resistivity, can be absent in specific wells, whereas other curve
+families remain available. The observed missingness is therefore inconsistent with a simple
+missing-completely-at-random assumption. It reflects tool-string selection, acquisition
+period, and operational conditions, which may also vary with the geological targets of
+different wells. The representation layer in Section~\ref{sec:repr} encodes missingness and
+curve-suite identity directly rather than discarding these patterns during preprocessing.
+
+Finally, robust lithology prediction also requires a geology-aware evaluation target. The
+FORCE 2020 benchmark provides an official $12{\times}12$ penalty matrix, shown in
+Figure~\ref{fig:penalty}. This matrix assigns small costs to sedimentologically adjacent
+confusions, such as Sandstone versus Sandstone/Shale, and larger costs to distant confusions,
+such as Sandstone versus Halite.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\linewidth]{figures/fig2_penalty_matrix.pdf}
+\ShortCenteredFigCaption{Geological penalty matrix.}{fig:penalty}
+\end{figure}
+
+The penalty matrix introduces an asymmetric evaluation criterion. Entry $A_{ij}$ is the cost
+of predicting class $j$ when
+the true class is $i$; the diagonal cost is zero, within-environment confusions are relatively
+cheap, and cross-environment confusions can cost up to 4. Consequently, posterior argmax is
+not necessarily the best geological decision. GeoMERIT uses this matrix at the decision layer
+by minimizing expected geological penalty rather than treating all errors as equal.
+
+\subsection{Evaluation Metrics: Three Facets of Robustness}
+\label{sec:metrics}
+We report five complementary metrics. Weighted F1 measures aggregate classification quality,
+whereas Macro F1 gives the unweighted mean over the 12 classes. Boundary F1 is computed only
+on samples within one depth step of a lithology change and therefore measures stratigraphic
+transition quality. Penalty is the mean of $-A_{y\hat y}$ under the FORCE matrix, with values
+closer to zero indicating less severe geological errors. Tail mean F1 is the unweighted mean
+F1 over the six rarest classes, namely Tuff, Halite, Coal, Dolomite, Anhydrite, and Basement. The three headline metrics probe three distinct facets
+of robust prediction and are not interchangeable. Weighted F1 reflects overall prediction
+quality and can rise simply by getting more Shale rows right. Boundary F1 reflects stability
+in formation-transition zones and rises only by resolving transitions. Penalty reflects the
+geological severity of the errors that remain and improves only by avoiding geologically
+distant confusions. A method that improves one facet by sacrificing another is not robust;
+we therefore evaluate all three jointly.
+
+\subsection{Held-Out-Well Validation as a Robustness Test}
+\label{sec:protocol}
+We evaluate exclusively under 10-fold GroupKFold cross-validation with well identity as the
+grouping key. This protocol is the experimental condition that tests robustness, not part of
+the method's definition. GeoMERIT's goal is not to adapt one specific well to another, but to
+remain stable under the curve missingness, acquisition heterogeneity, long-tail structure,
+and cost asymmetry that any previously unseen well may present, and holding out whole wells
+is how that stability is measured. Random row-wise splits place adjacent depth samples from
+the same well on both sides of the train/test boundary, allowing models to exploit
+well-specific acquisition signatures and local stratigraphic continuity; such splits estimate
+interpolation performance within already-logged wells and systematically overstate practical
+performance~\cite{rosenblatt2024,roberts2017cv,mila2022nndm}. All feature construction that
+uses depth context---window statistics, gradients, boundary masks---is computed strictly
+within each well sequence, so no information crosses well boundaries at any stage.
+
+This protocol deliberately exposes a rare-class limitation. For classes concentrated in a few
+wells, some training folds contain no positive examples. Basement (141 rows) is the extreme
+case. This is not an artifact of the split but a property of the prediction problem itself---a
+new well may contain a lithology the training fleet never sampled---so we report Basement
+separately and discuss open-set treatment as the appropriate future remedy
+(Section~\ref{sec:failures}).
+
+\subsection{Statistical Reporting}
+\label{sec:stats}
+Headline values are pooled out-of-fold (OOF) metrics over all $1{,}431{,}383$ predictions.
+Because pooled values hide fold-to-fold variation, we additionally report the mean
+$\pm$ standard deviation across the 10 folds. We also provide an exploratory one-sided
+one-sample Wilcoxon signed-rank test~\cite{wilcoxon1945} of the 10 fold values against the
+published pooled RFE+XGBoost reference (alternative: GeoMERIT exceeds the reference).
+Because fold-matched baseline values are unavailable, this test is descriptive and is not
+interpreted as a paired comparison between methods (Section~\ref{sec:rq1}).
+
+\section{GeoMERIT: A Four-Layer Robust Prediction Framework}
+\label{sec:method}
+The GeoMERIT framework comprises four components: a missingness-aware representation, a
+weighted learning objective, structured posterior estimation, and a geological-cost-guided
+decision rule (Table~\ref{tab:layers}, Figure~\ref{fig:framework}). Let $x_i$ denote the log
+response vector at depth sample $i$, $w(i)$ its training weight,
+$p(y\,|\,\phi(x_i))$ the class posterior for the representation $\phi(x_i)$, and $A$ the
+FORCE penalty matrix. The representation retains data-quality and curve-suite information
+(Section~\ref{sec:repr}). Model fitting uses class-, boundary-, and confidence-aware sample
+weights (Section~\ref{sec:learning}), and posterior estimates combine a model ensemble, a
+geological hierarchy, and tail experts (Section~\ref{sec:posterior}). After long-tail logit
+adjustment, the predicted label is
+\begin{equation}
+\hat y_i = \arg\min_{j\in\{1,\ldots,12\}} \sum_{k=1}^{12} A_{kj}\;\hat p\!\bigl(y=k\,\big|\,\phi(x_i)\bigr),
+\label{eq:bayes}
+\end{equation}
+as described in Section~\ref{sec:decision}. Equation~(\ref{eq:bayes}) is
+the classical Bayes decision rule under an asymmetric loss~\cite{berger1985decision}. It
+reduces to argmax when $A$ is the 0--1 loss and departs from argmax exactly where
+geological costs are asymmetric.
+
+\begin{table}[H]
+\caption{The four robustness layers of GeoMERIT. Each layer counters one condition of real
+well-log data that destabilizes conventional lithology classifiers.\label{tab:layers}}
+\begin{tabularx}{\textwidth}{lXXl}
+\toprule
+\textbf{Layer} & \textbf{Real-data condition} & \textbf{GeoMERIT mechanism} & \textbf{Section}\\
+\midrule
+Representation & Structured curve availability, anomalous responses, inter-well acquisition shift &
+Sentinel encoding, missing/outlier indicators, within-well robust normalization, multi-scale
+depth context, curve-suite fingerprint & \ref{sec:repr}\\
+Learning & Long-tailed classes, ambiguous boundary samples, uncertain labels &
+Multiplicative class $\times$ boundary $\times$ confidence sample weighting & \ref{sec:learning}\\
+Posterior & Joint 12-class estimation under severe imbalance &
+Three-backend GBDT geometric fusion, coarse-to-fine geological hierarchy, one-vs-rest tail experts &
+\ref{sec:posterior}\\
+Decision & Asymmetric geological misclassification cost ignored by argmax &
+Logit adjustment plus Bayes-risk decoding over the FORCE penalty matrix & \ref{sec:decision}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/geo_v2.pdf}
+\caption{The GeoMERIT four-layer robust design. Each real-data challenge (left) is countered
+by one mechanism layer (right). The representation layer encodes structured curve availability
+and anomalous responses. The learning layer increases the influence of tail classes and
+boundary samples, while the posterior layer combines a three-backend ensemble, a
+coarse-to-fine geological hierarchy, and tail experts. The decision layer replaces argmax
+with expected-cost minimization over the FORCE penalty matrix. Evaluation uses strict
+10-fold GroupKFold by well.}
+\label{fig:framework}
+\end{figure}
+
+\subsection{Missingness-Aware Geologic State Representation (Representation Layer)}
+\label{sec:repr}
+Missingness in well-log collections is often structured and need not satisfy a
+missing-completely-at-random assumption. Curve availability depends on factors such as the
+tool string, acquisition period, and borehole conditions; consequently, entire log families
+may be absent over a well (Figure~\ref{fig:missingness_matrix}). Conventional imputation can
+introduce reconstruction error and remove information about the acquisition context. GeoMERIT
+therefore retains the missingness pattern explicitly in the input representation.
+
+Concretely, for every curve $c$ we detect missing entries (NaN/Inf) and anomalies (within-well
+robust $z$-score $|z|>5$) and produce a sentinel-encoded copy $c_\text{enc}$ in which missing
+values become $-999$ and outliers $-777$, alongside binary indicators $c_\text{is\_missing}$
+and $c_\text{is\_outlier}$; per-row aggregates of the missing count, missing ratio, outlier
+count, and outlier ratio summarize the data quality at each depth. In a GBDT, sentinel values
+can be assigned to dedicated branches, allowing split rules to condition on both observed
+responses and curve availability without a separate imputation model.
+
+Within each well $w$ and curve $c$ we add a robust normalization
+\begin{equation}
+z_{w,c}(i) = \frac{c(i)-\operatorname{median}_w(c)}{\operatorname{MAD}_w(c)+\epsilon},\qquad \epsilon=10^{-9},
+\label{eq:zscore}
+\end{equation}
+with a standard-deviation fallback when $\operatorname{MAD}_w(c)=0$. Both the absolute
+encoded value and the well-relative value are retained. The absolute response separates
+lithologies with distinctive global signatures (e.g., Halite), while the well-relative offset
+partly compensates for calibration and borehole-environment drift between wells.
+
+Local depth context is captured by window statistics and stabilized gradients. For the eight
+primary curves (GR, RHOB, NPHI, PEF, DTC, RDEP, RMED, SP) and radii $r\in\{2,5,10\}$ we
+compute window mean, standard deviation, minimum, maximum, and endpoint difference
+($8\!\times\!3\!\times\!5=120$ features), plus the depth-normalized gradient
+\begin{equation}
+\nabla c(i) = \frac{c(i)-c(i-1)}{\text{DEPTH}(i)-\text{DEPTH}(i-1)+\epsilon}.
+\label{eq:grad}
+\end{equation}
+All context features are computed strictly within each well. Four diagnostic combinations
+from the classical interpretation playbook (density--porosity separation $\text{RHOB}-\text{NPHI}$;
+the ratios $\text{DTC}/|\text{RHOB}|$, $\text{GR}/\log(1+\text{RDEP})$, and
+$\text{PEF}/|\text{RHOB}|$) inject petrophysical priors for separating carbonates from
+clastics~\cite{rider2011,doveton2014}.
+
+Finally, the per-well curve-availability bit string is hashed into a categorical
+\texttt{curve\_suite\_id}---a single feature that captures vendor-, era-, and tool-driven
+variation---and well-head coordinates, distance to the dataset centroid, NPD GROUP and
+FORMATION labels, and casing-depth differences complete the state vector $\phi(x_i)$. Missing
+stratigraphic labels are encoded as the explicit category ``Unknown'' rather than dropped.
+
+\subsection{Long-Tail- and Boundary-Enhanced Risk Weighting (Learning Layer)}
+\label{sec:learning}
+The class distribution is strongly imbalanced: Shale accounts for approximately $61\%$ of
+the samples, whereas several lithologies have limited support. Under uniform sample
+weighting, the empirical loss is therefore dominated by majority-class and
+formation-interior samples. To increase the contribution of rare classes and boundary
+intervals during fitting, each training sample is assigned the multiplicative weight
+\begin{equation}
+w(i) = w_\text{class}\!\bigl(y(i)\bigr)\cdot w_\text{bnd}(i)\cdot w_\text{conf}(i).
+\label{eq:weight}
+\end{equation}
+The class term uses the effective-number-of-samples
+formulation~\cite{cui2019classbalanced},
+\begin{equation}
+w_\text{class}(k) = \min\!\left(\frac{1-\rho}{1-\rho^{n_k}},\; w_\text{max}\right),\qquad \rho=0.9995,\quad w_\text{max}=8.0,
+\label{eq:effn}
+\end{equation}
+where $n_k$ is the class support in the training fold; weights are rescaled to unit mean.
+Equation~(\ref{eq:effn}) functions as a saturation-aware inverse frequency. Once a class has
+enough samples that new ones are redundant, additional support stops reducing its weight,
+while the cap $w_\text{max}$ prevents the rarest classes from destabilizing training.
+Boundary samples (the label differs from an immediate depth neighbor) receive weight $1.2$,
+whereas interior samples receive weight $0.7$. The confidence term maps the FORCE
+interpreter-confidence field
+$1/2/3$ to $1.0/0.8/0.6$, discounting samples the original labelers themselves marked as
+uncertain. We deliberately avoid synthetic oversampling~\cite{chawla2002smote} because interpolated
+log rows can violate depth continuity and produce physically impossible curve combinations.
+
+\subsection{Structured Posterior Modeling: Ensemble, Hierarchy, and Tail Experts (Posterior Layer)}
+\label{sec:posterior}
+A single multiclass model estimates all 12 lithologies jointly despite large differences in
+class support and separability. Under this setting, rare classes contribute relatively few
+training examples, while adjacent lithologies such as Limestone and Chalk require finer
+discrimination than well-separated classes. GeoMERIT retains a multiclass model and augments
+its posterior estimates with three complementary components: backbone ensembling, a
+geological hierarchy, and one-vs-rest tail experts.
+
+The first mechanism replaces the lone classifier with three complementary backbones trained
+per fold---LightGBM~\cite{ke2017lightgbm} on the full training partition ($\approx\!1.28$M rows),
+XGBoost~\cite{chen2016xgboost} on a 750{,}000-row subsample, and
+CatBoost~\cite{prokhorenkova2018catboost} on a 300{,}000-row subsample, both subsamples
+preserving all tail rows. CatBoost uses $\texttt{classes\_count}=12$ to maintain a consistent
+12-class output in folds without examples of every class. The backbones differ in their
+inductive biases (leaf-wise growth with
+native categorical support; depth-wise regularized histogram splitting; ordered boosting with
+target statistics). Their posteriors are fused geometrically in log space as
+\begin{equation}
+\hat p(y=k\,|\,\phi)\propto\exp\!\left(\sum_m \alpha_m\log p^{(m)}(y=k\,|\,\phi)\right),\qquad
+\boldsymbol\alpha=(1.0,\,0.8,\,0.8).
+\label{eq:geomean}
+\end{equation}
+The geometric mean assigns a low fused probability to a class when any backend assigns it a
+near-zero probability, thereby providing a more conservative pooling rule than arithmetic
+averaging.
+
+The second mechanism reorganizes the label space according to geological similarity. The 12
+classes are mapped to six super-classes that mirror interpreter taxonomy
+(Table~\ref{tab:superclass}); a coarse classifier predicts the super-class, per-group experts
+predict the fine class within it, and the hierarchical posterior
+\begin{equation}
+p_\text{c2f}(y=k\,|\,\phi) = p\!\bigl(\text{super}(k)\,|\,\phi\bigr)\cdot p\!\bigl(k\,|\,\phi,\text{super}(k)\bigr)
+\label{eq:c2f}
+\end{equation}
+is mixed with the multiclass posterior using weight $\mu=0.20$ (validation grid). The
+hierarchical component combines group-level and within-group estimates. For example, Chalk
+and Limestone are first assigned to the carbonate group and are then distinguished using the
+corresponding fine classifier.
+
+\begin{table}[H]
+\caption{Geological super-classes used by the coarse-to-fine cascade.\label{tab:superclass}}
+\begin{tabularx}{\textwidth}{lX}
+\toprule
+\textbf{Super-class} & \textbf{Fine classes}\\
+\midrule
+Clastic & Sandstone, Sandstone/Shale, Shale\\
+Carbonate & Limestone, Chalk, Dolomite, Marl\\
+Evaporite & Halite, Anhydrite\\
+Coal & Coal\\
+Basement & Basement\\
+Tuff & Tuff\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The third mechanism adds dedicated rare-class discriminators that work outside the 12-way
+competition. For each tail class $k\in\mathcal T=\{\text{Tuff, Halite,
+Coal, Dolomite, Anhydrite, Basement}\}$ a one-vs-rest LightGBM expert with $5\times$
+up-weighted positives produces a score $s_k$. When the expert is confident, the corresponding
+posterior entry is gated upward:
+\begin{equation}
+\tilde p(y=k\,|\,\phi) = \hat p(y=k\,|\,\phi)\!\left(1+\gamma_k\,\mathbf 1\bigl[s_k>\theta_k\bigr]\right),
+\label{eq:gate}
+\end{equation}
+followed by renormalization. The gate restores posterior mass that the long tail suppressed,
+but only where a dedicated binary discriminator---trained without the 12-way
+competition---produces a score above the selected threshold. A single global pair
+$(\gamma,\theta)$ serves all tail
+classes, with a separate, stricter Dolomite pair $(\gamma_\text{dol},\theta_\text{dol})$
+because Dolomite trades off directly against the penalty (Section~\ref{sec:rq5}).
+
+\subsection{Geological-Cost-Guided Decision Layer (Decision Layer)}
+\label{sec:decision}
+Posterior argmax does not account for asymmetric misclassification costs, and a posterior
+estimated from an imbalanced training fold reflects the corresponding class prior. The
+decision layer first applies logit
+adjustment~\cite{menon2021logit},
+\begin{equation}
+\hat p_\text{LA}(y=k\,|\,\phi)\propto \tilde p(y=k\,|\,\phi)\cdot \pi_k^{-\tau},
+\label{eq:logitadj}
+\end{equation}
+where $\pi_k$ is the training-fold prior and $\tau\geq 0$ a temperature. This adjustment
+reduces the influence of the empirical head-class prior. The adjusted posterior then enters the
+Bayes-risk rule of Equation~(\ref{eq:bayes}), so the final label is the one with the lowest
+expected geological cost rather than the highest probability. The full decision layer has
+five interpretable knobs---$\tau$, the global gate $(\gamma,\theta)$, and the Dolomite gate
+$(\gamma_\text{dol},\theta_\text{dol})$---searched on a small validation grid (192
+configurations), yielding $\tau=0.2$, $\gamma=1.2$, $\theta=0.35$,
+$\gamma_\text{dol}=8.0$, $\theta_\text{dol}=0.05$. The Dolomite setting uses a low activation
+threshold together with strong posterior amplification; its effect is therefore assessed
+empirically in the sensitivity analysis rather than interpreted as a high-confidence gate.
+These parameters can be retuned without retraining the underlying classifiers.
+
+An optional Viterbi pass over each well's depth sequence~\cite{viterbi1967,lafferty2001crf,sarawagi2004semimarkov}
+can smooth the decoded labels with an empirical transition matrix; it is examined in
+ablation but excluded from headline numbers to keep the decision layer purely pointwise and
+tree-only.
+
+\section{Experimental Setup}
+\label{sec:setup}
+
+\subsection{Compared Methods and Fairness}
+\label{sec:compared}
+The primary references are Baseline XGBoost (no feature engineering or weighting),
+RFE+XGBoost, and the RFE+\{Random Forest, CatBoost, LightGBM\} variants, all as published
+in~\cite{chen2026rfe} and all evaluated on FORCE 2020 under a comparable well-grouped 10-fold
+protocol. Their values are used as reported at the operating points selected by the original
+authors. GeoMERIT's decision-layer grid was searched on validation folds under the same
+GroupKFold protocol used for reporting.
+
+\subsection{Implementation and Scale}
+\label{sec:impl}
+All experiments ran on a single 112-core CPU machine with 251~GB RAM (no GPU). The software
+stack is LightGBM, XGBoost, CatBoost, scikit-learn~\cite{pedregosa2011sklearn}, NumPy,
+Pandas, and PyArrow. Each fold trains the three backends, the coarse-to-fine cascade, and
+six tail experts; full 10-fold training takes about 3~h and the decoding-parameter search
+about 1~h. The feature table occupies $\approx\!12$~GB in Parquet form and peak training
+memory is $\approx\!90$~GB.
+
+\section{Results}
+\label{sec:results}
+The evaluation contains five analyses. Section~\ref{sec:rq1} reports overall, boundary, and
+cost-sensitive performance under held-out-well validation together with fold-level
+variability. Section~\ref{sec:rq2} compares the framework with published feature-engineering
+and tree-backbone references and examines a same-stack decoder ablation.
+Section~\ref{sec:rq3} reports performance after stratifying held-out wells by missingness,
+and Section~\ref{sec:rq4} presents class-level and well-track diagnostics.
+Section~\ref{sec:rq5} evaluates sensitivity to the decision-layer hyperparameters.
+
+\subsection{Main Comparison Under Held-Out-Well Validation}
+\label{sec:rq1}
+The primary comparison evaluates three complementary outcomes under 10-fold GroupKFold by
+well: Weighted F1 for aggregate classification quality, Boundary F1 for formation-transition
+samples, and Penalty for the geological severity of errors. Relative to the published
+RFE+XGBoost reference, GeoMERIT raises Weighted F1 from $0.7272$ to $0.7526$
+($+0.0254$; $+3.5\%$), Boundary F1 from $0.4100$ to $0.4567$ ($+0.0467$; $+11.4\%$), and
+Penalty from $-0.6289$ to $-0.5886$ ($+0.0403$; $+6.4\%$) (Table~\ref{tab:main},
+Figure~\ref{fig:main}). The simultaneous improvement indicates that the gain in aggregate
+performance is not accompanied by lower boundary performance or a higher geological error
+cost. The tail mean F1 is $0.5061$, compared with approximately $0.31$ for the single-model
+baseline level.
+
+\begin{table}[H]
+\caption{Main comparison under 10-fold GroupKFold by well. Reference values from~\cite{chen2026rfe};
+GeoMERIT values are pooled out-of-fold over all $1{,}431{,}383$ samples. The third row
+(``base ensemble $+$ Bayes'') uses the representation, learning, and posterior layers of
+GeoMERIT but decodes with plain Bayes risk (no logit adjustment, no tail gates); contrasting
+it with the full row isolates logit adjustment and tail gating within the decision layer. It
+does not isolate Bayes-risk decoding from argmax. $\Delta$ rows give the change relative to
+RFE+XGBoost.\label{tab:main}}
+\begin{tabularx}{\textwidth}{Xccccc}
+\toprule
+\textbf{Method} & \textbf{Weighted F1} & \textbf{Macro F1} & \textbf{Boundary F1} & \textbf{Penalty} & \textbf{Tail F1}\\
+\midrule
+Baseline XGBoost~\cite{chen2026rfe} & 0.6640 & -- & 0.3510 & $-0.7800$ & --\\
+RFE + XGBoost~\cite{chen2026rfe} & 0.7272 & -- & 0.4100 & $-0.6289$ & --\\
+GeoMERIT, base ensemble + Bayes decoding & 0.7446 & 0.5038 & 0.4423 & $-0.5885$ & 0.4737\\
+\textbf{GeoMERIT, full decision layer} & \textbf{0.7526} & \textbf{0.5315} & \textbf{0.4567} & $\mathbf{-0.5886}$ & \textbf{0.5061}\\
+\midrule
+$\Delta$ absolute vs.\ RFE+XGBoost & $+0.0254$ & -- & $+0.0467$ & $+0.0403$ & --\\
+$\Delta$ relative vs.\ RFE+XGBoost & $+3.5\%$ & -- & $+11.4\%$ & $+6.4\%$ & --\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/fig4_main_results.pdf}
+\caption{GeoMERIT improves aggregate, boundary-sensitive, and cost-sensitive performance
+simultaneously under held-out-well validation. Panels show Weighted F1, Boundary F1, and
+Penalty for Baseline XGBoost, RFE+XGBoost~\cite{chen2026rfe}, and GeoMERIT; annotations give
+the gain over the RFE reference. The Penalty axis is signed so that closer to zero is
+better.}
+\label{fig:main}
+\end{figure}
+
+Pooled metrics do not characterize variation among held-out well groups. Table~\ref{tab:perfold}
+therefore reports fold-level dispersion and exploratory one-sample tests against the pooled
+RFE+XGBoost reference. Boundary F1 exceeds the reference in 9 of 10 folds ($p=0.002$),
+Weighted F1 in 7 of 10 folds ($p=0.080$), and Penalty in 6 of 10 folds ($p=0.138$).
+However, the published reference is a pooled point estimate rather than a matched set of
+per-fold results. These tests consequently do not provide a paired comparison between methods
+and are not used to claim inferential superiority. Figure~\ref{fig:perfold} reports the
+underlying fold values to show the magnitude of geological heterogeneity across splits.
+
+\begin{table}[H]
+\caption{Fold-level dispersion of GeoMERIT (mean $\pm$ SD over 10 GroupKFold folds), pooled
+OOF value, and exploratory one-sided one-sample Wilcoxon signed-rank test against the pooled
+RFE+XGBoost reference value. Because fold-matched reference values are unavailable, the test
+is descriptive rather than a paired comparison. Pooled Macro F1 exceeds the fold mean because
+several tail classes are concentrated in a few wells. When a held-out fold contains no samples
+of a class, the fold-level calculation assigns that class an F1 of zero, which lowers the mean
+of fold-level Macro F1 values but not the pooled value.\label{tab:perfold}}
+\begin{tabularx}{\textwidth}{Xcccc}
+\toprule
+\textbf{Metric} & \textbf{Fold mean $\pm$ SD} & \textbf{Pooled OOF} & \textbf{Folds $>$ ref.} & \textbf{Wilcoxon $p$}\\
+\midrule
+Weighted F1 & $0.7521\pm 0.0477$ & $0.7526$ & 7/10 & $0.080$\\
+Macro F1 & $0.4410\pm 0.0842$ & $0.5315$ & --- & ---\\
+Boundary F1 & $0.4567\pm 0.0250$ & $0.4567$ & 9/10 & $\mathbf{0.002}$\\
+Penalty & $-0.5884\pm 0.0937$ & $-0.5886$ & 6/10 & $0.138$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/fig5_perfold_forest.pdf}
+\caption{Per-fold metrics across the 10 GroupKFold folds. Each row is one held-out fold;
+filled markers exceed the pooled RFE+XGBoost reference (dashed line) and open markers fall
+below. The diamond row gives mean $\pm$ SD. Fold-to-fold spread reflects the geological
+heterogeneity of the held-out well groups, motivating the reporting of dispersion in addition
+to pooled point estimates.}
+\label{fig:perfold}
+\end{figure}
+
+\subsection{Analysis of Performance Gains}
+\label{sec:rq2}
+To assess whether the improvement can be explained solely by the choice of base classifier,
+we compare GeoMERIT with the published RFE ablation sequence, examine results across tree
+backbones, and evaluate a same-stack decoder contrast. In the published sequence
+of~\cite{chen2026rfe} (Table~\ref{tab:ladder}),
+quality-aware weighting and feature engineering each close part of the gap from the $0.6635$
+baseline to $0.7272$, and GeoMERIT's added layers---the three-backend geometric ensemble, the
+geological hierarchy, the tail experts, and Bayes-risk decoding---close a further $+0.0254$
+Weighted F1 and $+0.0403$ Penalty on top of them. Because those rungs were not re-run inside
+our implementation, the final increment is a cumulative cross-study comparison rather than a
+per-component ablation. Sections~\ref{sec:rq3}--\ref{sec:rq4} provide targeted diagnostics
+for the representation and learning objectives, while the same-stack comparison below
+isolates logit adjustment and tail gating.
+
+\begin{table}[H]
+\caption{Comparison with published RFE configurations from~\cite{chen2026rfe}. The
+GeoMERIT increment is a cumulative cross-study comparison and should not be interpreted as a
+per-layer causal decomposition.\label{tab:ladder}}
+\begin{tabularx}{\textwidth}{Xcc}
+\toprule
+\textbf{Configuration} & \textbf{Weighted F1} & \textbf{Penalty}\\
+\midrule
+Baseline XGBoost (no FE, no weighting) & 0.6635 & $-0.7804$\\
+Baseline $+$ weighting & 0.7230 & $-0.6346$\\
+Baseline $+$ feature engineering & 0.7259 & $-0.6327$\\
+RFE $+$ XGBoost (FE $+$ weighting) & 0.7272 & $-0.6289$\\
+\textbf{GeoMERIT} ($+$ ensemble, hierarchy, tail experts, Bayes-risk decoding) & \textbf{0.7526} & $\mathbf{-0.5886}$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The backbone comparison provides a second reference (Table~\ref{tab:backbones}). RFE-style
+features improve each reported single-model variant, consistent with~\cite{chen2026rfe}, and
+each remains below GeoMERIT on all three metrics. The difference between the best reported
+single model (RFE+LightGBM at $0.7092$) and GeoMERIT ($0.7526$) is consistent with the
+additional use of geometric fusion, the hierarchy, tail gating, and cost-aware decoding,
+although the cross-study design does not identify their individual contributions.
+
+\begin{table}[H]
+\caption{Tree-backbone reference rungs (from~\cite{chen2026rfe}) versus the GeoMERIT
+ensemble. Every reported single-backbone RFE variant remains below the GeoMERIT operating
+point on all three metrics.\label{tab:backbones}}
+\begin{tabularx}{\textwidth}{Xccc}
+\toprule
+\textbf{Model} & \textbf{Weighted F1} & \textbf{Boundary F1} & \textbf{Penalty}\\
+\midrule
+Random Forest & 0.6918 & 0.3840 & $-0.6776$\\
+RFE $+$ Random Forest & 0.7051 & 0.3920 & $-0.6467$\\
+CatBoost & 0.6501 & 0.3510 & $-0.7895$\\
+RFE $+$ CatBoost & 0.6866 & 0.3725 & $-0.7156$\\
+LightGBM & 0.6550 & 0.3768 & $-0.8080$\\
+RFE $+$ LightGBM & 0.7092 & 0.4147 & $-0.6691$\\
+\textbf{GeoMERIT ensemble} & \textbf{0.7526} & \textbf{0.4567} & $\mathbf{-0.5886}$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Holding the representation, learning, posterior estimates, and Bayes-risk rule fixed, the
+third and fourth rows of Table~\ref{tab:main} isolate the addition of logit adjustment and
+tail gating. These components add $+0.0080$ Weighted F1, $+0.0277$
+Macro F1, $+0.0144$ Boundary F1, and $+0.0324$ Tail F1 at essentially unchanged Penalty
+($-0.5885\to-0.5886$). This same-stack contrast directly measures the combined effect of the
+two posterior-adjustment mechanisms. It does not, however, isolate Bayes-risk decoding because
+both rows use that rule. The remaining difference relative to the published RFE result reflects
+the representation, learning, posterior, and Bayes-risk components jointly and cannot be
+decomposed from the reported cross-study values.
+
+\subsection{Robustness on Feature-Deficient Wells}
+\label{sec:rq3}
+To evaluate performance under incomplete curve suites, we stratify held-out wells by mean
+per-row missingness and compare feature-complete and feature-deficient subsets at several
+thresholds (Figure~\ref{fig:robust}). Each subset is annotated with its number of wells so
+that results from sparsely populated subsets can be identified. The $38$-well deficient
+bucket ($0.1/0.4$ split) attains Weighted F1
+$0.7103$ and Boundary F1 $0.4408$---above the full-fleet RFE+XGBoost boundary reference of
+$0.4100$ despite operating only on incomplete wells. The $8$-well deficient bucket
+($0.2/0.5$) attains Weighted F1 $0.7555$, exceeding the full-fleet reference of $0.7272$
+outright. At the $0.3/0.6$ threshold, the deficient subset contains only one well with
+$11{,}315$ rows and has substantially lower performance. The populated subsets indicate that
+the model can retain useful performance under incomplete curve suites, while the single-well
+result also shows that robustness is not uniform across acquisition regimes. Because the
+subsets differ in geological composition, this stratification is a descriptive stress test
+rather than a controlled ablation of individual representation features.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/fig6_missingness_robustness.pdf}
+\caption{Missingness-stratified robustness under held-out-well validation. At each threshold,
+wells are split into feature-complete (solid blue) and feature-deficient (dashed orange)
+subsets by mean per-row missing rate; annotations give bucket sizes in wells. The gray
+dashed line is the pooled full-fleet RFE+XGBoost reference. Deficient subsets containing 38
+and 8 wells remain near or above the reference, whereas the $0.3/0.6$ deficient subset
+contains only one well and should be interpreted accordingly.}
+\label{fig:robust}
+\end{figure}
+
+\subsection{Per-Class Diagnosis, Tail Behavior, and Well Tracks}
+\label{sec:rq4}
+Because Weighted F1 is strongly influenced by Shale, aggregate performance may obscure weak
+tail classes and boundary behavior. We therefore report per-class out-of-fold precision,
+recall, and F1 (Table~\ref{tab:perclass}). Figure~\ref{fig:classdiag} relates class-level F1
+to support (panel~a), summarizes the destinations of misclassified samples (panel~b), and
+reports performance for the six classes targeted by the tail experts (panel~c).
+
+\begin{table}[H]
+\caption{Per-class out-of-fold metrics for the 12 FORCE 2020 lithology classes (pooled over
+10 folds). Support is the number of labeled rows. Figure~\ref{fig:classdiag}a visualizes the
+F1 column jointly with support; precision and recall are reported here
+only.\label{tab:perclass}}
+\begin{tabularx}{\textwidth}{Xrccc}
+\toprule
+\textbf{Class} & \textbf{Support} & \textbf{Precision} & \textbf{Recall} & \textbf{F1}\\
+\midrule
+Shale & 877{,}043 & 0.833 & 0.912 & 0.870\\
+Sandstone & 207{,}704 & 0.768 & 0.723 & 0.745\\
+Sandstone/Shale & 180{,}820 & 0.442 & 0.285 & 0.347\\
+Limestone & 69{,}498 & 0.636 & 0.659 & 0.647\\
+Marl & 41{,}038 & 0.382 & 0.368 & 0.375\\
+Tuff & 17{,}431 & 0.663 & 0.742 & 0.700\\
+Halite & 14{,}712 & 0.968 & 0.983 & 0.975\\
+Chalk & 14{,}043 & 0.815 & 0.228 & 0.357\\
+Coal & 4{,}754 & 0.649 & 0.692 & 0.670\\
+Dolomite & 2{,}391 & 0.040 & 0.041 & 0.040\\
+Anhydrite & 1{,}808 & 0.606 & 0.704 & 0.651\\
+Basement & 141 & 0.000 & 0.000 & 0.000\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/fig7_class_diagnosis.pdf}
+\caption{Class-level diagnostic results for GeoMERIT.
+(\textbf{a})~Per-class F1 with marker size proportional to log support (support in
+parentheses); classes ordered by geological group with the shared lithology palette.
+(\textbf{b})~Row-normalized confusion matrix in the same group order as
+Figure~\ref{fig:penalty}; framed blocks show that residual errors concentrate inside the
+clastic and carbonate--marl clusters (values below $0.02$ suppressed).
+(\textbf{c})~The six tail classes against the $0.65$ recovery goal: four are recovered
+(green); Dolomite and Basement remain failure modes (red).}
+\label{fig:classdiag}
+\end{figure}
+
+Two patterns are evident. First, Halite (F1 $0.975$), Tuff ($0.700$), Coal ($0.670$), and
+Anhydrite ($0.651$) exceed $0.65$ despite jointly accounting for less than $3\%$ of the
+labels. Their distinctive log responses are consistent with successful rare-class recovery.
+Second, the largest residual confusions occur among geologically related classes.
+Sandstone/Shale is predicted as Shale for $0.538$ of its samples, and Chalk is predicted as
+Limestone for $0.654$. Marl is predicted as Shale and Limestone for $0.408$ and $0.178$,
+respectively. Dolomite is predicted as Shale and Limestone for $0.437$ and $0.311$.
+Most large off-diagonal entries therefore fall within the low-cost clusters identified by the
+penalty matrix (Figure~\ref{fig:penalty}), which is consistent with the cost-aware decision
+rule. The tail mean F1 of $0.5061$ is approximately $1.6\times$ the
+$\approx\!0.31$ level of the reported single-model baselines.
+
+To complement the pooled analysis, we inspect two held-out wells representing the two
+conditions emphasized in Section~\ref{sec:repr}: feature-complete well 16/7-6 and
+missingness-heavy 35/9-7, both located within the North Sea study area shown in
+Figure~\ref{fig:well_locations}.
+Figure~\ref{fig:tracks} shows, for each well, five measured curves (GR, RHOB, NPHI, DTC,
+RDEP), the per-row suite missing fraction, and the true/predicted/hit lithology strips on a
+common depth axis.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/fig8_well_tracks.pdf}
+\caption{Held-out single-well prediction tracks.
+(\textbf{a})~Feature-complete well 16/7-6 (point accuracy $75.5\%$): five log curves,
+per-row suite missing fraction, and true/predicted/hit strips in the shared lithology
+palette; dotted lines bracket the 2200--2400~m carbonate interval, where the chalk section
+is decoded as Limestone---the depth-localized expression of the
+$\text{Chalk}\to\text{Limestone}$ confusion ($0.654$) of Figure~\ref{fig:classdiag}b.
+(\textbf{b})~Missingness-heavy well 35/9-7 (point accuracy $87.6\%$): six of twenty suite
+curves (RSHA, SGR, SP, DCAL, MUDWEIGHT, RXO) are entirely absent (gray missing-fraction
+track), yet the predicted column reproduces the Shale-dominated sequence and its sandstone
+interbeds with only thin boundary errors. Hatched bands mark within-curve gaps.}
+\label{fig:tracks}
+\end{figure}
+
+The feature-complete well illustrates the class-level confusion pattern. Prediction quality is high along
+the clastic section, while the bracketed 2200--2400~m interval---about 1{,}200 rows of Chalk
+with thin Marl---is decoded almost entirely as Limestone (interval accuracy $6.0\%$) and
+alone accounts for $48\%$ of the well's errors. The error is therefore not diffuse model
+noise; it is a depth-contiguous carbonate--marl ambiguity consistent with
+Figure~\ref{fig:classdiag}b. The RHOB/NPHI response in this interval lies between the chalk
+and limestone training distributions. In the missingness-heavy well, six curves are absent
+over the entire interval, point accuracy is $87.6\%$, and most errors occur near thin
+transitions. This case illustrates the behavior of the missingness-aware representation at
+the well-track scale but does not by itself establish the contribution of an individual feature.
+
+\subsection{Decision-Layer Sensitivity}
+\label{sec:rq5}
+We evaluate the sensitivity of the decision layer by varying two groups of hyperparameters
+while holding the remaining pipeline fixed: the logit-adjustment temperature $\tau$ and the
+Dolomite gate $(\gamma_\text{dol},\theta_\text{dol})$ from
+Section~\ref{sec:decision} (Figure~\ref{fig:decision}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/fig9_decision_layer.pdf}
+\caption{Decision-layer trade-off under logit adjustment and Dolomite gating.
+(\textbf{a})~Sweeping $\tau$ (gates off): the four F1 facets rise as the head-class prior is
+flattened while Penalty peaks near $\tau\approx 0.1$ and degrades slowly beyond; the
+adopted $\tau=0.2$ (dashed) sits inside the shaded flat region, trading $\le 0.002$ Penalty
+for $+0.009$ Macro F1 relative to $\tau=0.1$.
+(\textbf{b})~Dolomite-gate grid: each point is one
+$(\gamma_\text{dol},\theta_\text{dol})$ setting, colored by $\gamma_\text{dol}$; the red
+curve is the Pareto frontier of Dolomite F1 versus Penalty and the star is the adopted
+setting $(8.0, 0.05)$. Settings near the maximum Dolomite F1 ($\approx 0.076$) worsen the
+Penalty metric by as much as $0.04$.}
+\label{fig:decision}
+\end{figure}
+
+The $\tau$ sweep is monotone and relatively flat near the adopted value. Between
+$\tau=0.1$ and $\tau=0.3$, Weighted F1 varies by $0.0045$ and Penalty by $0.0077$, indicating
+limited sensitivity within this interval. The adopted Dolomite-gate setting lies on the
+estimated Pareto frontier. Configurations with higher Dolomite F1 have worse (more negative)
+Penalty scores,
+consistent with overlap between Dolomite and neighboring carbonate classes
+(Section~\ref{sec:failures}). Because these adjustments are applied after model fitting, the
+trade-off can be examined without retraining the underlying classifiers.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Interpretation of the Joint Performance Gains}
+\label{sec:joint}
+Under held-out-well validation, GeoMERIT exceeds the published RFE+XGBoost reference on the
+three pooled headline metrics: Weighted F1, Boundary F1, and Penalty. This joint result shows
+that the aggregate gain is accompanied by improved boundary and cost-sensitive performance.
+The missingness-stratified, class-level, and sensitivity analyses are consistent with the
+intended roles of the representation, weighting, posterior, and decision components.
+However, the reported experiments do not provide a complete leave-one-component-out ablation.
+In particular, the same-stack comparison in Section~\ref{sec:rq2} isolates logit adjustment
+and tail gating but not Bayes-risk decoding relative to argmax. The Penalty improvement should
+therefore be interpreted as a property of the full framework rather than attributed solely to
+the Bayes-risk rule.
+
+\subsection{Geological Structure of Residual Errors}
+\label{sec:failures}
+The residual errors are concentrated in a small number of classes and can be related to their
+geological and sampling characteristics.
+
+\textbf{Dolomite (F1 $=0.040$)} is the largest visible failure, and its cause is mineralogical
+rather than statistical. Clean dolomite (PEF $\approx 3.1$, matrix density
+$\approx 2.87$~g/cm$^3$) sits squarely inside the carbonate subspace already occupied by
+limestone (PEF $\approx 5$, $\approx 2.71$~g/cm$^3$), chalk, and marl, and the gate sweep of
+Section~\ref{sec:rq5} showed that overlap to be strong enough that forcing dolomite recall
+actively worsens the penalty. This pattern motivates more targeted alternatives, such as a
+carbonate-subspace expert, retrieval priors restricted to the same GROUP and FORMATION, or a
+dedicated Dolomite-versus-Limestone discriminator trained where the two classes coexist.
+
+\textbf{Basement (F1 $=0.000$)} fails completely, but for a reason that lies in the data rather
+than the model. Its 141 rows are concentrated in a few wells where the key curves are
+themselves heavily missing, so under GroupKFold several training folds contain no Basement
+supervision. This setting may be better addressed by an open-set or anomaly-detection
+formulation than by a closed-set multiclass output.
+
+\textbf{Sandstone/Shale ($0.347$) and Chalk ($0.357$)} are weak despite ample support---
+Sandstone/Shale alone has $180{,}820$ rows---so here the ceiling is set by the labels, not by
+rarity. Sandstone/Shale is by definition a transitional rock between its two parents, and
+Chalk's combination of high precision ($0.815$) with low recall ($0.228$) describes a model
+that commits to chalk only when the evidence is overwhelming and otherwise defers to limestone.
+These results suggest a resolution and label-ambiguity limitation at log scale. Improved
+labels or sequence-level decoding over bed intervals may help distinguish these classes.
+
+\subsection{Scope and Limitations}
+\label{sec:limits}
+Four limitations bound the claims. First, the cross-stack comparison in
+Table~\ref{tab:ladder} splices published rungs with our extension, so the four-layer
+increment is attributed cumulatively rather than per-layer in that comparison; the
+same-stack contrast of Section~\ref{sec:rq2} isolates only logit adjustment and tail gating.
+A full in-stack leave-one-component-out study is needed to quantify the remaining
+contributions. Second, the effect of Bayes-risk decoding is not isolated from argmax using
+identical posterior estimates. Third, the fold-level tests use a pooled published reference
+rather than matched baseline folds and are therefore exploratory rather than inferential
+comparisons (Table~\ref{tab:perfold}). Fourth, all conclusions are for one basin and one
+penalty matrix; the decision layer would inherit any context-dependence of $A$ (e.g., depth-
+or formation-conditional costs). Equation~(\ref{eq:bayes}) can accept a different cost matrix
+without retraining, but its performance would require validation in the new context.
+
+\subsection{Rationale for a Tree-Based Model Stack}
+\label{sec:trees}
+GeoMERIT instantiates, in a geological setting, the broader observation that tree ensembles
+remain highly competitive on tabular
+data~\cite{grinsztajn2022trees,shwartzziv2022tabular,mcelfresh2024benchmark}. GBDTs natively
+route the sentinel-encoded missingness states, remain insensitive to the
+four-orders-of-magnitude scale differences across curves, use axis-aligned decision surfaces
+that mirror the cross-plot logic of petrophysical interpretation, and accept categorical
+features such as \texttt{curve\_suite\_id} and FORMATION as first-class inputs. These
+properties do not preclude deep-learning extensions. Well-log foundation
+models~\cite{qi2025wlfm} could supply
+upstream representations that the same weighting, hierarchy, and decoding layers consume,
+and agentic workflows~\cite{wang2026geodecider} could invoke GeoMERIT as a calibrated
+tool. For the missingness-heavy, long-tailed, and strictly well-grouped setting studied here,
+tree ensembles provide a suitable model class for the structured tabular representation.
+
+\section{Conclusions}
+\label{sec:conclusion}
+We presented GeoMERIT, a missingness-aware and penalty-guided lithology prediction method for
+incomplete, heterogeneous, and long-tailed well-log data. The representation encodes
+missingness, anomalies, and curve-suite identity. Model fitting applies class, boundary, and
+label-confidence weights, while posterior estimation combines a tree ensemble with a
+geological hierarchy and tail experts. Final labels minimize expected geological cost after
+logit adjustment. On the full FORCE 2020 valid-label set under strict
+10-fold GroupKFold validation by well---the protocol that simulates prediction on unseen
+wells---GeoMERIT attains Weighted F1 $=0.7526$, Macro F1 $=0.5315$, Boundary F1 $=0.4567$,
+Penalty $=-0.5886$, and tail mean F1 $=0.5061$, improving the published RFE+XGBoost
+reference by $+3.5\%$ (Weighted F1), $+11.4\%$ (Boundary F1), and $+6.4\%$ (Penalty).
+Within the same posterior stack, adding logit adjustment and tail gating increases Weighted
+F1 by $0.0080$, Macro F1 by $0.0277$, Boundary F1 by $0.0144$, and Tail F1 by $0.0324$ at
+essentially unchanged Penalty. These results support the joint treatment of missingness,
+long-tail structure, boundary uncertainty, and geological cost, while the incomplete
+component ablation limits causal attribution to individual layers. Future work should evaluate
+carbonate-subspace experts for Dolomite, open-set formulations for Basement-like classes,
+semi-Markov segment decoding at bed scale, and foundation-model representations under the
+same held-out-well protocol.
+
+\vspace{6pt}
+
+\authorcontributions{Conceptualization, methodology, software, validation, formal analysis,
+investigation, data curation, writing---original draft preparation, writing---review and
+editing, and visualization: A.A. The author has read and agreed to the published version of
+the manuscript.}
+
+\funding{This research received no external funding.}
+
+\institutionalreview{Not applicable.}
+
+\informedconsent{Not applicable.}
+
+\dataavailability{The FORCE 2020 dataset is publicly available at
+\url{https://doi.org/10.5281/zenodo.4351156}~\cite{bormann2020force}. The code,
+configuration files, fold definitions, out-of-fold predictions, decoding grids, and
+plotting scripts that reproduce every number, table, and figure in this paper are described
+in Appendix~\ref{app:repro}.}
+
+\acknowledgments{The authors thank the FORCE 2020 organizers for releasing the dataset and
+penalty matrix that made this study possible.}
+
+\conflictsofinterest{The author declares no conflicts of interest.}
+
+\abbreviations{Abbreviations}{
+The following abbreviations are used in this manuscript:\\
+
+\noindent
+\begin{tabular}{@{}ll}
+GBDT & Gradient-boosted decision tree\\
+RFE  & Robust feature engineering\\
+OOF  & Out-of-fold\\
+MAD  & Median absolute deviation\\
+OvR  & One-vs-rest\\
+GR   & Gamma ray\\
+RHOB & Bulk density\\
+NPHI & Neutron porosity\\
+PEF  & Photoelectric factor\\
+DTC  & Compressional sonic transit time\\
+RDEP & Deep resistivity\\
+NPD  & Norwegian Petroleum Directorate\\
+\end{tabular}}
+
+\appendixtitles{yes}
+\appendixstart
+\appendix
+\section[\appendixname~\thesection]{Reproducibility Artifacts}
+\label{app:repro}
+All numbers in this paper are regenerated from saved artifacts. Core library:
+\texttt{geomerit/features.py} (representation layer), \texttt{weights.py} (learning layer),
+\texttt{models.py} (posterior layer: three backends, geometric fusion, coarse-to-fine, tail
+experts), \texttt{decode.py} (decision layer), \texttt{metrics.py} (five metrics),
+\texttt{cv.py} (GroupKFold protocol). Result files: \texttt{decode\_report.json} (pooled
+metrics and per-class report), \texttt{decode\_report.csv} (per-row OOF predictions),
+\texttt{decode\_grid\_results.json} (decision-layer grid), \texttt{perfold\_geomerit.csv}
+(per-fold metrics; \texttt{scripts/06\_perfold\_stats.py} reproduces the Wilcoxon tests).
+Figures: every panel is generated by \texttt{revision\_v3/scripts/make\_figures.py} from
+same-named CSV source data; the two case-well curve extracts derive from the public FORCE
+2020 release. Best decoding configuration: stage \texttt{global\_tail}, $\tau=0.2$,
+$(\gamma,\theta)_\text{global}=(1.2,0.35)$,
+$(\gamma,\theta)_\text{dol}=(8.0,0.05)$.
+
+\begin{adjustwidth}{-\extralength}{0cm}
+\reftitle{References}
+\bibliography{references}
+\end{adjustwidth}
+
+\PublishersNote{}
+\end{document}
