@@ -18,31 +18,31 @@ and full per-row prediction tables are intentionally excluded from GitHub.
 
 ```text
 .
-鈹溾攢鈹€ geomerit/              # Core Python package
-鈹?  鈹溾攢鈹€ io_las.py          # LAS and auxiliary Excel readers
-鈹?  鈹溾攢鈹€ features.py        # Missingness-aware robust feature engineering
-鈹?  鈹溾攢鈹€ labels.py          # FORCE 2020 lithology labels and class groupings
-鈹?  鈹溾攢鈹€ weights.py         # Class, boundary, and confidence sample weights
-鈹?  鈹溾攢鈹€ models.py          # GBDT ensemble, hierarchy, and tail experts
-鈹?  鈹溾攢鈹€ decode.py          # Logit adjustment and Bayes-risk decoding
-鈹?  鈹溾攢鈹€ metrics.py         # Weighted F1, Macro F1, Boundary F1, Penalty
-鈹?  鈹斺攢鈹€ cv.py              # Well-grouped cross-validation helpers
-鈹溾攢鈹€ scripts/               # Reproduction entry points
-鈹?  鈹溾攢鈹€ 00_build_dataset.py
-鈹?  鈹溾攢鈹€ 01_train.py
-鈹?  鈹溾攢鈹€ 02_predict_decode.py
-鈹?  鈹溾攢鈹€ 03_ablation.py
-鈹?  鈹溾攢鈹€ 04_georacs_oof.py
-鈹?  鈹溾攢鈹€ 04_make_figures.py
-鈹?  鈹斺攢鈹€ 05_make_paper_figures.py
-鈹溾攢鈹€ configs/               # Dataset, feature, model, and penalty configs
-鈹溾攢鈹€ results/               # Lightweight experiment reports
-鈹溾攢鈹€ paper/                 # Latest manuscript, figures, and figure scripts
-鈹?  鈹溾攢鈹€ latex/
-鈹?  鈹溾攢鈹€ figures/
-鈹?  鈹溾攢鈹€ scripts/
-鈹?  鈹斺攢鈹€ data/
-鈹斺攢鈹€ requirements.txt
+|-- geomerit/              # Core Python package
+|   |-- io_las.py          # LAS and auxiliary Excel readers
+|   |-- features.py        # Missingness-aware robust feature engineering
+|   |-- labels.py          # FORCE 2020 lithology labels and class groupings
+|   |-- weights.py         # Class, boundary, and confidence sample weights
+|   |-- models.py          # GBDT ensemble, hierarchy, and tail experts
+|   |-- decode.py          # Logit adjustment and Bayes-risk decoding
+|   |-- metrics.py         # Weighted F1, Macro F1, Boundary F1, Penalty
+|   `-- cv.py              # Well-grouped cross-validation helpers
+|-- scripts/               # Reproduction entry points
+|   |-- 00_build_dataset.py
+|   |-- 01_train.py
+|   |-- 02_predict_decode.py
+|   |-- 03_ablation.py
+|   |-- 04_georacs_oof.py
+|   |-- 04_make_figures.py
+|   `-- 05_make_paper_figures.py
+|-- configs/               # Dataset, feature, model, and penalty configs
+|-- results/               # Lightweight experiment reports
+|-- paper/                 # Latest manuscript, figures, and figure scripts
+|   |-- latex/
+|   |-- figures/
+|   |-- scripts/
+|   `-- data/
+`-- requirements.txt
 ```
 
 ## Method Summary
@@ -181,6 +181,7 @@ If this code supports your research, please cite the accompanying manuscript:
   112-core CPU server with approximately 251 GB RAM.
 - The repository contains lightweight result summaries in `results/`. Full OOF
   predictions and probability tensors can be regenerated with the scripts above.
+
 
 
 
