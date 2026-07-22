@@ -138,8 +138,6 @@ The `paper/data/` folder contains the small CSV files needed for representative 
 
 ## Manuscript Submission
 
-This repository accompanies a manuscript prepared for submission to **Big Data and Cognitive Computing**.
-
 Manuscript title:
 
 **GeoMERIT: Missingness-Aware and Geological-Cost-Guided Lithology Prediction across Field Wells**
