@@ -1,0 +1,22 @@
+{
+  "blend": {
+    "alpha": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "mu": 0.0,
+    "source": "single fixed backbone"
+  },
+  "decision": {
+    "tau": 0.0,
+    "tail_gamma": 0.0,
+    "tail_threshold": 0.5,
+    "dolomite_gamma": 0.0,
+    "dolomite_threshold": 0.5
+  },
+  "candidates": 5,
+  "signature": "2b07090b2d6a520ad45fb241d0500633faac32a08cbd5fe8ec0e0b86c20f49c2",
+  "selected_before_outer_fit": true,
+  "evaluation_labels_used": false
+}

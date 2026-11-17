@@ -1,0 +1,7 @@
+-c environment/constraints-recorded.txt
+-r source/geomerit/requirements.txt
+scipy
+pyarrow
+psutil
+threadpoolctl
+joblib

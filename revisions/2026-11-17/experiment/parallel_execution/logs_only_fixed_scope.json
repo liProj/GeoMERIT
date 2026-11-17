@@ -1,0 +1,11 @@
+{
+  "id": "logs_only_fixed_parameters_20261110",
+  "base_scope": "essential_fixed_parameters_20261104 (fixed_scope.json, unchanged on disk)",
+  "change": "logs_only moved from nested (outer10/inner3) to fixed-parameter outer refit: inherits same-outer-fold full blend/decision parameters, one outer fit per fold. 80 folds, 140 training blocks.",
+  "disclosure": "logs_only inherits the same-fold full-model parameters for controlled outer refitting.",
+  "runner": "fixed_logs_only_train.py",
+  "result_root": "experiment_fixed_parameters_logs_only_20261110/runs",
+  "signature": "4bdf418af247f695f58b55d063bee251c329564c8325034f09fccf7b905faa71",
+  "controller": "parallel_controller_fast.py (4 lanes, fold-major ablations, logs_only last)",
+  "report_tools": "parallel_execution/report_tools_fast (patched copies; originals in report_tools untouched)"
+}

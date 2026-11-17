@@ -1,0 +1,86 @@
+{
+  "release_date": "2026-11-17",
+  "identifiers": "Logical source identifiers; no private storage paths. Digests of originals before sanitization or renaming.",
+  "sources": {
+    "final80/final_report.json": "4466962b3fed8c52a39491e5441a58705a9def7d18b65033bc440e946f661bc4",
+    "final80/main_report.json": "b12daed84a018f836a820e9803122c93e06701f6f786f4dd8fa8e10f3b655916",
+    "final80/artifact_verification.json": "4f8236d303da647a79ff966689d0c6a1ece425ed7d6c61b2c0a6e794a41f6278",
+    "final80/summary_metrics.csv": "0cc7b32c2f516c8754cfd19035e9c87301a4d957f093dc20a6003d674c9715cd",
+    "final80/fold_metrics.csv": "604dae0c5aa2d154311f9c35e4ed7ae7d06408eb49091df8e111322fc6cca593",
+    "final80/ablation_comparisons.csv": "9d4b9101a76ec9e4533b643bb649c0075637e8d1a48c2be71c4f75c5505ebf92",
+    "curated_results/合并外层指标.csv": "f3189af0396d66790dafe733cb262d14f59e5b62ba1b57848d560078e0824412",
+    "curated_results/主比较与统计区间.csv": "7d01d384207170f37edecc1be5d79312fac87f145b631fdabb3cb19fd837f867",
+    "curated_results/折均值与标准差.csv": "0fe4ff2c500cd2f2a6fae5c0d8385e1b70d0df94230106b16c0452e6a9bc791c",
+    "curated_results/完整模型逐类结果.csv": "4bf27da144e297cf0ea491e3845fdf1e994f86a9a637e18db463e5e2e6e0aa95",
+    "curated_results/完整模型逐折选择参数.csv": "1c6f930242130e19dca66b1a080ceb3c9322e7ed79b64b802545bf7b9927938a",
+    "curated_results/subgroup_summary.csv": "3983a213dd679af0139aaee6c3b931bdbad6bde64013794a1d5492ee037e01f5",
+    "curated_results/subgroup_class_support.csv": "917711d40740b7fe57d6010be81ad5730ce9e42ccfd4828f458afa108556a0db",
+    "curated_results/补充核查数据_S7.csv": "aa395965824ea71ba3991c98146627dc321633c78cf428c5f05b26c08a9e3ad1",
+    "curated_results/固定参数消融与统计区间.csv": "fd69f6ee5dd8ae98bc02b16a8405447c587bbbf70f455e78c243d9f96d057992",
+    "latest_missingness/固定参数消融与统计区间.csv": "fd69f6ee5dd8ae98bc02b16a8405447c587bbbf70f455e78c243d9f96d057992",
+    "latest_missingness/subgroup_summary.csv": "3983a213dd679af0139aaee6c3b931bdbad6bde64013794a1d5492ee037e01f5",
+    "latest_missingness/subgroup_class_support.csv": "917711d40740b7fe57d6010be81ad5730ce9e42ccfd4828f458afa108556a0db",
+    "parameter_archive/experiment_v1/runs/full/outer_00/selected_parameters.json": "abf13d069acdd5902253d70261c768fd10fd48750160004bb2e370c05b52410d",
+    "parameter_archive/experiment_v1/runs/full/outer_01/selected_parameters.json": "096ae9781f6e935f2261dea769c71960319217a5a4472164846055c42b54bfb2",
+    "parameter_archive/experiment_v1/runs/full/outer_02/selected_parameters.json": "f569c7ae7ab910c4b568aa4a175b686c4ea8feeaa1a3fbbc34a4e34f131c731e",
+    "parameter_archive/experiment_v1/runs/full/outer_03/selected_parameters.json": "65011d9c27593636c8e7c5c73897aad3fd47a7c72aabcc49b4673d54a767a606",
+    "parameter_archive/experiment_v1/runs/full/outer_04/selected_parameters.json": "936f737d48fb323d7ad664bf19f92440b62c926f041e414d41d254208637d1c5",
+    "parameter_archive/experiment_v1/runs/full/outer_05/selected_parameters.json": "5ca50211e974f671dc88c10f778913d326eb02f2d8b3d6cff82bcc4588819336",
+    "parameter_archive/experiment_v1/runs/full/outer_06/selected_parameters.json": "ecc79995daf8ab7535367a8afdaca3cf11ff7bfd6a58337830c60ba1a70351aa",
+    "parameter_archive/experiment_v1/runs/full/outer_07/selected_parameters.json": "e76d804ec746225be7212aa6342c47bbf2e2839c23380cb0591d82f263dd76dc",
+    "parameter_archive/experiment_v1/runs/full/outer_08/selected_parameters.json": "cc090fc59a6006eead4d8463af676c50e9fa984dedfbb204a1eee66f8b57dab2",
+    "parameter_archive/experiment_v1/runs/full/outer_09/selected_parameters.json": "4d6ad85e2605758fdf5d2e08071db4e099234dd26ade6b0c55a36581d3ea1b9a",
+    "parameter_archive/experiment_v1/runs/rfe_xgb/outer_00/selected_parameters.json": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+    "parameter_archive/experiment_v1/runs/rfe_xgb/outer_01/selected_parameters.json": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+    "parameter_archive/experiment_v1/runs/rfe_xgb/outer_02/selected_parameters.json": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+    "parameter_archive/experiment_v1/runs/rfe_xgb/outer_03/selected_parameters.json": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+    "parameter_archive/experiment_v1/runs/rfe_xgb/outer_04/selected_parameters.json": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+    "parameter_archive/experiment_v1/runs/rfe_xgb/outer_05/selected_parameters.json": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+    "parameter_archive/experiment_v1/runs/rfe_xgb/outer_06/selected_parameters.json": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+    "parameter_archive/experiment_v1/runs/rfe_xgb/outer_07/selected_parameters.json": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+    "parameter_archive/experiment_v1/runs/rfe_xgb/outer_08/selected_parameters.json": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+    "parameter_archive/experiment_v1/runs/rfe_xgb/outer_09/selected_parameters.json": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b"
+  },
+  "transformations": [
+    {
+      "file": "final_report.json",
+      "field": "result_roots.*",
+      "action": "replace private absolute prefix with expected artifact-root-relative experiment path"
+    },
+    {
+      "file": "final_report.json",
+      "field": "prediction_provenance[].path",
+      "action": "replace private absolute prefix with expected artifact-root-relative experiment path; preserve variant, fold and SHA256"
+    },
+    {
+      "file": "final_report.json",
+      "field": "main_report_path",
+      "action": "use release-relative main_report.json"
+    },
+    {
+      "file": "main_report.json",
+      "field": "pending",
+      "action": "remove superseded historical administrative field; final_report records completion of all 80 folds"
+    },
+    {
+      "file": "artifact_verification.json",
+      "field": "processes",
+      "action": "remove machine or runtime-monitoring information"
+    },
+    {
+      "file": "artifact_verification.json",
+      "field": "cpus",
+      "action": "remove machine or runtime-monitoring information"
+    },
+    {
+      "file": "artifact_verification.json",
+      "field": "memory_available_gib",
+      "action": "remove machine or runtime-monitoring information"
+    },
+    {
+      "file": "artifact_verification.json",
+      "field": "disk_free_gib",
+      "action": "remove machine or runtime-monitoring information"
+    }
+  ]
+}

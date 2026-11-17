@@ -1,0 +1,914 @@
+{
+  "status": "complete",
+  "rows": 1431383,
+  "wells": 118,
+  "curves": [
+    "GR",
+    "SGR",
+    "RHOB",
+    "DRHO",
+    "NPHI",
+    "PEF",
+    "DTC",
+    "DTS",
+    "RDEP",
+    "RSHA",
+    "RMED",
+    "RXO",
+    "RMIC",
+    "SP",
+    "CALI",
+    "BS",
+    "DCAL",
+    "ROP",
+    "ROPA",
+    "MUDWEIGHT"
+  ],
+  "geo_numeric": [
+    "GR_enc",
+    "GR_well_robust_z",
+    "GR_is_missing",
+    "GR_is_outlier",
+    "SGR_enc",
+    "SGR_well_robust_z",
+    "SGR_is_missing",
+    "SGR_is_outlier",
+    "RHOB_enc",
+    "RHOB_well_robust_z",
+    "RHOB_is_missing",
+    "RHOB_is_outlier",
+    "DRHO_enc",
+    "DRHO_well_robust_z",
+    "DRHO_is_missing",
+    "DRHO_is_outlier",
+    "NPHI_enc",
+    "NPHI_well_robust_z",
+    "NPHI_is_missing",
+    "NPHI_is_outlier",
+    "PEF_enc",
+    "PEF_well_robust_z",
+    "PEF_is_missing",
+    "PEF_is_outlier",
+    "DTC_enc",
+    "DTC_well_robust_z",
+    "DTC_is_missing",
+    "DTC_is_outlier",
+    "DTS_enc",
+    "DTS_well_robust_z",
+    "DTS_is_missing",
+    "DTS_is_outlier",
+    "RDEP_enc",
+    "RDEP_well_robust_z",
+    "RDEP_is_missing",
+    "RDEP_is_outlier",
+    "RSHA_enc",
+    "RSHA_well_robust_z",
+    "RSHA_is_missing",
+    "RSHA_is_outlier",
+    "RMED_enc",
+    "RMED_well_robust_z",
+    "RMED_is_missing",
+    "RMED_is_outlier",
+    "RXO_enc",
+    "RXO_well_robust_z",
+    "RXO_is_missing",
+    "RXO_is_outlier",
+    "RMIC_enc",
+    "RMIC_well_robust_z",
+    "RMIC_is_missing",
+    "RMIC_is_outlier",
+    "SP_enc",
+    "SP_well_robust_z",
+    "SP_is_missing",
+    "SP_is_outlier",
+    "CALI_enc",
+    "CALI_well_robust_z",
+    "CALI_is_missing",
+    "CALI_is_outlier",
+    "BS_enc",
+    "BS_well_robust_z",
+    "BS_is_missing",
+    "BS_is_outlier",
+    "DCAL_enc",
+    "DCAL_well_robust_z",
+    "DCAL_is_missing",
+    "DCAL_is_outlier",
+    "ROP_enc",
+    "ROP_well_robust_z",
+    "ROP_is_missing",
+    "ROP_is_outlier",
+    "ROPA_enc",
+    "ROPA_well_robust_z",
+    "ROPA_is_missing",
+    "ROPA_is_outlier",
+    "MUDWEIGHT_enc",
+    "MUDWEIGHT_well_robust_z",
+    "MUDWEIGHT_is_missing",
+    "MUDWEIGHT_is_outlier",
+    "missing_count",
+    "missing_rate",
+    "outlier_count",
+    "outlier_rate",
+    "GR_grad",
+    "GR_w2_mean",
+    "GR_w2_std",
+    "GR_w2_min",
+    "GR_w2_max",
+    "GR_w2_delta",
+    "GR_w5_mean",
+    "GR_w5_std",
+    "GR_w5_min",
+    "GR_w5_max",
+    "GR_w5_delta",
+    "GR_w10_mean",
+    "GR_w10_std",
+    "GR_w10_min",
+    "GR_w10_max",
+    "GR_w10_delta",
+    "RHOB_grad",
+    "RHOB_w2_mean",
+    "RHOB_w2_std",
+    "RHOB_w2_min",
+    "RHOB_w2_max",
+    "RHOB_w2_delta",
+    "RHOB_w5_mean",
+    "RHOB_w5_std",
+    "RHOB_w5_min",
+    "RHOB_w5_max",
+    "RHOB_w5_delta",
+    "RHOB_w10_mean",
+    "RHOB_w10_std",
+    "RHOB_w10_min",
+    "RHOB_w10_max",
+    "RHOB_w10_delta",
+    "NPHI_grad",
+    "NPHI_w2_mean",
+    "NPHI_w2_std",
+    "NPHI_w2_min",
+    "NPHI_w2_max",
+    "NPHI_w2_delta",
+    "NPHI_w5_mean",
+    "NPHI_w5_std",
+    "NPHI_w5_min",
+    "NPHI_w5_max",
+    "NPHI_w5_delta",
+    "NPHI_w10_mean",
+    "NPHI_w10_std",
+    "NPHI_w10_min",
+    "NPHI_w10_max",
+    "NPHI_w10_delta",
+    "PEF_grad",
+    "PEF_w2_mean",
+    "PEF_w2_std",
+    "PEF_w2_min",
+    "PEF_w2_max",
+    "PEF_w2_delta",
+    "PEF_w5_mean",
+    "PEF_w5_std",
+    "PEF_w5_min",
+    "PEF_w5_max",
+    "PEF_w5_delta",
+    "PEF_w10_mean",
+    "PEF_w10_std",
+    "PEF_w10_min",
+    "PEF_w10_max",
+    "PEF_w10_delta",
+    "DTC_grad",
+    "DTC_w2_mean",
+    "DTC_w2_std",
+    "DTC_w2_min",
+    "DTC_w2_max",
+    "DTC_w2_delta",
+    "DTC_w5_mean",
+    "DTC_w5_std",
+    "DTC_w5_min",
+    "DTC_w5_max",
+    "DTC_w5_delta",
+    "DTC_w10_mean",
+    "DTC_w10_std",
+    "DTC_w10_min",
+    "DTC_w10_max",
+    "DTC_w10_delta",
+    "RDEP_grad",
+    "RDEP_w2_mean",
+    "RDEP_w2_std",
+    "RDEP_w2_min",
+    "RDEP_w2_max",
+    "RDEP_w2_delta",
+    "RDEP_w5_mean",
+    "RDEP_w5_std",
+    "RDEP_w5_min",
+    "RDEP_w5_max",
+    "RDEP_w5_delta",
+    "RDEP_w10_mean",
+    "RDEP_w10_std",
+    "RDEP_w10_min",
+    "RDEP_w10_max",
+    "RDEP_w10_delta",
+    "RMED_grad",
+    "RMED_w2_mean",
+    "RMED_w2_std",
+    "RMED_w2_min",
+    "RMED_w2_max",
+    "RMED_w2_delta",
+    "RMED_w5_mean",
+    "RMED_w5_std",
+    "RMED_w5_min",
+    "RMED_w5_max",
+    "RMED_w5_delta",
+    "RMED_w10_mean",
+    "RMED_w10_std",
+    "RMED_w10_min",
+    "RMED_w10_max",
+    "RMED_w10_delta",
+    "SP_grad",
+    "SP_w2_mean",
+    "SP_w2_std",
+    "SP_w2_min",
+    "SP_w2_max",
+    "SP_w2_delta",
+    "SP_w5_mean",
+    "SP_w5_std",
+    "SP_w5_min",
+    "SP_w5_max",
+    "SP_w5_delta",
+    "SP_w10_mean",
+    "SP_w10_std",
+    "SP_w10_min",
+    "SP_w10_max",
+    "SP_w10_delta",
+    "rhob_nphi_sep",
+    "dtc_rhob_ratio",
+    "gr_log_rdep_ratio",
+    "pef_rhob_ratio",
+    "dist_to_xy_centroid",
+    "x_loc",
+    "y_loc",
+    "z_loc",
+    "dist_to_nearest_casing",
+    "is_below_deepest_casing"
+  ],
+  "categorical": [
+    "curve_suite_id",
+    "GROUP",
+    "FORMATION"
+  ],
+  "rfe_numeric": [
+    "rfe_GR_lag-2",
+    "rfe_SGR_lag-2",
+    "rfe_RHOB_lag-2",
+    "rfe_DRHO_lag-2",
+    "rfe_NPHI_lag-2",
+    "rfe_PEF_lag-2",
+    "rfe_DTC_lag-2",
+    "rfe_DTS_lag-2",
+    "rfe_RDEP_lag-2",
+    "rfe_RSHA_lag-2",
+    "rfe_RMED_lag-2",
+    "rfe_RXO_lag-2",
+    "rfe_RMIC_lag-2",
+    "rfe_SP_lag-2",
+    "rfe_CALI_lag-2",
+    "rfe_BS_lag-2",
+    "rfe_DCAL_lag-2",
+    "rfe_ROP_lag-2",
+    "rfe_ROPA_lag-2",
+    "rfe_MUDWEIGHT_lag-2",
+    "rfe_GR_lag-1",
+    "rfe_SGR_lag-1",
+    "rfe_RHOB_lag-1",
+    "rfe_DRHO_lag-1",
+    "rfe_NPHI_lag-1",
+    "rfe_PEF_lag-1",
+    "rfe_DTC_lag-1",
+    "rfe_DTS_lag-1",
+    "rfe_RDEP_lag-1",
+    "rfe_RSHA_lag-1",
+    "rfe_RMED_lag-1",
+    "rfe_RXO_lag-1",
+    "rfe_RMIC_lag-1",
+    "rfe_SP_lag-1",
+    "rfe_CALI_lag-1",
+    "rfe_BS_lag-1",
+    "rfe_DCAL_lag-1",
+    "rfe_ROP_lag-1",
+    "rfe_ROPA_lag-1",
+    "rfe_MUDWEIGHT_lag-1",
+    "rfe_GR_lag0",
+    "rfe_SGR_lag0",
+    "rfe_RHOB_lag0",
+    "rfe_DRHO_lag0",
+    "rfe_NPHI_lag0",
+    "rfe_PEF_lag0",
+    "rfe_DTC_lag0",
+    "rfe_DTS_lag0",
+    "rfe_RDEP_lag0",
+    "rfe_RSHA_lag0",
+    "rfe_RMED_lag0",
+    "rfe_RXO_lag0",
+    "rfe_RMIC_lag0",
+    "rfe_SP_lag0",
+    "rfe_CALI_lag0",
+    "rfe_BS_lag0",
+    "rfe_DCAL_lag0",
+    "rfe_ROP_lag0",
+    "rfe_ROPA_lag0",
+    "rfe_MUDWEIGHT_lag0",
+    "rfe_GR_lag1",
+    "rfe_SGR_lag1",
+    "rfe_RHOB_lag1",
+    "rfe_DRHO_lag1",
+    "rfe_NPHI_lag1",
+    "rfe_PEF_lag1",
+    "rfe_DTC_lag1",
+    "rfe_DTS_lag1",
+    "rfe_RDEP_lag1",
+    "rfe_RSHA_lag1",
+    "rfe_RMED_lag1",
+    "rfe_RXO_lag1",
+    "rfe_RMIC_lag1",
+    "rfe_SP_lag1",
+    "rfe_CALI_lag1",
+    "rfe_BS_lag1",
+    "rfe_DCAL_lag1",
+    "rfe_ROP_lag1",
+    "rfe_ROPA_lag1",
+    "rfe_MUDWEIGHT_lag1",
+    "rfe_GR_lag2",
+    "rfe_SGR_lag2",
+    "rfe_RHOB_lag2",
+    "rfe_DRHO_lag2",
+    "rfe_NPHI_lag2",
+    "rfe_PEF_lag2",
+    "rfe_DTC_lag2",
+    "rfe_DTS_lag2",
+    "rfe_RDEP_lag2",
+    "rfe_RSHA_lag2",
+    "rfe_RMED_lag2",
+    "rfe_RXO_lag2",
+    "rfe_RMIC_lag2",
+    "rfe_SP_lag2",
+    "rfe_CALI_lag2",
+    "rfe_BS_lag2",
+    "rfe_DCAL_lag2",
+    "rfe_ROP_lag2",
+    "rfe_ROPA_lag2",
+    "rfe_MUDWEIGHT_lag2",
+    "rfe_GR_grad",
+    "rfe_SGR_grad",
+    "rfe_RHOB_grad",
+    "rfe_DRHO_grad",
+    "rfe_NPHI_grad",
+    "rfe_PEF_grad",
+    "rfe_DTC_grad",
+    "rfe_DTS_grad",
+    "rfe_RDEP_grad",
+    "rfe_RSHA_grad",
+    "rfe_RMED_grad",
+    "rfe_RXO_grad",
+    "rfe_RMIC_grad",
+    "rfe_SP_grad",
+    "rfe_CALI_grad",
+    "rfe_BS_grad",
+    "rfe_DCAL_grad",
+    "rfe_ROP_grad",
+    "rfe_ROPA_grad",
+    "rfe_MUDWEIGHT_grad",
+    "rfe_missing_count",
+    "rfe_outlier_count",
+    "rfe_missing_rate",
+    "rfe_outlier_rate",
+    "rfe_padding_any",
+    "rfe_padding_rate"
+  ],
+  "inputs": [
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/15_9-13.las",
+      "sha256": "933752fd96b8c286b17d125b28d8a53dcd1d4c69e179a482cfaedfc2ace5fb00"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/15_9-14.las",
+      "sha256": "45128f4070ffa50c707f98383ce498922a1c26a77cf224f1384cdf973f397b3a"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/15_9-15.las",
+      "sha256": "25605db46b6765a01c88dc3e144cadc4b5a45b3818ce251dbbc9358274006b56"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/15_9-17.las",
+      "sha256": "320636af8a1d482a3f39b35104f8a088e4a58c911f6f5974b56473d9518ccf0d"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/15_9-23.las",
+      "sha256": "c1153a85c9852f2a6c021131010abe3c47963a4b673457bed7126daf94066ffe"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_1-2.las",
+      "sha256": "bfd8d3452e72958272c05db241f39a666f24699f772c298d9f874a513f5c01a3"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_1-6 A.las",
+      "sha256": "f275fa5a2a775edd3db8b38ceda19933d4b80b7889c7cc5cf7e2ee4d8514ab06"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_10-1.las",
+      "sha256": "2377fe3792b88ae48feadef3ec22772697310b5d7287a6ad5288676298db5287"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_10-2.las",
+      "sha256": "ed21febe02f26fbd8e2331b54b97037283688e4b9ef533b5bad05c511159f12c"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_10-3.las",
+      "sha256": "e2a4229d2c60b09d1de0a956ccc365065122830a08b96bb72bd97107d73744f6"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_10-5.las",
+      "sha256": "470c4668d1eeb1deefcd9b1bb7c1a61844fd3722b9656b6121b9c99225203808"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_11-1 ST3.las",
+      "sha256": "6a81bebda819751cd08dc1b00f6ca918475d07b27f13d330e254abf0067a9b78"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_2-11 A.las",
+      "sha256": "40d96b02782670cbcc2cde494f628b31aae7f75bc574d008e57ea6206971b35f"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_2-16.las",
+      "sha256": "7b778e020e51267c4e75c1dad4f75c20c814e2672892adf987e5784761f13d04"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_2-6.las",
+      "sha256": "93f1ea762b588332dbab233e1f00ad338c76c295944c5eac8914f7dcdb414eb9"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_2-7.las",
+      "sha256": "858a3e4ef4c0fb10aa7ba6f5a9b0def911c6027c07c17b0e2c038aef6a34aa43"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_4-1.las",
+      "sha256": "e9ab1d450af9de32c43f17b99c2811b022dd9a83764172c08e1c4536218c61a0"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_5-3.las",
+      "sha256": "3b0038ed00b49e025b67721c525ec7c171de73bfdea3c03533d293c1e0c24c7b"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_7-4.las",
+      "sha256": "fa0e531c294bf594ee6bf7096e287d7d28b277edb342877382c79518498a0913"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_7-5.las",
+      "sha256": "ee6693f3233af34ab5ef90545e68796f3519f6c6bb81142f1336b05483121f04"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_7-6.las",
+      "sha256": "3818694708dd05355b6ae6636f3fa680e032f3fd3d94b19f152c9409f1267024"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/16_8-1.las",
+      "sha256": "623a93a17418a55cdd128c97a5eb2d499ec1037b4440413a69a1f8924fe2039d"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/17_11-1.las",
+      "sha256": "af86dd25b2b7d5f0c9e195dbab562b48ba2ced641778d465fe9301472e69e2a9"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/17_4-1.las",
+      "sha256": "41ff2c065690f160212158fcc74d200e86aa33f9c0260bbf42f6f7c9f71b525d"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_10-10.las",
+      "sha256": "7cb838467a90bd56895e36c1d906bf69e736cf4ce94fa52006cb33ab4e9d4903"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_10-9.las",
+      "sha256": "e0497a46cf39d3647083c6fbd1e61e588a81f451438ee2d874f5b7daa0a43a6a"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_11-15.las",
+      "sha256": "cb1c55ed6b9cfbe1cbb9e131ba429808b01004dbea1d568d98d9f84e3695c83a"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_11-19 S.las",
+      "sha256": "5997b5f04cdeef32d15af8c44a7e25bd400ea3fa6d2f312b7135b3b19f67db68"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_11-24.las",
+      "sha256": "0bfe2c9cb5dad120ee60492f496f93f7a57df26db6e11d3a5a18629f3743356a"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_11-5.las",
+      "sha256": "5924f8ffa7c646a29d0bb7e39261644dd6c46c12b765b46019ec5edebe03c702"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_2-13 T4.las",
+      "sha256": "00857923950cd52364e11850b25023a2a944eb8fecaf52dc4f8157df8b2b967f"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_2-14.las",
+      "sha256": "a09e018e365976b4ed58c68d66ebaa7d1c2554b98fec4838a27d65413bc8936d"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_2-7.las",
+      "sha256": "4c134e46f9fa0859142437bc5687d4001d217b809bc6d9a825ce466f93b62e93"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_3-1.las",
+      "sha256": "d49307484d94b68bb35e0b8e1ae78233d1cc6684d86a7cbe905cdce45cea37aa"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_4-5.las",
+      "sha256": "68b6b44d79cadd61a7e700016bf0e180848f5957c2e57d40cb97af88818ac5b3"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_5-1.las",
+      "sha256": "e1f70db89a277603deac96a90d9769828f554e376e4e2e80b0da38c4bcf5b07a"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_5-3.las",
+      "sha256": "75908efffb46f4cccaf88413c5c026c154f3fbbf1c733bde4eb0dfb274025278"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_5-4.las",
+      "sha256": "feef0b7e0ca4247c5f3933182c068c145269c239e659b89a8475b704d3eab7c1"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_6-1.las",
+      "sha256": "408e508ca1a6369a6bc355467dbd0ab9457453e31d8b0dd98903b4bb765d2555"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_6-2.las",
+      "sha256": "eb558b555e9338cb98d54dfd5d46252f37aa8813199374f724af10b0ad7c74d7"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_6-3.las",
+      "sha256": "84e1c7b8c46316d8f2df3f88aa22394af239b9981e682a40c198a49882b05200"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_7-2.las",
+      "sha256": "3d0b5a75f697c7f4809e99fa5a30aa3f392ac68d58b2f54b33f1a72e32db9f40"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_8-5 S.las",
+      "sha256": "b0cd2deb1b8899451197587a60af562428414189639e8a269122f97bee53f343"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_8-7.las",
+      "sha256": "6daaf5988f48a07c28164a6ada184c36cf8801c455754dd19a576a0d5eade9e6"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/25_9-1.las",
+      "sha256": "343a0dca4cee82799464e188f2b7dafbba28e8cbf0115471f2820d6e417789e1"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/26_4-1.las",
+      "sha256": "dfe8aca1d51f80780232bd5f616176110936618621e003bebac41cbb12e57f03"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/29_3-1.las",
+      "sha256": "0c00be09cf11710d59cba4ce2293d0120826b17b6359d2dc5dae240a32db901c"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/29_6-1.las",
+      "sha256": "2b667d123ac0701aaf0ba1599247787a0846abce227b5bd66047c02d67730f70"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/30_3-3.las",
+      "sha256": "ac8e84548668934a1d97349ccb03caa5696d979d19c32751ff2507d4ac937b6c"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/30_3-5 S.las",
+      "sha256": "04cc06b999c7eea297e4ab0504f8274e32bca050b73dfb29599976607174b8f5"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/30_6-5.las",
+      "sha256": "71bc70f09782839a58ebc55b4aa005fd8022bcf4df7f445fa8d2781f22ff3327"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_2-1.las",
+      "sha256": "d40f7bfa93cd4b474c0ebf60a53f97bc1e2d892624293039b50e8a589a1feefb"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_2-10.las",
+      "sha256": "d43a6bf45ab1606abbf83cb9f24e9065735a6c79ae5e8f2d2cff9155eea8182c"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_2-19 S.las",
+      "sha256": "11a30170daf3a8e23da11c32a62237bc843714bdd07cd3b9489674233446b8c5"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_2-21 S.las",
+      "sha256": "aab4fd4450ee939a35b58a01deb618dc69516805410414d74be75a6f849b1b2a"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_2-7.las",
+      "sha256": "73f5c523f98bcbd270e61a0abe7d2e4169d21a4f3500a25956f5464bfcf23939"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_2-8.las",
+      "sha256": "ac9cf4e81bc358d5aea8543fa4dd9057c7e7a7850440689cc67d0b5c14f171b9"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_2-9.las",
+      "sha256": "f77f527b09178e6e3847da02269f2ef6c1435ac4e94c28276e28eb3109f3a401"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_3-1.las",
+      "sha256": "696341bb178de293c2e8e854467ab6b2e554444a44d45231665a6ba9e374e3cf"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_3-2.las",
+      "sha256": "5855ff4fa01a508c8d7f6f5054c042897c43dbf6a767ee4f2be6a24ed89a58c0"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_3-3.las",
+      "sha256": "03e0330373e63660d802744b45189b9588b2e3d038235a4c332fefd644ff3540"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_3-4.las",
+      "sha256": "cf130a5725a2fc533af420c0347d26bdc131440ed7aa30faceb787a8fd939c9a"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_4-10.las",
+      "sha256": "fa687327dc66114c6a592459c131efb76f3d85742720bd75e1919b74818b5309"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_4-5.las",
+      "sha256": "593df0bd2c667e77be7ad4b3aa1d24dc2c8f5be02d9dfeaa261d4dcab135a30e"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_5-4 S.las",
+      "sha256": "2c7048cc65130f0f71e25a3b3a858068fd1b6cc4b2527b035cf0719d30b2fdbe"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_6-5.las",
+      "sha256": "6322fe3a806764ab20d7668b1408d1c65e4a56b5972fa945ada958a8e83c9230"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/31_6-8.las",
+      "sha256": "ce940c80b1e11bc6c10f0199ce5f0f2e88a4a4ddf711acdb7871c0a2a2a56c20"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/32_2-1.las",
+      "sha256": "5402f697455523965f75ffd0c9b38bf7ddc8cd53eee31adeab6ece4546b3afe4"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/33_5-2.las",
+      "sha256": "9a4bb9a53bbc7ff0865ecc0b1cc81ebcf893fe6e6889d7b5cdaffa74460c1c79"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/33_6-3 S.las",
+      "sha256": "c21850771f76592b5f631f4491a9cd8383493b5b88b7ed4c357e949ec6b668c9"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/33_9-1.las",
+      "sha256": "8d0343330277c142d8095f76db1b2635464640274d36a3a179f3e3f6a61d6b2b"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/33_9-17.las",
+      "sha256": "ce5266e09fed355bf431cd6e9b68f9e61df21ae35d6c9aa75a86a81c8006ad64"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_10-16 R.las",
+      "sha256": "860ff15d2136ccdbd8e80a6810759dac5c443307468eb37fc6e9b52aa455a8ad"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_10-19.las",
+      "sha256": "bb9575f477d3999e73370d9981a3971fcdc37005c736625b4ba94261399805c8"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_10-21.las",
+      "sha256": "dd473f61ac7da396430777850b5fed08ee9484b2a8f392a3cddac639a8468354"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_10-33.las",
+      "sha256": "2dc27cb03040e01c5c7dc18348abfee863823f996db1b5f29766399d95de153e"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_10-35.las",
+      "sha256": "73badffe204bc763126dcfb7c9359369e1fc1c7061730dc6061f8cc7032c9234"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_11-1.las",
+      "sha256": "9837b065cbdc5e44d0b8cce3d3058914b7c54ee9f42fe8d660695d5023a79300"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_11-2 S.las",
+      "sha256": "8e6870487217c79caae8712636566d6867588fc6d6390545afed17cfcae78a06"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_12-1.las",
+      "sha256": "89b20fc0c699ac7e5fe607960115c4d83901ce060678ecb9fa36dd979476ee63"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_2-4.las",
+      "sha256": "93156939eb1123b61811eab822c4bc1bdf731ff9b7e19903f59463d917af0a68"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_3-1 A.las",
+      "sha256": "b9a1e65948699291c5b881e21e9db14110a8e6370d90955292b6dfd8fd86afa4"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_3-2 S.las",
+      "sha256": "e72ab910b55b30b740776cad6364516cdbf8d663485ac8c98f4fcf05ac2a3b04"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_3-3 A.las",
+      "sha256": "8cf99d5e9d0e8dac857d5a8965210ce456b5206df9d625fe39e020a9633ba844"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_4-10 R.las",
+      "sha256": "15d924137d67c66b8d53f96132308d320e2dd459e8d551a61f4e6956d75c2774"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_5-1 A.las",
+      "sha256": "b4e9332ab5a3449006a725da926170a2331ab98ca3353a236cc74c1c55ba6d05"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_5-1 S.las",
+      "sha256": "22043aa3ad4b8d468ed08f7d854345c3918cfcd02068e99e05dceeb7b721cfda"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_6-1 S.las",
+      "sha256": "eb08ad497dfb753cffd1dbdc3d2c111a4323cfe83bf3f1f673c8b1edd6d834aa"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_7-13.las",
+      "sha256": "6ce398588ed65e5354af2ba0b852ec0575e3ead87964d86079124274fbb72a26"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_7-20.las",
+      "sha256": "5f0ba62c9edad90854fc55bf83badbb9c0f12eec9b3209f094a793df32d983c5"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_7-21.las",
+      "sha256": "cea6088928d8ac944b4c59e08d9cab559f6c8668b3380c641e80e186116c00b3"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_8-1.las",
+      "sha256": "8320bc65ee5592e110d83f6604b0f1f6277dea0c4706adfccfdfccaa8e0d65e7"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_8-3.las",
+      "sha256": "c9eb65cb2aa961b92125fe5006610ab91aa6ff675151366e572efe4c76932751"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/34_8-7 R.las",
+      "sha256": "24eba31be35ba3c1bc36cd5fcb8db098cfae5b178f42efe8d8d00b82a2f5ff61"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_11-1.las",
+      "sha256": "e9facd8f7b2fd7763c29ec69e9ff056c481b5080762a8200689bf1a217ab0dc1"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_11-10.las",
+      "sha256": "b291db5c16a1fba296e4efa87d6ccc0e7efd5ca569c840fc459e101951f40f07"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_11-11.las",
+      "sha256": "bf6c965b8969cdc05cbf436ae256dd54a89eab1a09361d5fd5df8683b3da2145"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_11-12.las",
+      "sha256": "7355c22337b0a8a93ed46b82cdfbf9986c189b7b43870c74b1b90fa576cb921c"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_11-13.las",
+      "sha256": "9fa602fe6453fe220e1fd50f8d1232b9e2f614566d785ef302695aa4ef0132ca"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_11-15 S.las",
+      "sha256": "71d10a0a75edf3484d24c641535887054b122dac1ebc4fb6dab4f3f6cf61e781"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_11-5.las",
+      "sha256": "254538a2889d05ecb34026cda0205408b9a71f86686cc68206020c8300fe303a"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_11-6.las",
+      "sha256": "b01a8bf0f4a88aeb7c6ee6908de6d329f2b4665608c04895f32fa47a9615118f"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_11-7.las",
+      "sha256": "f35e65dc3f20689b2273af5a4d1f2597608f0853713a8146dc756de8e8a91174"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_12-1.las",
+      "sha256": "cb76385d6a4206c3b32c9ec5fbd37ec72e98c8423515f820840edf88f27ed4e0"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_3-7 S.las",
+      "sha256": "67a64b64f579913e7958890181948ee3f93be8da17fdd11e5fdecc7df7ad4cd4"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_4-1.las",
+      "sha256": "87efe8f76e44636c41e756b2e7485bed4e3fb640926df5d8900547db9049f750"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_6-2 S.las",
+      "sha256": "56ba50a71b85752d3e2d9d80671fb26fc989c3fb71ca7ebdf9ce8455e633ff91"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_8-4.las",
+      "sha256": "7e6996453ec41cb429965f92279a35afb49ca086f2a3085e42b8939acf07f59d"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_8-6 S.las",
+      "sha256": "4b26a23cc2b1decf80a33ba8c11f0e842216d892c75d3e61ecc5f890f0d8524a"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_9-10 S.las",
+      "sha256": "2e6ff9caae08796ad56c623d2d433d9123dd0e895f674ccb13cf91a58d5825e5"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_9-2.las",
+      "sha256": "5f26a92e8c3387f811c18318fb77b355c73b0debc457c8c37a7b749bc74d3b89"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_9-5.las",
+      "sha256": "df8a69609c0f1a328f252c01fb053d83c5f83d3e167cccddaa1f7646a55c995c"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_9-6 S.las",
+      "sha256": "728879a70071837d04c039706a727f3071b1cf89c52fee65af40a336a5db2b9d"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_9-7.las",
+      "sha256": "bce7bacf29314cab3f8bb037f0ea794f075b02c4df036bd0c5960fe95c00319a"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/35_9-8.las",
+      "sha256": "4a88212716c869f7b32752ad0095b4089f3959ac6d6591a39ffd98b68bc73be6"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/36_7-3.las",
+      "sha256": "5535d202ff6bfdb9d20b8d23062130d98ee015e4aa5df94d0aea5238986aa2ce"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/7_1-1.las",
+      "sha256": "b7de7ac3d5d71497b601e1ac2e4bc698e36e521e50bd9f713bc4fa0832aea042"
+    },
+    {
+      "path": "source/Force_2020_all_wells_train_test_blind_hidden_final/7_1-2 S.las",
+      "sha256": "6134a9a56e2b71f31416ddace51ddf5990496c4860934df8f75ec4cf58e692b9"
+    },
+    {
+      "path": "source/lithology scoring matrix cost function.xlsx",
+      "sha256": "23c1bcec3454e2620aaa76ed145fa5363015afa4ccafabfb0bece64f18b3735d"
+    },
+    {
+      "path": "source/NPD_Casing_depth_most_wells.xlsx",
+      "sha256": "d36564dd821f892c58f35d1ef86fe4ca68422e133d1b9cc14cc1deb32461aeb6"
+    },
+    {
+      "path": "source/NPD_Lithostratigraphy_groups_all_wells.xlsx",
+      "sha256": "f0be5f3061aa0e63b8692f71264635ccb7d52cb148b00beaf7a59cd495c49025"
+    },
+    {
+      "path": "source/NPD_Lithostratigraphy_member_formations_all_wells.xlsx",
+      "sha256": "2dd953073c459db341e6cf3243a9dbfa5a46b4bb567dddcaec2a1db4e5879518"
+    },
+    {
+      "path": "source/geomerit/runs/full10_fullfeat_3gbdt_c2f_tail_complete_remote_snapshot/oof_rows.parquet",
+      "sha256": "3d96a531a0831185706446168a9cd856044dc4eb312ea6e2eecdfe04d2e0009b"
+    },
+    {
+      "path": "source/geomerit/runs/full10_fullfeat_3gbdt_c2f_tail_complete_remote_snapshot/oof_fold.npy",
+      "sha256": "50d1d7848d2af4d2dc43fd8439ba33c11741be10cf42892c27728ae4a691fc67"
+    }
+  ],
+  "class_codes": [
+    65000,
+    30000,
+    65030,
+    70000,
+    80000,
+    99000,
+    88000,
+    70032,
+    90000,
+    74000,
+    86000,
+    93000
+  ],
+  "class_names": [
+    "Shale",
+    "Sandstone",
+    "Sandstone/Shale",
+    "Limestone",
+    "Marl",
+    "Tuff",
+    "Halite",
+    "Chalk",
+    "Coal",
+    "Dolomite",
+    "Anhydrite",
+    "Basement"
+  ],
+  "parquet_sha256": "d7c6b4cd0633121b67092a2d76823726bdc84e9d4f3f265020cc26f422029434",
+  "context_gap_max_m": 1.0,
+  "feature_semantics": "offline full-well, label-free; training-only categorical vocabulary and fleet center",
+  "rfe_status": "equation-based reimplementation; radius=2 and within-well standard-z are explicit assumptions, not exact original code"
+}

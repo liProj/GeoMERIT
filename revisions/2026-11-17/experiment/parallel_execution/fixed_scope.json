@@ -1,0 +1,42 @@
+{
+  "id": "essential_fixed_parameters_20261104",
+  "variants": [
+    "full",
+    "rfe_xgb",
+    "no_missing",
+    "no_normalization",
+    "no_class_weight",
+    "no_boundary_weight",
+    "no_confidence_weight",
+    "logs_only"
+  ],
+  "main": [
+    "full",
+    "rfe_xgb"
+  ],
+  "deferred": [
+    "raw_xgb",
+    "no_context",
+    "logs_spatial",
+    "logs_strata"
+  ],
+  "expected_folds": 80,
+  "folds_per_variant": 10,
+  "scientific_protocol_unchanged": true,
+  "separate_required": null,
+  "spatial_holdout": "Outside the completed experiment scope.",
+  "fixed_parameter_variants": [
+    "no_missing",
+    "no_normalization",
+    "no_class_weight",
+    "no_boundary_weight",
+    "no_confidence_weight"
+  ],
+  "nested_variants": [
+    "full",
+    "rfe_xgb",
+    "logs_only"
+  ],
+  "change": "Five ablations inherit same-outer-fold full-model inner-selected blend and decision parameters; full architecture and ten outer folds retained.",
+  "previous_scope_id": "essential_20261104"
+}

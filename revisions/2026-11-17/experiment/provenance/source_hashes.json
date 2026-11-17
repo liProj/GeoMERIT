@@ -1,0 +1,2729 @@
+{
+  "source_snapshot": "final 80-fold experiment and matching local archival copy",
+  "files": [
+    {
+      "release_path": "source/geomerit/configs/data.yaml",
+      "source_path_relative": "source/geomerit/configs/data.yaml",
+      "original_sha256": "f840d6ba9c6d824db79dd731f6cf5a70df31cc4826e2e646a8482d8c0fa6407a",
+      "release_sha256": "f840d6ba9c6d824db79dd731f6cf5a70df31cc4826e2e646a8482d8c0fa6407a",
+      "source_bytes": 939,
+      "release_bytes": 939,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/configs/penalty_matrix.csv",
+      "source_path_relative": "source/geomerit/configs/penalty_matrix.csv",
+      "original_sha256": "0c006cf3a62aef9b0bba334ddda4a7bb9a3f5ae1133f8731c8ce88d9d9995bc2",
+      "release_sha256": "0c006cf3a62aef9b0bba334ddda4a7bb9a3f5ae1133f8731c8ce88d9d9995bc2",
+      "source_bytes": 674,
+      "release_bytes": 674,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/configs/revision_20261103.yaml",
+      "source_path_relative": "source/geomerit/configs/revision_20261103.yaml",
+      "original_sha256": "b8b9d8955dbab3d6fe2abdd6b3c274ef2f59b06c1fbeabe8160fd0abe0ee88ef",
+      "release_sha256": "b8b9d8955dbab3d6fe2abdd6b3c274ef2f59b06c1fbeabe8160fd0abe0ee88ef",
+      "source_bytes": 2626,
+      "release_bytes": 2626,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/geomerit/__init__.py",
+      "source_path_relative": "source/geomerit/geomerit/__init__.py",
+      "original_sha256": "aba25bd77bf7aada77fab93825dd847129dd5e9da4f329117cd51462f636de61",
+      "release_sha256": "aba25bd77bf7aada77fab93825dd847129dd5e9da4f329117cd51462f636de61",
+      "source_bytes": 151,
+      "release_bytes": 151,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/geomerit/cv.py",
+      "source_path_relative": "source/geomerit/geomerit/cv.py",
+      "original_sha256": "f37eef7de7c95c9ea08b7a1d05a13992e325a39083df5137d71fc40747125c80",
+      "release_sha256": "f37eef7de7c95c9ea08b7a1d05a13992e325a39083df5137d71fc40747125c80",
+      "source_bytes": 1693,
+      "release_bytes": 1693,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/geomerit/decode.py",
+      "source_path_relative": "source/geomerit/geomerit/decode.py",
+      "original_sha256": "75186fd9783027aab3f1d5e3ef859401cd5a88918f9f8e4b0613e53392f0541e",
+      "release_sha256": "75186fd9783027aab3f1d5e3ef859401cd5a88918f9f8e4b0613e53392f0541e",
+      "source_bytes": 4082,
+      "release_bytes": 4082,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/geomerit/features.py",
+      "source_path_relative": "source/geomerit/geomerit/features.py",
+      "original_sha256": "489ec7080cb9d7dab8c2fe3c4883225109c372f20b3ce369707335d47063b14e",
+      "release_sha256": "489ec7080cb9d7dab8c2fe3c4883225109c372f20b3ce369707335d47063b14e",
+      "source_bytes": 7418,
+      "release_bytes": 7418,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/geomerit/io_las.py",
+      "source_path_relative": "source/geomerit/geomerit/io_las.py",
+      "original_sha256": "c1f6c84e1facdaf1348c8f36d7b62cd3c67001f22a943280039db9822c9b5515",
+      "release_sha256": "c1f6c84e1facdaf1348c8f36d7b62cd3c67001f22a943280039db9822c9b5515",
+      "source_bytes": 6777,
+      "release_bytes": 6777,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/geomerit/labels.py",
+      "source_path_relative": "source/geomerit/geomerit/labels.py",
+      "original_sha256": "3cf023b88bbfdf8998d05859bda04c2e3f69ddf1866499d18c0ca49eb667ba66",
+      "release_sha256": "3cf023b88bbfdf8998d05859bda04c2e3f69ddf1866499d18c0ca49eb667ba66",
+      "source_bytes": 4608,
+      "release_bytes": 4608,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/geomerit/metrics.py",
+      "source_path_relative": "source/geomerit/geomerit/metrics.py",
+      "original_sha256": "806e8065c7596941b4041f3a77215f44c17c8278c2993fc47dad031e5fc88a18",
+      "release_sha256": "806e8065c7596941b4041f3a77215f44c17c8278c2993fc47dad031e5fc88a18",
+      "source_bytes": 3151,
+      "release_bytes": 3151,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/geomerit/models.py",
+      "source_path_relative": "source/geomerit/geomerit/models.py",
+      "original_sha256": "0e3e70eaf9d1eee20ae026f545c44e9e58250a18dab01e9d575681828c415ab7",
+      "release_sha256": "0e3e70eaf9d1eee20ae026f545c44e9e58250a18dab01e9d575681828c415ab7",
+      "source_bytes": 10818,
+      "release_bytes": 10818,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/geomerit/revision_data.py",
+      "source_path_relative": "source/geomerit/geomerit/revision_data.py",
+      "original_sha256": "1725f0d24d93b4964ef9e1b473b10e45ed157e891fbe56aa44d9ce58300963c8",
+      "release_sha256": "84085d742944b877a6e4dd6a7f38b03d316f38816ae7dc1e4eef5096088b4a4b",
+      "source_bytes": 11227,
+      "release_bytes": 12677,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": [
+        "Load an exact compact aggregation of historical cohort records when legacy prediction references are absent; preserve original folds, class-count validation and all feature/training logic."
+      ]
+    },
+    {
+      "release_path": "source/geomerit/geomerit/revision_decision.py",
+      "source_path_relative": "source/geomerit/geomerit/revision_decision.py",
+      "original_sha256": "429620469bd9d19dae061e3aded662e2595b3b1c17fe7e0c71244928b3a6d135",
+      "release_sha256": "429620469bd9d19dae061e3aded662e2595b3b1c17fe7e0c71244928b3a6d135",
+      "source_bytes": 5829,
+      "release_bytes": 5829,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/geomerit/revision_models.py",
+      "source_path_relative": "source/geomerit/geomerit/revision_models.py",
+      "original_sha256": "077e27a6d2966ac711ff16b01c1eac5d71cb5f363b9238a6825b16e7e9dc7109",
+      "release_sha256": "077e27a6d2966ac711ff16b01c1eac5d71cb5f363b9238a6825b16e7e9dc7109",
+      "source_bytes": 10933,
+      "release_bytes": 10933,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/geomerit/weights.py",
+      "source_path_relative": "source/geomerit/geomerit/weights.py",
+      "original_sha256": "dcc5d44bb5347d22f75305d76c5bb96c669f99160c53d8d2d15352f044f522e0",
+      "release_sha256": "dcc5d44bb5347d22f75305d76c5bb96c669f99160c53d8d2d15352f044f522e0",
+      "source_bytes": 1545,
+      "release_bytes": 1545,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/README.md",
+      "source_path_relative": "source/geomerit/README.md",
+      "original_sha256": "22f11d15d91bf09b28e9cdc1772811d5af942c6b508f09732d0825871a23a083",
+      "release_sha256": "1bd1d9f0672f21f302e5edbc98480cb35bf1aefef4deb9da58c77fc94d17e75f",
+      "source_bytes": 853,
+      "release_bytes": 1117,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Add a historical-documentation banner linking to the current publication instructions; retain original historical text."
+      ]
+    },
+    {
+      "release_path": "source/geomerit/requirements.txt",
+      "source_path_relative": "source/geomerit/requirements.txt",
+      "original_sha256": "4a781f57132a4e360ad4c69970cb062453baa0a25ba0e6a7d7ec9b3bc48fb471",
+      "release_sha256": "4a781f57132a4e360ad4c69970cb062453baa0a25ba0e6a7d7ec9b3bc48fb471",
+      "source_bytes": 106,
+      "release_bytes": 106,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/REVISION_PROTOCOL.md",
+      "source_path_relative": "source/geomerit/REVISION_PROTOCOL.md",
+      "original_sha256": "d91665b57315c2f2b75814f5c615729e9bad071a29ecbcacae281ca0ac738e82",
+      "release_sha256": "aa5f9bd6d581fc16b2ad20128aab61b70e6580a6ef117b7dd8790a6915d85897",
+      "source_bytes": 3647,
+      "release_bytes": 3911,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Add a historical-documentation banner linking to the current publication instructions; retain original historical text."
+      ]
+    },
+    {
+      "release_path": "source/geomerit/scripts/10_revision_train.py",
+      "source_path_relative": "source/geomerit/scripts/10_revision_train.py",
+      "original_sha256": "4fe01d7e664ff79dd9be1569b6f4eb7bace4544d3197b99e21e14ee11dc9ddb1",
+      "release_sha256": "4fe01d7e664ff79dd9be1569b6f4eb7bace4544d3197b99e21e14ee11dc9ddb1",
+      "source_bytes": 12377,
+      "release_bytes": 12377,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/scripts/11_revision_report.py",
+      "source_path_relative": "source/geomerit/scripts/11_revision_report.py",
+      "original_sha256": "bb408c1bf9c0cd904f1fbc336f49e7702ca92052fc82b139885868374b8ea27f",
+      "release_sha256": "bb408c1bf9c0cd904f1fbc336f49e7702ca92052fc82b139885868374b8ea27f",
+      "source_bytes": 7484,
+      "release_bytes": 7484,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "source/geomerit/tests/test_revision_protocol.py",
+      "source_path_relative": "source/geomerit/tests/test_revision_protocol.py",
+      "original_sha256": "01ac0925889fc69647e3bae22f86424c5567036b8c825e96bee05bad6e2bb0e7",
+      "release_sha256": "01ac0925889fc69647e3bae22f86424c5567036b8c825e96bee05bad6e2bb0e7",
+      "source_bytes": 6011,
+      "release_bytes": 6011,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "fixed_ablation_train.py",
+      "source_path_relative": "fixed_ablation_train.py",
+      "original_sha256": "c052587cb7d8f146d3c2284172432ffaf17b6f6d2dfbb437a3219688e8885328",
+      "release_sha256": "c052587cb7d8f146d3c2284172432ffaf17b6f6d2dfbb437a3219688e8885328",
+      "source_bytes": 9381,
+      "release_bytes": 9381,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "fixed_logs_only_train.py",
+      "source_path_relative": "fixed_logs_only_train.py",
+      "original_sha256": "217bd94bb2792885a307f43ca6c51c1b3ab15167bb765ca72739be6cfd669faf",
+      "release_sha256": "217bd94bb2792885a307f43ca6c51c1b3ab15167bb765ca72739be6cfd669faf",
+      "source_bytes": 3715,
+      "release_bytes": 3715,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "parallel_controller_fast.py",
+      "source_path_relative": "parallel_controller_fast.py",
+      "original_sha256": "4072fba6694df22860db48c177d61d116379401b632cc9b57e3c1afc138c5209",
+      "release_sha256": "4072fba6694df22860db48c177d61d116379401b632cc9b57e3c1afc138c5209",
+      "source_bytes": 13127,
+      "release_bytes": 13127,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "parallel_controller_fixed.py",
+      "source_path_relative": "parallel_controller_fixed.py",
+      "original_sha256": "5515e2cda47bd5e48f3c7b7c306c9a3147ebcb6d2df8cacf21957961d5992610",
+      "release_sha256": "5515e2cda47bd5e48f3c7b7c306c9a3147ebcb6d2df8cacf21957961d5992610",
+      "source_bytes": 11411,
+      "release_bytes": 11411,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "parallel_execution/fixed_scope.json",
+      "source_path_relative": "parallel_execution/fixed_scope.json",
+      "original_sha256": "775207aff7f26a87e20546d642b202e87b92afb8de9fb36abd9aedf4d88334ab",
+      "release_sha256": "171cca591c2de64ed2afca06428861964665817907ac977bce88ea741e75bc98",
+      "source_bytes": 1534,
+      "release_bytes": 983,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": [
+        "Remove administrative conversation and reviewer-comment identifiers; retain experimental scope, amendment and signature."
+      ]
+    },
+    {
+      "release_path": "parallel_execution/logs_only_fixed_scope.json",
+      "source_path_relative": "parallel_execution/logs_only_fixed_scope.json",
+      "original_sha256": "487d79a1301400947016692344f9500fe8cd149520083d469587e74c1a839880",
+      "release_sha256": "3536c84718f154c26e5ebbf8adb2fe821e66e2632bec4315ffbb52426c327479",
+      "source_bytes": 991,
+      "release_bytes": 855,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": [
+        "Remove administrative conversation and reviewer-comment identifiers; retain experimental scope, amendment and signature."
+      ]
+    },
+    {
+      "release_path": "parallel_execution/fixed_main_report.py",
+      "source_path_relative": "parallel_execution/fixed_main_report.py",
+      "original_sha256": "84b274869c986bc44b6242032d9cd6c4c5a1d46ca02d03cb0a26a8f14a53da79",
+      "release_sha256": "bc782047ada0d76532f9ead26bb77928e431aa73ec4f1cbbe89a06d871c1af7b",
+      "source_bytes": 7621,
+      "release_bytes": 7674,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": [
+        "Replace private absolute root with GEOMERIT_REVISION_ROOT/package-relative root, including required os import."
+      ]
+    },
+    {
+      "release_path": "parallel_execution/report_tools_fast/final_geomerit_report.py",
+      "source_path_relative": "parallel_execution/report_tools_fast/final_geomerit_report.py",
+      "original_sha256": "a1f40446f71bb7e4881187aec7c80646c1dcfd699ac338a7e14c04aad53d970f",
+      "release_sha256": "274fab88a6607d0e0bce1004690e66af2540413c3e434864db147fc581e2e62c",
+      "source_bytes": 9585,
+      "release_bytes": 9623,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "Matches the current fast-tool SHA recorded by the 2026-11-16 server review; no contemporaneous tool manifest proves historical byte identity.",
+      "publication_changes": [
+        "Only portability edit: resolve the experiment root from GEOMERIT_REVISION_ROOT or this package location; helper adds the os import. No numerical or decision logic changed."
+      ]
+    },
+    {
+      "release_path": "parallel_execution/report_tools_fast/verify_geomerit.py",
+      "source_path_relative": "parallel_execution/report_tools_fast/verify_geomerit.py",
+      "original_sha256": "796ad6d745a58d82c5291a616d8b76b531754605e4e0b3fca8882413d474b8d5",
+      "release_sha256": "e2e8c115aea7dfb10b49c5bd62bf529edda700119701fecd7faf2390a72a4eb0",
+      "source_bytes": 11120,
+      "release_bytes": 11158,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "Matches the current fast-tool SHA recorded by the 2026-11-16 server review; no contemporaneous tool manifest proves historical byte identity.",
+      "publication_changes": [
+        "Only portability edit: resolve the experiment root from GEOMERIT_REVISION_ROOT or this package location; helper adds the os import. No numerical or decision logic changed."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/dataset/dataset.json",
+      "source_path_relative": "experiment_v1/dataset/dataset.json",
+      "original_sha256": "3a72d800995724c9e02d8cd8b8ae2ea04b87833e21d47d3b09d78a22db71fd8f",
+      "release_sha256": "6e92e3482acbed097d23176c0da1eb6d6992c63a8859b982f14aded8601efbb1",
+      "source_bytes": 36296,
+      "release_bytes": 30965,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/dataset/outer_wells.json",
+      "source_path_relative": "experiment_v1/dataset/outer_wells.json",
+      "original_sha256": "ec31b7f79a7450c5e1d9b182d045ee9d4c4110b5224456c13a40c8d06cb2dddb",
+      "release_sha256": "ec31b7f79a7450c5e1d9b182d045ee9d4c4110b5224456c13a40c8d06cb2dddb",
+      "source_bytes": 1892,
+      "release_bytes": 1892,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_00/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_00/inner_00/split.json",
+      "original_sha256": "db8200dd030293c8fc5f7c4d14bfef017942fa51f2727c76450a63530a5b6e28",
+      "release_sha256": "db8200dd030293c8fc5f7c4d14bfef017942fa51f2727c76450a63530a5b6e28",
+      "source_bytes": 1844,
+      "release_bytes": 1844,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_00/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_00/inner_01/split.json",
+      "original_sha256": "8f2af38ebcc090bf0e101bc47c91bfb3c1fd3b4384e493272e3e3a64685f486e",
+      "release_sha256": "8f2af38ebcc090bf0e101bc47c91bfb3c1fd3b4384e493272e3e3a64685f486e",
+      "source_bytes": 1844,
+      "release_bytes": 1844,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_00/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_00/inner_02/split.json",
+      "original_sha256": "bba419910e511944864173fca570f5db5b735e59fa38a240df2f9048dc9a9a8d",
+      "release_sha256": "bba419910e511944864173fca570f5db5b735e59fa38a240df2f9048dc9a9a8d",
+      "source_bytes": 1844,
+      "release_bytes": 1844,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_00/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_00/outer_fit/split.json",
+      "original_sha256": "70590c2a6e525726b4d8b84da3dbedf023827a38939f3fbff7371078df3cdb12",
+      "release_sha256": "70590c2a6e525726b4d8b84da3dbedf023827a38939f3fbff7371078df3cdb12",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_00/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_00/selected_parameters.json",
+      "original_sha256": "abf13d069acdd5902253d70261c768fd10fd48750160004bb2e370c05b52410d",
+      "release_sha256": "abf13d069acdd5902253d70261c768fd10fd48750160004bb2e370c05b52410d",
+      "source_bytes": 659,
+      "release_bytes": 659,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_01/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_01/inner_00/split.json",
+      "original_sha256": "724478b068bda3355c06924eb2d81838148caa5515757ece69e610ad11e91439",
+      "release_sha256": "724478b068bda3355c06924eb2d81838148caa5515757ece69e610ad11e91439",
+      "source_bytes": 1834,
+      "release_bytes": 1834,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_01/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_01/inner_01/split.json",
+      "original_sha256": "d70de2832eec417c5cdf3c76b3964509c4d38ca75f0203d4abba2c156619aa42",
+      "release_sha256": "d70de2832eec417c5cdf3c76b3964509c4d38ca75f0203d4abba2c156619aa42",
+      "source_bytes": 1834,
+      "release_bytes": 1834,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_01/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_01/inner_02/split.json",
+      "original_sha256": "283cf85f490fd2372488dd207ec1a0094aadc7e489906f9ba2458f1bccdd96a1",
+      "release_sha256": "283cf85f490fd2372488dd207ec1a0094aadc7e489906f9ba2458f1bccdd96a1",
+      "source_bytes": 1834,
+      "release_bytes": 1834,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_01/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_01/outer_fit/split.json",
+      "original_sha256": "cf94029499f97ac71516ff9d48a0ec24238ff9e129a16845f420591ce85f8884",
+      "release_sha256": "cf94029499f97ac71516ff9d48a0ec24238ff9e129a16845f420591ce85f8884",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_01/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_01/selected_parameters.json",
+      "original_sha256": "096ae9781f6e935f2261dea769c71960319217a5a4472164846055c42b54bfb2",
+      "release_sha256": "096ae9781f6e935f2261dea769c71960319217a5a4472164846055c42b54bfb2",
+      "source_bytes": 661,
+      "release_bytes": 661,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_02/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_02/inner_00/split.json",
+      "original_sha256": "560acf07d3c05ec37a92f4beb106ec9c62d9986a7730f1ad994383da4c0b86d7",
+      "release_sha256": "560acf07d3c05ec37a92f4beb106ec9c62d9986a7730f1ad994383da4c0b86d7",
+      "source_bytes": 1856,
+      "release_bytes": 1856,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_02/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_02/inner_01/split.json",
+      "original_sha256": "9177fe46cef50c5c92775d4636e88d3c2ee906d68bec00a0df9b81962ea70125",
+      "release_sha256": "9177fe46cef50c5c92775d4636e88d3c2ee906d68bec00a0df9b81962ea70125",
+      "source_bytes": 1856,
+      "release_bytes": 1856,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_02/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_02/inner_02/split.json",
+      "original_sha256": "9acd15c0f1600298df40dbd10df5818e4e87e0715aff6fca5ef0c38b9f29beaf",
+      "release_sha256": "9acd15c0f1600298df40dbd10df5818e4e87e0715aff6fca5ef0c38b9f29beaf",
+      "source_bytes": 1856,
+      "release_bytes": 1856,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_02/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_02/outer_fit/split.json",
+      "original_sha256": "09f7d9f5c9e8b501f83882e09a3cc3386eb90e2585a7704161b42f75b120700a",
+      "release_sha256": "09f7d9f5c9e8b501f83882e09a3cc3386eb90e2585a7704161b42f75b120700a",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_02/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_02/selected_parameters.json",
+      "original_sha256": "f569c7ae7ab910c4b568aa4a175b686c4ea8feeaa1a3fbbc34a4e34f131c731e",
+      "release_sha256": "f569c7ae7ab910c4b568aa4a175b686c4ea8feeaa1a3fbbc34a4e34f131c731e",
+      "source_bytes": 661,
+      "release_bytes": 661,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_03/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_03/inner_00/split.json",
+      "original_sha256": "5013e59bdec5343171ae8f6aa69b4b25bfbdfd53f4c02abf5864cc9f00117260",
+      "release_sha256": "5013e59bdec5343171ae8f6aa69b4b25bfbdfd53f4c02abf5864cc9f00117260",
+      "source_bytes": 1845,
+      "release_bytes": 1845,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_03/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_03/inner_01/split.json",
+      "original_sha256": "8c4df2935432d6d7b8c34b1925db5e499ec87e0698b4ace7ccb0b521e601de35",
+      "release_sha256": "8c4df2935432d6d7b8c34b1925db5e499ec87e0698b4ace7ccb0b521e601de35",
+      "source_bytes": 1845,
+      "release_bytes": 1845,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_03/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_03/inner_02/split.json",
+      "original_sha256": "4bd9e8f0ae53bd6004e95a6cb62643a985c15924066cb0cdde73463299cd54e3",
+      "release_sha256": "4bd9e8f0ae53bd6004e95a6cb62643a985c15924066cb0cdde73463299cd54e3",
+      "source_bytes": 1845,
+      "release_bytes": 1845,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_03/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_03/outer_fit/split.json",
+      "original_sha256": "b3a3eeff6fa260991511bd0a74a86794e4b437bec4ea63b6d6c5503f53538982",
+      "release_sha256": "b3a3eeff6fa260991511bd0a74a86794e4b437bec4ea63b6d6c5503f53538982",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_03/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_03/selected_parameters.json",
+      "original_sha256": "65011d9c27593636c8e7c5c73897aad3fd47a7c72aabcc49b4673d54a767a606",
+      "release_sha256": "65011d9c27593636c8e7c5c73897aad3fd47a7c72aabcc49b4673d54a767a606",
+      "source_bytes": 661,
+      "release_bytes": 661,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_04/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_04/inner_00/split.json",
+      "original_sha256": "398cad3a0e72c5105e5425d186f97a32fe507342027c13bcd03ddcee24e05098",
+      "release_sha256": "398cad3a0e72c5105e5425d186f97a32fe507342027c13bcd03ddcee24e05098",
+      "source_bytes": 1857,
+      "release_bytes": 1857,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_04/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_04/inner_01/split.json",
+      "original_sha256": "bc65b7332b3340d201a487f83b70b391175b14b0db92ab84436d59fc9cad29ea",
+      "release_sha256": "bc65b7332b3340d201a487f83b70b391175b14b0db92ab84436d59fc9cad29ea",
+      "source_bytes": 1857,
+      "release_bytes": 1857,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_04/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_04/inner_02/split.json",
+      "original_sha256": "d1fb5898b8401c199c91d2612422f42a8a961e3285bdc0a73f805c01d8cb2efc",
+      "release_sha256": "d1fb5898b8401c199c91d2612422f42a8a961e3285bdc0a73f805c01d8cb2efc",
+      "source_bytes": 1857,
+      "release_bytes": 1857,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_04/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_04/outer_fit/split.json",
+      "original_sha256": "9e015399909e3d2cbbb641df1322e1418ca587efd2ad046abb90c206932d9544",
+      "release_sha256": "9e015399909e3d2cbbb641df1322e1418ca587efd2ad046abb90c206932d9544",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_04/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_04/selected_parameters.json",
+      "original_sha256": "936f737d48fb323d7ad664bf19f92440b62c926f041e414d41d254208637d1c5",
+      "release_sha256": "936f737d48fb323d7ad664bf19f92440b62c926f041e414d41d254208637d1c5",
+      "source_bytes": 661,
+      "release_bytes": 661,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_05/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_05/inner_00/split.json",
+      "original_sha256": "a27dcbfb1dd77902f9995f1c4abc78ef484e0a04c4823a5db5959350245d7893",
+      "release_sha256": "a27dcbfb1dd77902f9995f1c4abc78ef484e0a04c4823a5db5959350245d7893",
+      "source_bytes": 1842,
+      "release_bytes": 1842,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_05/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_05/inner_01/split.json",
+      "original_sha256": "0fb9b4783d55b27be7a7af77e75d7787854aa25e0240dcf45264b608c005efa6",
+      "release_sha256": "0fb9b4783d55b27be7a7af77e75d7787854aa25e0240dcf45264b608c005efa6",
+      "source_bytes": 1842,
+      "release_bytes": 1842,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_05/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_05/inner_02/split.json",
+      "original_sha256": "2a4b042aa1abe7f72307402113d955853ccb7ddbc6a897e51983ecb800541efa",
+      "release_sha256": "2a4b042aa1abe7f72307402113d955853ccb7ddbc6a897e51983ecb800541efa",
+      "source_bytes": 1842,
+      "release_bytes": 1842,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_05/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_05/outer_fit/split.json",
+      "original_sha256": "b23cfb126b94d55df785b7c9c13367b06ee42ad959cd4b8993515055aad3b3d3",
+      "release_sha256": "b23cfb126b94d55df785b7c9c13367b06ee42ad959cd4b8993515055aad3b3d3",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_05/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_05/selected_parameters.json",
+      "original_sha256": "5ca50211e974f671dc88c10f778913d326eb02f2d8b3d6cff82bcc4588819336",
+      "release_sha256": "5ca50211e974f671dc88c10f778913d326eb02f2d8b3d6cff82bcc4588819336",
+      "source_bytes": 659,
+      "release_bytes": 659,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_06/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_06/inner_00/split.json",
+      "original_sha256": "9ae3095c3e760710aab83544798d3b285302d13d6355369113f77e02f3ef8d1f",
+      "release_sha256": "9ae3095c3e760710aab83544798d3b285302d13d6355369113f77e02f3ef8d1f",
+      "source_bytes": 1849,
+      "release_bytes": 1849,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_06/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_06/inner_01/split.json",
+      "original_sha256": "960689cfafaf6c803beee952568a99e0cbbad3b0f478084fd5af11340ee3cfff",
+      "release_sha256": "960689cfafaf6c803beee952568a99e0cbbad3b0f478084fd5af11340ee3cfff",
+      "source_bytes": 1849,
+      "release_bytes": 1849,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_06/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_06/inner_02/split.json",
+      "original_sha256": "647f3b4fbf3b0b383c8cefabddaa6ef2dc6c2dd563150fb73c5edf08ab86183c",
+      "release_sha256": "647f3b4fbf3b0b383c8cefabddaa6ef2dc6c2dd563150fb73c5edf08ab86183c",
+      "source_bytes": 1849,
+      "release_bytes": 1849,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_06/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_06/outer_fit/split.json",
+      "original_sha256": "415b462186f2409fff71934a7d1d081c12badb6fd84629862ee50122bcf8fc7a",
+      "release_sha256": "415b462186f2409fff71934a7d1d081c12badb6fd84629862ee50122bcf8fc7a",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_06/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_06/selected_parameters.json",
+      "original_sha256": "ecc79995daf8ab7535367a8afdaca3cf11ff7bfd6a58337830c60ba1a70351aa",
+      "release_sha256": "ecc79995daf8ab7535367a8afdaca3cf11ff7bfd6a58337830c60ba1a70351aa",
+      "source_bytes": 659,
+      "release_bytes": 659,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_07/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_07/inner_00/split.json",
+      "original_sha256": "34cdacd9367b51af6f9e5c251e8b5c173b0004f1b130253a4bf5a81e90a82fb2",
+      "release_sha256": "34cdacd9367b51af6f9e5c251e8b5c173b0004f1b130253a4bf5a81e90a82fb2",
+      "source_bytes": 1836,
+      "release_bytes": 1836,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_07/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_07/inner_01/split.json",
+      "original_sha256": "99db6c759873159f73b0ed896b4e2832daf210e8805d876623af679f9ec72b17",
+      "release_sha256": "99db6c759873159f73b0ed896b4e2832daf210e8805d876623af679f9ec72b17",
+      "source_bytes": 1836,
+      "release_bytes": 1836,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_07/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_07/inner_02/split.json",
+      "original_sha256": "bec7e246f514293fc8b301e6c3119e51535da69d5167d3886c84c1946a3159c2",
+      "release_sha256": "bec7e246f514293fc8b301e6c3119e51535da69d5167d3886c84c1946a3159c2",
+      "source_bytes": 1836,
+      "release_bytes": 1836,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_07/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_07/outer_fit/split.json",
+      "original_sha256": "e2e3e28293181fea2057a961e7e472d134cdd236484e165c4548751432a368a9",
+      "release_sha256": "e2e3e28293181fea2057a961e7e472d134cdd236484e165c4548751432a368a9",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_07/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_07/selected_parameters.json",
+      "original_sha256": "e76d804ec746225be7212aa6342c47bbf2e2839c23380cb0591d82f263dd76dc",
+      "release_sha256": "e76d804ec746225be7212aa6342c47bbf2e2839c23380cb0591d82f263dd76dc",
+      "source_bytes": 660,
+      "release_bytes": 660,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_08/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_08/inner_00/split.json",
+      "original_sha256": "85d3d2e58a96e8a1a5f654afa689a4f347642959d4ca33f60ab952f0a31c7523",
+      "release_sha256": "85d3d2e58a96e8a1a5f654afa689a4f347642959d4ca33f60ab952f0a31c7523",
+      "source_bytes": 1838,
+      "release_bytes": 1838,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_08/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_08/inner_01/split.json",
+      "original_sha256": "e1c66bd646c305877a05d844a2cad9458ca725d94f1ab47bebd66df535b5905b",
+      "release_sha256": "e1c66bd646c305877a05d844a2cad9458ca725d94f1ab47bebd66df535b5905b",
+      "source_bytes": 1838,
+      "release_bytes": 1838,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_08/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_08/inner_02/split.json",
+      "original_sha256": "b31388b06341cdb22303c1053c1ea243165b274935598061b2f7556df0db49e9",
+      "release_sha256": "b31388b06341cdb22303c1053c1ea243165b274935598061b2f7556df0db49e9",
+      "source_bytes": 1838,
+      "release_bytes": 1838,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_08/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_08/outer_fit/split.json",
+      "original_sha256": "8d863d8f21289c7c800b12317e365095d1e61065cbf3b78c65b8537be9997e48",
+      "release_sha256": "8d863d8f21289c7c800b12317e365095d1e61065cbf3b78c65b8537be9997e48",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_08/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_08/selected_parameters.json",
+      "original_sha256": "cc090fc59a6006eead4d8463af676c50e9fa984dedfbb204a1eee66f8b57dab2",
+      "release_sha256": "cc090fc59a6006eead4d8463af676c50e9fa984dedfbb204a1eee66f8b57dab2",
+      "source_bytes": 660,
+      "release_bytes": 660,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_09/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_09/inner_00/split.json",
+      "original_sha256": "251a1a2c5441209c84e0ebc1190a055bc2b5e28f8af3386f7a9a0fb8abbc61be",
+      "release_sha256": "251a1a2c5441209c84e0ebc1190a055bc2b5e28f8af3386f7a9a0fb8abbc61be",
+      "source_bytes": 1847,
+      "release_bytes": 1847,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_09/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_09/inner_01/split.json",
+      "original_sha256": "f81b83caab4add19fd7acc6b1ca9c6bddbc129e318cf3c7bd95df9e7e6409d03",
+      "release_sha256": "f81b83caab4add19fd7acc6b1ca9c6bddbc129e318cf3c7bd95df9e7e6409d03",
+      "source_bytes": 1847,
+      "release_bytes": 1847,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_09/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_09/inner_02/split.json",
+      "original_sha256": "3e3b60355dd082cefb9e44101e8e06176e3c5699d1a2b548802c52e115484f49",
+      "release_sha256": "3e3b60355dd082cefb9e44101e8e06176e3c5699d1a2b548802c52e115484f49",
+      "source_bytes": 1847,
+      "release_bytes": 1847,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_09/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_09/outer_fit/split.json",
+      "original_sha256": "3f9041104a5befefcacacccfe04525bf79e65d2a4ce519c106c7868fdc50df11",
+      "release_sha256": "3f9041104a5befefcacacccfe04525bf79e65d2a4ce519c106c7868fdc50df11",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/full/outer_09/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/full/outer_09/selected_parameters.json",
+      "original_sha256": "4d6ad85e2605758fdf5d2e08071db4e099234dd26ade6b0c55a36581d3ea1b9a",
+      "release_sha256": "4d6ad85e2605758fdf5d2e08071db4e099234dd26ade6b0c55a36581d3ea1b9a",
+      "source_bytes": 661,
+      "release_bytes": 661,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/protocol.json",
+      "source_path_relative": "experiment_v1/runs/protocol.json",
+      "original_sha256": "afd25095fe9ff3c08311e5f40ef81f3d5a7ef76019c24e18544a388ae8b69d03",
+      "release_sha256": "c6769076bdb7944dbf3b514169ca283e277747bce47523f5b769303b8d5e45ed",
+      "source_bytes": 6273,
+      "release_bytes": 6283,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_00/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_00/inner_00/split.json",
+      "original_sha256": "db8200dd030293c8fc5f7c4d14bfef017942fa51f2727c76450a63530a5b6e28",
+      "release_sha256": "db8200dd030293c8fc5f7c4d14bfef017942fa51f2727c76450a63530a5b6e28",
+      "source_bytes": 1844,
+      "release_bytes": 1844,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_00/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_00/inner_01/split.json",
+      "original_sha256": "8f2af38ebcc090bf0e101bc47c91bfb3c1fd3b4384e493272e3e3a64685f486e",
+      "release_sha256": "8f2af38ebcc090bf0e101bc47c91bfb3c1fd3b4384e493272e3e3a64685f486e",
+      "source_bytes": 1844,
+      "release_bytes": 1844,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_00/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_00/inner_02/split.json",
+      "original_sha256": "bba419910e511944864173fca570f5db5b735e59fa38a240df2f9048dc9a9a8d",
+      "release_sha256": "bba419910e511944864173fca570f5db5b735e59fa38a240df2f9048dc9a9a8d",
+      "source_bytes": 1844,
+      "release_bytes": 1844,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_00/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_00/outer_fit/split.json",
+      "original_sha256": "70590c2a6e525726b4d8b84da3dbedf023827a38939f3fbff7371078df3cdb12",
+      "release_sha256": "70590c2a6e525726b4d8b84da3dbedf023827a38939f3fbff7371078df3cdb12",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_00/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_00/selected_parameters.json",
+      "original_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "release_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "source_bytes": 445,
+      "release_bytes": 445,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_01/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_01/inner_00/split.json",
+      "original_sha256": "724478b068bda3355c06924eb2d81838148caa5515757ece69e610ad11e91439",
+      "release_sha256": "724478b068bda3355c06924eb2d81838148caa5515757ece69e610ad11e91439",
+      "source_bytes": 1834,
+      "release_bytes": 1834,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_01/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_01/inner_01/split.json",
+      "original_sha256": "d70de2832eec417c5cdf3c76b3964509c4d38ca75f0203d4abba2c156619aa42",
+      "release_sha256": "d70de2832eec417c5cdf3c76b3964509c4d38ca75f0203d4abba2c156619aa42",
+      "source_bytes": 1834,
+      "release_bytes": 1834,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_01/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_01/inner_02/split.json",
+      "original_sha256": "283cf85f490fd2372488dd207ec1a0094aadc7e489906f9ba2458f1bccdd96a1",
+      "release_sha256": "283cf85f490fd2372488dd207ec1a0094aadc7e489906f9ba2458f1bccdd96a1",
+      "source_bytes": 1834,
+      "release_bytes": 1834,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_01/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_01/outer_fit/split.json",
+      "original_sha256": "cf94029499f97ac71516ff9d48a0ec24238ff9e129a16845f420591ce85f8884",
+      "release_sha256": "cf94029499f97ac71516ff9d48a0ec24238ff9e129a16845f420591ce85f8884",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_01/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_01/selected_parameters.json",
+      "original_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "release_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "source_bytes": 445,
+      "release_bytes": 445,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_02/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_02/inner_00/split.json",
+      "original_sha256": "560acf07d3c05ec37a92f4beb106ec9c62d9986a7730f1ad994383da4c0b86d7",
+      "release_sha256": "560acf07d3c05ec37a92f4beb106ec9c62d9986a7730f1ad994383da4c0b86d7",
+      "source_bytes": 1856,
+      "release_bytes": 1856,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_02/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_02/inner_01/split.json",
+      "original_sha256": "9177fe46cef50c5c92775d4636e88d3c2ee906d68bec00a0df9b81962ea70125",
+      "release_sha256": "9177fe46cef50c5c92775d4636e88d3c2ee906d68bec00a0df9b81962ea70125",
+      "source_bytes": 1856,
+      "release_bytes": 1856,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_02/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_02/inner_02/split.json",
+      "original_sha256": "9acd15c0f1600298df40dbd10df5818e4e87e0715aff6fca5ef0c38b9f29beaf",
+      "release_sha256": "9acd15c0f1600298df40dbd10df5818e4e87e0715aff6fca5ef0c38b9f29beaf",
+      "source_bytes": 1856,
+      "release_bytes": 1856,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_02/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_02/outer_fit/split.json",
+      "original_sha256": "09f7d9f5c9e8b501f83882e09a3cc3386eb90e2585a7704161b42f75b120700a",
+      "release_sha256": "09f7d9f5c9e8b501f83882e09a3cc3386eb90e2585a7704161b42f75b120700a",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_02/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_02/selected_parameters.json",
+      "original_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "release_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "source_bytes": 445,
+      "release_bytes": 445,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_03/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_03/inner_00/split.json",
+      "original_sha256": "5013e59bdec5343171ae8f6aa69b4b25bfbdfd53f4c02abf5864cc9f00117260",
+      "release_sha256": "5013e59bdec5343171ae8f6aa69b4b25bfbdfd53f4c02abf5864cc9f00117260",
+      "source_bytes": 1845,
+      "release_bytes": 1845,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_03/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_03/inner_01/split.json",
+      "original_sha256": "8c4df2935432d6d7b8c34b1925db5e499ec87e0698b4ace7ccb0b521e601de35",
+      "release_sha256": "8c4df2935432d6d7b8c34b1925db5e499ec87e0698b4ace7ccb0b521e601de35",
+      "source_bytes": 1845,
+      "release_bytes": 1845,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_03/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_03/inner_02/split.json",
+      "original_sha256": "4bd9e8f0ae53bd6004e95a6cb62643a985c15924066cb0cdde73463299cd54e3",
+      "release_sha256": "4bd9e8f0ae53bd6004e95a6cb62643a985c15924066cb0cdde73463299cd54e3",
+      "source_bytes": 1845,
+      "release_bytes": 1845,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_03/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_03/outer_fit/split.json",
+      "original_sha256": "b3a3eeff6fa260991511bd0a74a86794e4b437bec4ea63b6d6c5503f53538982",
+      "release_sha256": "b3a3eeff6fa260991511bd0a74a86794e4b437bec4ea63b6d6c5503f53538982",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_03/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_03/selected_parameters.json",
+      "original_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "release_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "source_bytes": 445,
+      "release_bytes": 445,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_04/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_04/inner_00/split.json",
+      "original_sha256": "398cad3a0e72c5105e5425d186f97a32fe507342027c13bcd03ddcee24e05098",
+      "release_sha256": "398cad3a0e72c5105e5425d186f97a32fe507342027c13bcd03ddcee24e05098",
+      "source_bytes": 1857,
+      "release_bytes": 1857,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_04/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_04/inner_01/split.json",
+      "original_sha256": "bc65b7332b3340d201a487f83b70b391175b14b0db92ab84436d59fc9cad29ea",
+      "release_sha256": "bc65b7332b3340d201a487f83b70b391175b14b0db92ab84436d59fc9cad29ea",
+      "source_bytes": 1857,
+      "release_bytes": 1857,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_04/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_04/inner_02/split.json",
+      "original_sha256": "d1fb5898b8401c199c91d2612422f42a8a961e3285bdc0a73f805c01d8cb2efc",
+      "release_sha256": "d1fb5898b8401c199c91d2612422f42a8a961e3285bdc0a73f805c01d8cb2efc",
+      "source_bytes": 1857,
+      "release_bytes": 1857,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_04/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_04/outer_fit/split.json",
+      "original_sha256": "9e015399909e3d2cbbb641df1322e1418ca587efd2ad046abb90c206932d9544",
+      "release_sha256": "9e015399909e3d2cbbb641df1322e1418ca587efd2ad046abb90c206932d9544",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_04/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_04/selected_parameters.json",
+      "original_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "release_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "source_bytes": 445,
+      "release_bytes": 445,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_05/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_05/inner_00/split.json",
+      "original_sha256": "a27dcbfb1dd77902f9995f1c4abc78ef484e0a04c4823a5db5959350245d7893",
+      "release_sha256": "a27dcbfb1dd77902f9995f1c4abc78ef484e0a04c4823a5db5959350245d7893",
+      "source_bytes": 1842,
+      "release_bytes": 1842,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_05/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_05/inner_01/split.json",
+      "original_sha256": "0fb9b4783d55b27be7a7af77e75d7787854aa25e0240dcf45264b608c005efa6",
+      "release_sha256": "0fb9b4783d55b27be7a7af77e75d7787854aa25e0240dcf45264b608c005efa6",
+      "source_bytes": 1842,
+      "release_bytes": 1842,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_05/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_05/inner_02/split.json",
+      "original_sha256": "2a4b042aa1abe7f72307402113d955853ccb7ddbc6a897e51983ecb800541efa",
+      "release_sha256": "2a4b042aa1abe7f72307402113d955853ccb7ddbc6a897e51983ecb800541efa",
+      "source_bytes": 1842,
+      "release_bytes": 1842,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_05/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_05/outer_fit/split.json",
+      "original_sha256": "b23cfb126b94d55df785b7c9c13367b06ee42ad959cd4b8993515055aad3b3d3",
+      "release_sha256": "b23cfb126b94d55df785b7c9c13367b06ee42ad959cd4b8993515055aad3b3d3",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_05/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_05/selected_parameters.json",
+      "original_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "release_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "source_bytes": 445,
+      "release_bytes": 445,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_06/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_06/inner_00/split.json",
+      "original_sha256": "9ae3095c3e760710aab83544798d3b285302d13d6355369113f77e02f3ef8d1f",
+      "release_sha256": "9ae3095c3e760710aab83544798d3b285302d13d6355369113f77e02f3ef8d1f",
+      "source_bytes": 1849,
+      "release_bytes": 1849,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_06/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_06/inner_01/split.json",
+      "original_sha256": "960689cfafaf6c803beee952568a99e0cbbad3b0f478084fd5af11340ee3cfff",
+      "release_sha256": "960689cfafaf6c803beee952568a99e0cbbad3b0f478084fd5af11340ee3cfff",
+      "source_bytes": 1849,
+      "release_bytes": 1849,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_06/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_06/inner_02/split.json",
+      "original_sha256": "647f3b4fbf3b0b383c8cefabddaa6ef2dc6c2dd563150fb73c5edf08ab86183c",
+      "release_sha256": "647f3b4fbf3b0b383c8cefabddaa6ef2dc6c2dd563150fb73c5edf08ab86183c",
+      "source_bytes": 1849,
+      "release_bytes": 1849,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_06/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_06/outer_fit/split.json",
+      "original_sha256": "415b462186f2409fff71934a7d1d081c12badb6fd84629862ee50122bcf8fc7a",
+      "release_sha256": "415b462186f2409fff71934a7d1d081c12badb6fd84629862ee50122bcf8fc7a",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_06/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_06/selected_parameters.json",
+      "original_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "release_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "source_bytes": 445,
+      "release_bytes": 445,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_07/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_07/inner_00/split.json",
+      "original_sha256": "34cdacd9367b51af6f9e5c251e8b5c173b0004f1b130253a4bf5a81e90a82fb2",
+      "release_sha256": "34cdacd9367b51af6f9e5c251e8b5c173b0004f1b130253a4bf5a81e90a82fb2",
+      "source_bytes": 1836,
+      "release_bytes": 1836,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_07/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_07/inner_01/split.json",
+      "original_sha256": "99db6c759873159f73b0ed896b4e2832daf210e8805d876623af679f9ec72b17",
+      "release_sha256": "99db6c759873159f73b0ed896b4e2832daf210e8805d876623af679f9ec72b17",
+      "source_bytes": 1836,
+      "release_bytes": 1836,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_07/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_07/inner_02/split.json",
+      "original_sha256": "bec7e246f514293fc8b301e6c3119e51535da69d5167d3886c84c1946a3159c2",
+      "release_sha256": "bec7e246f514293fc8b301e6c3119e51535da69d5167d3886c84c1946a3159c2",
+      "source_bytes": 1836,
+      "release_bytes": 1836,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_07/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_07/outer_fit/split.json",
+      "original_sha256": "e2e3e28293181fea2057a961e7e472d134cdd236484e165c4548751432a368a9",
+      "release_sha256": "e2e3e28293181fea2057a961e7e472d134cdd236484e165c4548751432a368a9",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_07/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_07/selected_parameters.json",
+      "original_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "release_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "source_bytes": 445,
+      "release_bytes": 445,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_08/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_08/inner_00/split.json",
+      "original_sha256": "85d3d2e58a96e8a1a5f654afa689a4f347642959d4ca33f60ab952f0a31c7523",
+      "release_sha256": "85d3d2e58a96e8a1a5f654afa689a4f347642959d4ca33f60ab952f0a31c7523",
+      "source_bytes": 1838,
+      "release_bytes": 1838,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_08/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_08/inner_01/split.json",
+      "original_sha256": "e1c66bd646c305877a05d844a2cad9458ca725d94f1ab47bebd66df535b5905b",
+      "release_sha256": "e1c66bd646c305877a05d844a2cad9458ca725d94f1ab47bebd66df535b5905b",
+      "source_bytes": 1838,
+      "release_bytes": 1838,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_08/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_08/inner_02/split.json",
+      "original_sha256": "b31388b06341cdb22303c1053c1ea243165b274935598061b2f7556df0db49e9",
+      "release_sha256": "b31388b06341cdb22303c1053c1ea243165b274935598061b2f7556df0db49e9",
+      "source_bytes": 1838,
+      "release_bytes": 1838,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_08/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_08/outer_fit/split.json",
+      "original_sha256": "8d863d8f21289c7c800b12317e365095d1e61065cbf3b78c65b8537be9997e48",
+      "release_sha256": "8d863d8f21289c7c800b12317e365095d1e61065cbf3b78c65b8537be9997e48",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_08/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_08/selected_parameters.json",
+      "original_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "release_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "source_bytes": 445,
+      "release_bytes": 445,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_09/inner_00/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_09/inner_00/split.json",
+      "original_sha256": "251a1a2c5441209c84e0ebc1190a055bc2b5e28f8af3386f7a9a0fb8abbc61be",
+      "release_sha256": "251a1a2c5441209c84e0ebc1190a055bc2b5e28f8af3386f7a9a0fb8abbc61be",
+      "source_bytes": 1847,
+      "release_bytes": 1847,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_09/inner_01/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_09/inner_01/split.json",
+      "original_sha256": "f81b83caab4add19fd7acc6b1ca9c6bddbc129e318cf3c7bd95df9e7e6409d03",
+      "release_sha256": "f81b83caab4add19fd7acc6b1ca9c6bddbc129e318cf3c7bd95df9e7e6409d03",
+      "source_bytes": 1847,
+      "release_bytes": 1847,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_09/inner_02/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_09/inner_02/split.json",
+      "original_sha256": "3e3b60355dd082cefb9e44101e8e06176e3c5699d1a2b548802c52e115484f49",
+      "release_sha256": "3e3b60355dd082cefb9e44101e8e06176e3c5699d1a2b548802c52e115484f49",
+      "source_bytes": 1847,
+      "release_bytes": 1847,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_09/outer_fit/split.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_09/outer_fit/split.json",
+      "original_sha256": "3f9041104a5befefcacacccfe04525bf79e65d2a4ce519c106c7868fdc50df11",
+      "release_sha256": "3f9041104a5befefcacacccfe04525bf79e65d2a4ce519c106c7868fdc50df11",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_v1/runs/rfe_xgb/outer_09/selected_parameters.json",
+      "source_path_relative": "experiment_v1/runs/rfe_xgb/outer_09/selected_parameters.json",
+      "original_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "release_sha256": "46878e830ab363db1ea558b94237eb6f1ff0c439b2528f5a9def8bc21420eb9b",
+      "source_bytes": 445,
+      "release_bytes": 445,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_00/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_00/outer_fit/split.json",
+      "original_sha256": "a76239b5fb11161515b88a3550c8066a46b93ddea34644d92849132ec66405e1",
+      "release_sha256": "a76239b5fb11161515b88a3550c8066a46b93ddea34644d92849132ec66405e1",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_00/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_00/selected_parameters.json",
+      "original_sha256": "949b0d3146b1c21bf31d8efbfc47aa34147b36ab63658c720a61ab616b014dc6",
+      "release_sha256": "c74395f633e140ce362f7b00c109cd27018c41a5458116bc98a685bb8d96deec",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_01/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_01/outer_fit/split.json",
+      "original_sha256": "41b56ec1dbe1d3e7821986853d5ceeee73cba2752af30db8bc27531dfac5d241",
+      "release_sha256": "41b56ec1dbe1d3e7821986853d5ceeee73cba2752af30db8bc27531dfac5d241",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_01/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_01/selected_parameters.json",
+      "original_sha256": "b446f0e3dab9a33318e872f8ab76d296850bc8cd4aba05ee4aeafebfd1a34255",
+      "release_sha256": "b6cb7c3f5a42ee94f8a3d62efcaaf280622c9a46b6c7fdcfd2d7e9fef87167df",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_02/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_02/outer_fit/split.json",
+      "original_sha256": "83bb55f30a4fc99879b612a7d501b08b51de0d78acebfa9f3848545ef86fc9b4",
+      "release_sha256": "83bb55f30a4fc99879b612a7d501b08b51de0d78acebfa9f3848545ef86fc9b4",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_02/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_02/selected_parameters.json",
+      "original_sha256": "2e93a4d102bac5907431a54649677af75c81a8d8a539a22f8355bf1c0b040c77",
+      "release_sha256": "87727c02ada19e0b6ea780d4bd2327ee3f50290abc9355082f7d9b006963858d",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_03/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_03/outer_fit/split.json",
+      "original_sha256": "01878c4d30d202fbfac256a73b632dc3ea24e6cacbd9cc13b55b4760e371a2da",
+      "release_sha256": "01878c4d30d202fbfac256a73b632dc3ea24e6cacbd9cc13b55b4760e371a2da",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_03/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_03/selected_parameters.json",
+      "original_sha256": "76dad6e796cdde03929b42cf0f61a6f17103b6af9fe1bd0b5849aa79bf9bd8d6",
+      "release_sha256": "b3a0796e7876210413b0dd8fa66c98ae96360cb348d46552ba546090c17ca661",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_04/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_04/outer_fit/split.json",
+      "original_sha256": "b61780afb39636475397200160925b2f5dbbdf43a993b214f6b7c1f8382fb60b",
+      "release_sha256": "b61780afb39636475397200160925b2f5dbbdf43a993b214f6b7c1f8382fb60b",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_04/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_04/selected_parameters.json",
+      "original_sha256": "ac48c5e65e7fc9fd6b5e19637af15c764668d29f24f6cde2a63abbce4b68968d",
+      "release_sha256": "52a9aa76bdff7c2ccf7a68ab3fade6cc715ec8725bbf965a798958076b8a7d0a",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_05/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_05/outer_fit/split.json",
+      "original_sha256": "cdb794e624ba6b0d5f005811b1e26e01e9a622e8db7bcc4b18a41bc536c42e9a",
+      "release_sha256": "cdb794e624ba6b0d5f005811b1e26e01e9a622e8db7bcc4b18a41bc536c42e9a",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_05/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_05/selected_parameters.json",
+      "original_sha256": "6dbc232009d9098b0a7aee27fb867a8046aa7cee6eae4906e82f685b4201558f",
+      "release_sha256": "1773d6475814c10daebf643f2791217bc4c6fe316af505af88e972ae4b888de0",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_06/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_06/outer_fit/split.json",
+      "original_sha256": "3191e72d5c61fd0e7ed4792c0238915bc675421963f3cc72555a0c6428aae1a4",
+      "release_sha256": "3191e72d5c61fd0e7ed4792c0238915bc675421963f3cc72555a0c6428aae1a4",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_06/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_06/selected_parameters.json",
+      "original_sha256": "9cccfcbcaed6fa05632458d9b0977bc448de1135ba2b3e16bf29cffbbd97b26d",
+      "release_sha256": "ed2f18e7bff3d6e59f80704c30c8774b63fb93e75360215fbafcce77a20374a0",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_07/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_07/outer_fit/split.json",
+      "original_sha256": "b5a23eddf4dfe65dcf9b8f0ce6380dd099e4efe2f48708e8c6ead3a6e0951e2b",
+      "release_sha256": "b5a23eddf4dfe65dcf9b8f0ce6380dd099e4efe2f48708e8c6ead3a6e0951e2b",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_07/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_07/selected_parameters.json",
+      "original_sha256": "19f3852806f78ccf3368e3eb199a66dc49f53d5080547fe5f61472dade1c9377",
+      "release_sha256": "c8cc0e907a0995d84097f20b437e9eb2179df49543d1b6bcdb5a49bd4010333b",
+      "source_bytes": 1126,
+      "release_bytes": 1084,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_08/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_08/outer_fit/split.json",
+      "original_sha256": "a91f54b53f5c74e6772c3fc77169183bb504a54f580dca074534e993336392a9",
+      "release_sha256": "a91f54b53f5c74e6772c3fc77169183bb504a54f580dca074534e993336392a9",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_08/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_08/selected_parameters.json",
+      "original_sha256": "7a6050ed739a05618478a96432b12ea9438d454b971867d2060f530461ca8981",
+      "release_sha256": "751747c51a51fc68cce4d22aed4b014327d34e4a4c2c7df7675dcb3cbee0c987",
+      "source_bytes": 1126,
+      "release_bytes": 1084,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_09/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_09/outer_fit/split.json",
+      "original_sha256": "89db7960876390ff5af5a1699057126162afde1460046cb84608d72ede2fff46",
+      "release_sha256": "89db7960876390ff5af5a1699057126162afde1460046cb84608d72ede2fff46",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_09/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_boundary_weight/outer_09/selected_parameters.json",
+      "original_sha256": "fee8de28d7acfa3eb11d7f88cd6e9d0324cd9e4b595643400246d6eec5b84127",
+      "release_sha256": "f778a544ac309a192a8416f3fb50d03cdebbb82763f3483d3c101f06e2c9832d",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_00/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_00/outer_fit/split.json",
+      "original_sha256": "a76239b5fb11161515b88a3550c8066a46b93ddea34644d92849132ec66405e1",
+      "release_sha256": "a76239b5fb11161515b88a3550c8066a46b93ddea34644d92849132ec66405e1",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_00/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_00/selected_parameters.json",
+      "original_sha256": "949b0d3146b1c21bf31d8efbfc47aa34147b36ab63658c720a61ab616b014dc6",
+      "release_sha256": "c74395f633e140ce362f7b00c109cd27018c41a5458116bc98a685bb8d96deec",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_01/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_01/outer_fit/split.json",
+      "original_sha256": "41b56ec1dbe1d3e7821986853d5ceeee73cba2752af30db8bc27531dfac5d241",
+      "release_sha256": "41b56ec1dbe1d3e7821986853d5ceeee73cba2752af30db8bc27531dfac5d241",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_01/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_01/selected_parameters.json",
+      "original_sha256": "b446f0e3dab9a33318e872f8ab76d296850bc8cd4aba05ee4aeafebfd1a34255",
+      "release_sha256": "b6cb7c3f5a42ee94f8a3d62efcaaf280622c9a46b6c7fdcfd2d7e9fef87167df",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_02/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_02/outer_fit/split.json",
+      "original_sha256": "83bb55f30a4fc99879b612a7d501b08b51de0d78acebfa9f3848545ef86fc9b4",
+      "release_sha256": "83bb55f30a4fc99879b612a7d501b08b51de0d78acebfa9f3848545ef86fc9b4",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_02/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_02/selected_parameters.json",
+      "original_sha256": "2e93a4d102bac5907431a54649677af75c81a8d8a539a22f8355bf1c0b040c77",
+      "release_sha256": "87727c02ada19e0b6ea780d4bd2327ee3f50290abc9355082f7d9b006963858d",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_03/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_03/outer_fit/split.json",
+      "original_sha256": "01878c4d30d202fbfac256a73b632dc3ea24e6cacbd9cc13b55b4760e371a2da",
+      "release_sha256": "01878c4d30d202fbfac256a73b632dc3ea24e6cacbd9cc13b55b4760e371a2da",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_03/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_03/selected_parameters.json",
+      "original_sha256": "76dad6e796cdde03929b42cf0f61a6f17103b6af9fe1bd0b5849aa79bf9bd8d6",
+      "release_sha256": "b3a0796e7876210413b0dd8fa66c98ae96360cb348d46552ba546090c17ca661",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_04/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_04/outer_fit/split.json",
+      "original_sha256": "b61780afb39636475397200160925b2f5dbbdf43a993b214f6b7c1f8382fb60b",
+      "release_sha256": "b61780afb39636475397200160925b2f5dbbdf43a993b214f6b7c1f8382fb60b",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_04/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_04/selected_parameters.json",
+      "original_sha256": "ac48c5e65e7fc9fd6b5e19637af15c764668d29f24f6cde2a63abbce4b68968d",
+      "release_sha256": "52a9aa76bdff7c2ccf7a68ab3fade6cc715ec8725bbf965a798958076b8a7d0a",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_05/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_05/outer_fit/split.json",
+      "original_sha256": "cdb794e624ba6b0d5f005811b1e26e01e9a622e8db7bcc4b18a41bc536c42e9a",
+      "release_sha256": "cdb794e624ba6b0d5f005811b1e26e01e9a622e8db7bcc4b18a41bc536c42e9a",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_05/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_05/selected_parameters.json",
+      "original_sha256": "6dbc232009d9098b0a7aee27fb867a8046aa7cee6eae4906e82f685b4201558f",
+      "release_sha256": "1773d6475814c10daebf643f2791217bc4c6fe316af505af88e972ae4b888de0",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_06/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_06/outer_fit/split.json",
+      "original_sha256": "3191e72d5c61fd0e7ed4792c0238915bc675421963f3cc72555a0c6428aae1a4",
+      "release_sha256": "3191e72d5c61fd0e7ed4792c0238915bc675421963f3cc72555a0c6428aae1a4",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_06/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_06/selected_parameters.json",
+      "original_sha256": "9cccfcbcaed6fa05632458d9b0977bc448de1135ba2b3e16bf29cffbbd97b26d",
+      "release_sha256": "ed2f18e7bff3d6e59f80704c30c8774b63fb93e75360215fbafcce77a20374a0",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_07/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_07/outer_fit/split.json",
+      "original_sha256": "b5a23eddf4dfe65dcf9b8f0ce6380dd099e4efe2f48708e8c6ead3a6e0951e2b",
+      "release_sha256": "b5a23eddf4dfe65dcf9b8f0ce6380dd099e4efe2f48708e8c6ead3a6e0951e2b",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_07/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_07/selected_parameters.json",
+      "original_sha256": "19f3852806f78ccf3368e3eb199a66dc49f53d5080547fe5f61472dade1c9377",
+      "release_sha256": "c8cc0e907a0995d84097f20b437e9eb2179df49543d1b6bcdb5a49bd4010333b",
+      "source_bytes": 1126,
+      "release_bytes": 1084,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_08/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_08/outer_fit/split.json",
+      "original_sha256": "a91f54b53f5c74e6772c3fc77169183bb504a54f580dca074534e993336392a9",
+      "release_sha256": "a91f54b53f5c74e6772c3fc77169183bb504a54f580dca074534e993336392a9",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_08/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_08/selected_parameters.json",
+      "original_sha256": "7a6050ed739a05618478a96432b12ea9438d454b971867d2060f530461ca8981",
+      "release_sha256": "751747c51a51fc68cce4d22aed4b014327d34e4a4c2c7df7675dcb3cbee0c987",
+      "source_bytes": 1126,
+      "release_bytes": 1084,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_09/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_09/outer_fit/split.json",
+      "original_sha256": "89db7960876390ff5af5a1699057126162afde1460046cb84608d72ede2fff46",
+      "release_sha256": "89db7960876390ff5af5a1699057126162afde1460046cb84608d72ede2fff46",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_class_weight/outer_09/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_class_weight/outer_09/selected_parameters.json",
+      "original_sha256": "fee8de28d7acfa3eb11d7f88cd6e9d0324cd9e4b595643400246d6eec5b84127",
+      "release_sha256": "f778a544ac309a192a8416f3fb50d03cdebbb82763f3483d3c101f06e2c9832d",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_00/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_00/outer_fit/split.json",
+      "original_sha256": "a76239b5fb11161515b88a3550c8066a46b93ddea34644d92849132ec66405e1",
+      "release_sha256": "a76239b5fb11161515b88a3550c8066a46b93ddea34644d92849132ec66405e1",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_00/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_00/selected_parameters.json",
+      "original_sha256": "949b0d3146b1c21bf31d8efbfc47aa34147b36ab63658c720a61ab616b014dc6",
+      "release_sha256": "c74395f633e140ce362f7b00c109cd27018c41a5458116bc98a685bb8d96deec",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_01/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_01/outer_fit/split.json",
+      "original_sha256": "41b56ec1dbe1d3e7821986853d5ceeee73cba2752af30db8bc27531dfac5d241",
+      "release_sha256": "41b56ec1dbe1d3e7821986853d5ceeee73cba2752af30db8bc27531dfac5d241",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_01/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_01/selected_parameters.json",
+      "original_sha256": "b446f0e3dab9a33318e872f8ab76d296850bc8cd4aba05ee4aeafebfd1a34255",
+      "release_sha256": "b6cb7c3f5a42ee94f8a3d62efcaaf280622c9a46b6c7fdcfd2d7e9fef87167df",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_02/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_02/outer_fit/split.json",
+      "original_sha256": "83bb55f30a4fc99879b612a7d501b08b51de0d78acebfa9f3848545ef86fc9b4",
+      "release_sha256": "83bb55f30a4fc99879b612a7d501b08b51de0d78acebfa9f3848545ef86fc9b4",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_02/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_02/selected_parameters.json",
+      "original_sha256": "2e93a4d102bac5907431a54649677af75c81a8d8a539a22f8355bf1c0b040c77",
+      "release_sha256": "87727c02ada19e0b6ea780d4bd2327ee3f50290abc9355082f7d9b006963858d",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_03/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_03/outer_fit/split.json",
+      "original_sha256": "01878c4d30d202fbfac256a73b632dc3ea24e6cacbd9cc13b55b4760e371a2da",
+      "release_sha256": "01878c4d30d202fbfac256a73b632dc3ea24e6cacbd9cc13b55b4760e371a2da",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_03/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_03/selected_parameters.json",
+      "original_sha256": "76dad6e796cdde03929b42cf0f61a6f17103b6af9fe1bd0b5849aa79bf9bd8d6",
+      "release_sha256": "b3a0796e7876210413b0dd8fa66c98ae96360cb348d46552ba546090c17ca661",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_04/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_04/outer_fit/split.json",
+      "original_sha256": "b61780afb39636475397200160925b2f5dbbdf43a993b214f6b7c1f8382fb60b",
+      "release_sha256": "b61780afb39636475397200160925b2f5dbbdf43a993b214f6b7c1f8382fb60b",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_04/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_04/selected_parameters.json",
+      "original_sha256": "ac48c5e65e7fc9fd6b5e19637af15c764668d29f24f6cde2a63abbce4b68968d",
+      "release_sha256": "52a9aa76bdff7c2ccf7a68ab3fade6cc715ec8725bbf965a798958076b8a7d0a",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_05/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_05/outer_fit/split.json",
+      "original_sha256": "cdb794e624ba6b0d5f005811b1e26e01e9a622e8db7bcc4b18a41bc536c42e9a",
+      "release_sha256": "cdb794e624ba6b0d5f005811b1e26e01e9a622e8db7bcc4b18a41bc536c42e9a",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_05/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_05/selected_parameters.json",
+      "original_sha256": "6dbc232009d9098b0a7aee27fb867a8046aa7cee6eae4906e82f685b4201558f",
+      "release_sha256": "1773d6475814c10daebf643f2791217bc4c6fe316af505af88e972ae4b888de0",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_06/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_06/outer_fit/split.json",
+      "original_sha256": "3191e72d5c61fd0e7ed4792c0238915bc675421963f3cc72555a0c6428aae1a4",
+      "release_sha256": "3191e72d5c61fd0e7ed4792c0238915bc675421963f3cc72555a0c6428aae1a4",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_06/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_06/selected_parameters.json",
+      "original_sha256": "9cccfcbcaed6fa05632458d9b0977bc448de1135ba2b3e16bf29cffbbd97b26d",
+      "release_sha256": "ed2f18e7bff3d6e59f80704c30c8774b63fb93e75360215fbafcce77a20374a0",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_07/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_07/outer_fit/split.json",
+      "original_sha256": "b5a23eddf4dfe65dcf9b8f0ce6380dd099e4efe2f48708e8c6ead3a6e0951e2b",
+      "release_sha256": "b5a23eddf4dfe65dcf9b8f0ce6380dd099e4efe2f48708e8c6ead3a6e0951e2b",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_07/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_07/selected_parameters.json",
+      "original_sha256": "19f3852806f78ccf3368e3eb199a66dc49f53d5080547fe5f61472dade1c9377",
+      "release_sha256": "c8cc0e907a0995d84097f20b437e9eb2179df49543d1b6bcdb5a49bd4010333b",
+      "source_bytes": 1126,
+      "release_bytes": 1084,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_08/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_08/outer_fit/split.json",
+      "original_sha256": "a91f54b53f5c74e6772c3fc77169183bb504a54f580dca074534e993336392a9",
+      "release_sha256": "a91f54b53f5c74e6772c3fc77169183bb504a54f580dca074534e993336392a9",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_08/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_08/selected_parameters.json",
+      "original_sha256": "7a6050ed739a05618478a96432b12ea9438d454b971867d2060f530461ca8981",
+      "release_sha256": "751747c51a51fc68cce4d22aed4b014327d34e4a4c2c7df7675dcb3cbee0c987",
+      "source_bytes": 1126,
+      "release_bytes": 1084,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_09/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_09/outer_fit/split.json",
+      "original_sha256": "89db7960876390ff5af5a1699057126162afde1460046cb84608d72ede2fff46",
+      "release_sha256": "89db7960876390ff5af5a1699057126162afde1460046cb84608d72ede2fff46",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_09/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_confidence_weight/outer_09/selected_parameters.json",
+      "original_sha256": "fee8de28d7acfa3eb11d7f88cd6e9d0324cd9e4b595643400246d6eec5b84127",
+      "release_sha256": "f778a544ac309a192a8416f3fb50d03cdebbb82763f3483d3c101f06e2c9832d",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_00/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_00/outer_fit/split.json",
+      "original_sha256": "a76239b5fb11161515b88a3550c8066a46b93ddea34644d92849132ec66405e1",
+      "release_sha256": "a76239b5fb11161515b88a3550c8066a46b93ddea34644d92849132ec66405e1",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_00/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_00/selected_parameters.json",
+      "original_sha256": "949b0d3146b1c21bf31d8efbfc47aa34147b36ab63658c720a61ab616b014dc6",
+      "release_sha256": "c74395f633e140ce362f7b00c109cd27018c41a5458116bc98a685bb8d96deec",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_01/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_01/outer_fit/split.json",
+      "original_sha256": "41b56ec1dbe1d3e7821986853d5ceeee73cba2752af30db8bc27531dfac5d241",
+      "release_sha256": "41b56ec1dbe1d3e7821986853d5ceeee73cba2752af30db8bc27531dfac5d241",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_01/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_01/selected_parameters.json",
+      "original_sha256": "b446f0e3dab9a33318e872f8ab76d296850bc8cd4aba05ee4aeafebfd1a34255",
+      "release_sha256": "b6cb7c3f5a42ee94f8a3d62efcaaf280622c9a46b6c7fdcfd2d7e9fef87167df",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_02/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_02/outer_fit/split.json",
+      "original_sha256": "83bb55f30a4fc99879b612a7d501b08b51de0d78acebfa9f3848545ef86fc9b4",
+      "release_sha256": "83bb55f30a4fc99879b612a7d501b08b51de0d78acebfa9f3848545ef86fc9b4",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_02/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_02/selected_parameters.json",
+      "original_sha256": "2e93a4d102bac5907431a54649677af75c81a8d8a539a22f8355bf1c0b040c77",
+      "release_sha256": "87727c02ada19e0b6ea780d4bd2327ee3f50290abc9355082f7d9b006963858d",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_03/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_03/outer_fit/split.json",
+      "original_sha256": "01878c4d30d202fbfac256a73b632dc3ea24e6cacbd9cc13b55b4760e371a2da",
+      "release_sha256": "01878c4d30d202fbfac256a73b632dc3ea24e6cacbd9cc13b55b4760e371a2da",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_03/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_03/selected_parameters.json",
+      "original_sha256": "76dad6e796cdde03929b42cf0f61a6f17103b6af9fe1bd0b5849aa79bf9bd8d6",
+      "release_sha256": "b3a0796e7876210413b0dd8fa66c98ae96360cb348d46552ba546090c17ca661",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_04/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_04/outer_fit/split.json",
+      "original_sha256": "b61780afb39636475397200160925b2f5dbbdf43a993b214f6b7c1f8382fb60b",
+      "release_sha256": "b61780afb39636475397200160925b2f5dbbdf43a993b214f6b7c1f8382fb60b",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_04/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_04/selected_parameters.json",
+      "original_sha256": "ac48c5e65e7fc9fd6b5e19637af15c764668d29f24f6cde2a63abbce4b68968d",
+      "release_sha256": "52a9aa76bdff7c2ccf7a68ab3fade6cc715ec8725bbf965a798958076b8a7d0a",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_05/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_05/outer_fit/split.json",
+      "original_sha256": "cdb794e624ba6b0d5f005811b1e26e01e9a622e8db7bcc4b18a41bc536c42e9a",
+      "release_sha256": "cdb794e624ba6b0d5f005811b1e26e01e9a622e8db7bcc4b18a41bc536c42e9a",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_05/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_05/selected_parameters.json",
+      "original_sha256": "6dbc232009d9098b0a7aee27fb867a8046aa7cee6eae4906e82f685b4201558f",
+      "release_sha256": "1773d6475814c10daebf643f2791217bc4c6fe316af505af88e972ae4b888de0",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_06/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_06/outer_fit/split.json",
+      "original_sha256": "3191e72d5c61fd0e7ed4792c0238915bc675421963f3cc72555a0c6428aae1a4",
+      "release_sha256": "3191e72d5c61fd0e7ed4792c0238915bc675421963f3cc72555a0c6428aae1a4",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_06/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_06/selected_parameters.json",
+      "original_sha256": "9cccfcbcaed6fa05632458d9b0977bc448de1135ba2b3e16bf29cffbbd97b26d",
+      "release_sha256": "ed2f18e7bff3d6e59f80704c30c8774b63fb93e75360215fbafcce77a20374a0",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_07/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_07/outer_fit/split.json",
+      "original_sha256": "b5a23eddf4dfe65dcf9b8f0ce6380dd099e4efe2f48708e8c6ead3a6e0951e2b",
+      "release_sha256": "b5a23eddf4dfe65dcf9b8f0ce6380dd099e4efe2f48708e8c6ead3a6e0951e2b",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_07/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_07/selected_parameters.json",
+      "original_sha256": "19f3852806f78ccf3368e3eb199a66dc49f53d5080547fe5f61472dade1c9377",
+      "release_sha256": "c8cc0e907a0995d84097f20b437e9eb2179df49543d1b6bcdb5a49bd4010333b",
+      "source_bytes": 1126,
+      "release_bytes": 1084,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_08/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_08/outer_fit/split.json",
+      "original_sha256": "a91f54b53f5c74e6772c3fc77169183bb504a54f580dca074534e993336392a9",
+      "release_sha256": "a91f54b53f5c74e6772c3fc77169183bb504a54f580dca074534e993336392a9",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_08/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_08/selected_parameters.json",
+      "original_sha256": "7a6050ed739a05618478a96432b12ea9438d454b971867d2060f530461ca8981",
+      "release_sha256": "751747c51a51fc68cce4d22aed4b014327d34e4a4c2c7df7675dcb3cbee0c987",
+      "source_bytes": 1126,
+      "release_bytes": 1084,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_09/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_09/outer_fit/split.json",
+      "original_sha256": "89db7960876390ff5af5a1699057126162afde1460046cb84608d72ede2fff46",
+      "release_sha256": "89db7960876390ff5af5a1699057126162afde1460046cb84608d72ede2fff46",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_missing/outer_09/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_missing/outer_09/selected_parameters.json",
+      "original_sha256": "fee8de28d7acfa3eb11d7f88cd6e9d0324cd9e4b595643400246d6eec5b84127",
+      "release_sha256": "f778a544ac309a192a8416f3fb50d03cdebbb82763f3483d3c101f06e2c9832d",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_00/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_00/outer_fit/split.json",
+      "original_sha256": "a76239b5fb11161515b88a3550c8066a46b93ddea34644d92849132ec66405e1",
+      "release_sha256": "a76239b5fb11161515b88a3550c8066a46b93ddea34644d92849132ec66405e1",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_00/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_00/selected_parameters.json",
+      "original_sha256": "949b0d3146b1c21bf31d8efbfc47aa34147b36ab63658c720a61ab616b014dc6",
+      "release_sha256": "c74395f633e140ce362f7b00c109cd27018c41a5458116bc98a685bb8d96deec",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_01/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_01/outer_fit/split.json",
+      "original_sha256": "41b56ec1dbe1d3e7821986853d5ceeee73cba2752af30db8bc27531dfac5d241",
+      "release_sha256": "41b56ec1dbe1d3e7821986853d5ceeee73cba2752af30db8bc27531dfac5d241",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_01/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_01/selected_parameters.json",
+      "original_sha256": "b446f0e3dab9a33318e872f8ab76d296850bc8cd4aba05ee4aeafebfd1a34255",
+      "release_sha256": "b6cb7c3f5a42ee94f8a3d62efcaaf280622c9a46b6c7fdcfd2d7e9fef87167df",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_02/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_02/outer_fit/split.json",
+      "original_sha256": "83bb55f30a4fc99879b612a7d501b08b51de0d78acebfa9f3848545ef86fc9b4",
+      "release_sha256": "83bb55f30a4fc99879b612a7d501b08b51de0d78acebfa9f3848545ef86fc9b4",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_02/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_02/selected_parameters.json",
+      "original_sha256": "2e93a4d102bac5907431a54649677af75c81a8d8a539a22f8355bf1c0b040c77",
+      "release_sha256": "87727c02ada19e0b6ea780d4bd2327ee3f50290abc9355082f7d9b006963858d",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_03/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_03/outer_fit/split.json",
+      "original_sha256": "01878c4d30d202fbfac256a73b632dc3ea24e6cacbd9cc13b55b4760e371a2da",
+      "release_sha256": "01878c4d30d202fbfac256a73b632dc3ea24e6cacbd9cc13b55b4760e371a2da",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_03/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_03/selected_parameters.json",
+      "original_sha256": "76dad6e796cdde03929b42cf0f61a6f17103b6af9fe1bd0b5849aa79bf9bd8d6",
+      "release_sha256": "b3a0796e7876210413b0dd8fa66c98ae96360cb348d46552ba546090c17ca661",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_04/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_04/outer_fit/split.json",
+      "original_sha256": "b61780afb39636475397200160925b2f5dbbdf43a993b214f6b7c1f8382fb60b",
+      "release_sha256": "b61780afb39636475397200160925b2f5dbbdf43a993b214f6b7c1f8382fb60b",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_04/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_04/selected_parameters.json",
+      "original_sha256": "ac48c5e65e7fc9fd6b5e19637af15c764668d29f24f6cde2a63abbce4b68968d",
+      "release_sha256": "52a9aa76bdff7c2ccf7a68ab3fade6cc715ec8725bbf965a798958076b8a7d0a",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_05/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_05/outer_fit/split.json",
+      "original_sha256": "cdb794e624ba6b0d5f005811b1e26e01e9a622e8db7bcc4b18a41bc536c42e9a",
+      "release_sha256": "cdb794e624ba6b0d5f005811b1e26e01e9a622e8db7bcc4b18a41bc536c42e9a",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_05/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_05/selected_parameters.json",
+      "original_sha256": "6dbc232009d9098b0a7aee27fb867a8046aa7cee6eae4906e82f685b4201558f",
+      "release_sha256": "1773d6475814c10daebf643f2791217bc4c6fe316af505af88e972ae4b888de0",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_06/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_06/outer_fit/split.json",
+      "original_sha256": "3191e72d5c61fd0e7ed4792c0238915bc675421963f3cc72555a0c6428aae1a4",
+      "release_sha256": "3191e72d5c61fd0e7ed4792c0238915bc675421963f3cc72555a0c6428aae1a4",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_06/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_06/selected_parameters.json",
+      "original_sha256": "9cccfcbcaed6fa05632458d9b0977bc448de1135ba2b3e16bf29cffbbd97b26d",
+      "release_sha256": "ed2f18e7bff3d6e59f80704c30c8774b63fb93e75360215fbafcce77a20374a0",
+      "source_bytes": 1125,
+      "release_bytes": 1083,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_07/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_07/outer_fit/split.json",
+      "original_sha256": "b5a23eddf4dfe65dcf9b8f0ce6380dd099e4efe2f48708e8c6ead3a6e0951e2b",
+      "release_sha256": "b5a23eddf4dfe65dcf9b8f0ce6380dd099e4efe2f48708e8c6ead3a6e0951e2b",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_07/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_07/selected_parameters.json",
+      "original_sha256": "19f3852806f78ccf3368e3eb199a66dc49f53d5080547fe5f61472dade1c9377",
+      "release_sha256": "c8cc0e907a0995d84097f20b437e9eb2179df49543d1b6bcdb5a49bd4010333b",
+      "source_bytes": 1126,
+      "release_bytes": 1084,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_08/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_08/outer_fit/split.json",
+      "original_sha256": "a91f54b53f5c74e6772c3fc77169183bb504a54f580dca074534e993336392a9",
+      "release_sha256": "a91f54b53f5c74e6772c3fc77169183bb504a54f580dca074534e993336392a9",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_08/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_08/selected_parameters.json",
+      "original_sha256": "7a6050ed739a05618478a96432b12ea9438d454b971867d2060f530461ca8981",
+      "release_sha256": "751747c51a51fc68cce4d22aed4b014327d34e4a4c2c7df7675dcb3cbee0c987",
+      "source_bytes": 1126,
+      "release_bytes": 1084,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_09/outer_fit/split.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_09/outer_fit/split.json",
+      "original_sha256": "89db7960876390ff5af5a1699057126162afde1460046cb84608d72ede2fff46",
+      "release_sha256": "89db7960876390ff5af5a1699057126162afde1460046cb84608d72ede2fff46",
+      "source_bytes": 2022,
+      "release_bytes": 2022,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/no_normalization/outer_09/selected_parameters.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/no_normalization/outer_09/selected_parameters.json",
+      "original_sha256": "fee8de28d7acfa3eb11d7f88cd6e9d0324cd9e4b595643400246d6eec5b84127",
+      "release_sha256": "f778a544ac309a192a8416f3fb50d03cdebbb82763f3483d3c101f06e2c9832d",
+      "source_bytes": 1127,
+      "release_bytes": 1085,
+      "final_artifact_inventory_match": false,
+      "provenance_basis": "current source snapshot; not individually present in final artifact SHA inventory",
+      "publication_changes": [
+        "Redact host identity and replace private absolute paths with public relative paths; preserve scientific values."
+      ]
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_20261104/runs/protocol.json",
+      "source_path_relative": "experiment_fixed_parameters_20261104/runs/protocol.json",
+      "original_sha256": "36771a26ab32ff96b17a7b519cc094cf62d7f51494f7d3062fb3a7930a0f8638",
+      "release_sha256": "36771a26ab32ff96b17a7b519cc094cf62d7f51494f7d3062fb3a7930a0f8638",
+      "source_bytes": 779,
+      "release_bytes": 779,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "provenance/records/experiment_fixed_parameters_logs_only_20261110/runs/protocol.json",
+      "source_path_relative": "experiment_fixed_parameters_logs_only_20261110/runs/protocol.json",
+      "original_sha256": "c7da6e220cadb35e72e3263d90d513f5c7266e0b47ae1b28d547413815cdfbfc",
+      "release_sha256": "c7da6e220cadb35e72e3263d90d513f5c7266e0b47ae1b28d547413815cdfbfc",
+      "source_bytes": 873,
+      "release_bytes": 873,
+      "final_artifact_inventory_match": true,
+      "provenance_basis": "final artifact SHA inventory",
+      "publication_changes": []
+    },
+    {
+      "release_path": "parallel_execution/user_pause_20261104T232649Z/verification.json",
+      "source_path_relative": "parallel_execution/user_pause_20261104T232649Z/verification.json",
+      "original_sha256": "465fcc4cc94bd06f96692013a3f1cfef484207e9fb7e080abc646800170ded46",
+      "release_sha256": "142800ffecc7d1bae9492b00c2a9321804d8320bf18494639997c7787cfc9f0e",
+      "provenance_basis": "Projection of the historical verification baseline needed by the final verifier.",
+      "publication_changes": [
+        "Keep only per_variant_completed and verified_training_blocks; omit all machine/runtime/log fields."
+      ]
+    },
+    {
+      "release_path": "source/geomerit/configs/cohort_reference.json",
+      "release_sha256": "618066c888047cba039b1c669ea1865fa22a4822f1f8a619212c7e71d4943e12",
+      "release_bytes": 29503,
+      "provenance_basis": "Exact aggregation of the two SHA256-verified historical cohort inputs named inside the file.",
+      "publication_changes": [
+        "Publish only well-fold assignments and class counts, not per-row predictions."
+      ]
+    }
+  ]
+}

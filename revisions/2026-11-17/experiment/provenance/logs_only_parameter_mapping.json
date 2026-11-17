@@ -1,0 +1,59 @@
+{
+  "status": "derived mapping, not fabricated copies of missing original selection JSON",
+  "variant": "logs_only",
+  "independent_inner_selection": false,
+  "original_logs_selection_files_included": 0,
+  "evidence": "The final 80-fold report and server verification record the completed fixed-parameter logs-only folds. Original per-fold logs-only selection files were not present in the audited local archive.",
+  "folds": [
+    {
+      "outer_fold": 0,
+      "full_selection_record": "provenance/records/experiment_v1/runs/full/outer_00/selected_parameters.json",
+      "original_full_selection_sha256": "abf13d069acdd5902253d70261c768fd10fd48750160004bb2e370c05b52410d"
+    },
+    {
+      "outer_fold": 1,
+      "full_selection_record": "provenance/records/experiment_v1/runs/full/outer_01/selected_parameters.json",
+      "original_full_selection_sha256": "096ae9781f6e935f2261dea769c71960319217a5a4472164846055c42b54bfb2"
+    },
+    {
+      "outer_fold": 2,
+      "full_selection_record": "provenance/records/experiment_v1/runs/full/outer_02/selected_parameters.json",
+      "original_full_selection_sha256": "f569c7ae7ab910c4b568aa4a175b686c4ea8feeaa1a3fbbc34a4e34f131c731e"
+    },
+    {
+      "outer_fold": 3,
+      "full_selection_record": "provenance/records/experiment_v1/runs/full/outer_03/selected_parameters.json",
+      "original_full_selection_sha256": "65011d9c27593636c8e7c5c73897aad3fd47a7c72aabcc49b4673d54a767a606"
+    },
+    {
+      "outer_fold": 4,
+      "full_selection_record": "provenance/records/experiment_v1/runs/full/outer_04/selected_parameters.json",
+      "original_full_selection_sha256": "936f737d48fb323d7ad664bf19f92440b62c926f041e414d41d254208637d1c5"
+    },
+    {
+      "outer_fold": 5,
+      "full_selection_record": "provenance/records/experiment_v1/runs/full/outer_05/selected_parameters.json",
+      "original_full_selection_sha256": "5ca50211e974f671dc88c10f778913d326eb02f2d8b3d6cff82bcc4588819336"
+    },
+    {
+      "outer_fold": 6,
+      "full_selection_record": "provenance/records/experiment_v1/runs/full/outer_06/selected_parameters.json",
+      "original_full_selection_sha256": "ecc79995daf8ab7535367a8afdaca3cf11ff7bfd6a58337830c60ba1a70351aa"
+    },
+    {
+      "outer_fold": 7,
+      "full_selection_record": "provenance/records/experiment_v1/runs/full/outer_07/selected_parameters.json",
+      "original_full_selection_sha256": "e76d804ec746225be7212aa6342c47bbf2e2839c23380cb0591d82f263dd76dc"
+    },
+    {
+      "outer_fold": 8,
+      "full_selection_record": "provenance/records/experiment_v1/runs/full/outer_08/selected_parameters.json",
+      "original_full_selection_sha256": "cc090fc59a6006eead4d8463af676c50e9fa984dedfbb204a1eee66f8b57dab2"
+    },
+    {
+      "outer_fold": 9,
+      "full_selection_record": "provenance/records/experiment_v1/runs/full/outer_09/selected_parameters.json",
+      "original_full_selection_sha256": "4d6ad85e2605758fdf5d2e08071db4e099234dd26ade6b0c55a36581d3ea1b9a"
+    }
+  ]
+}

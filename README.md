@@ -1,5 +1,14 @@
 # GeoMERIT
 
+## Complete revision experiments — 2026-11-17
+
+The dated [2026-11-17 snapshot](revisions/2026-11-17/README.md) adds the completed **80 outer-fold runs across eight configurations**, including all six retrained ablations and `logs_only`. It contains the revision training and reporting code, configurations, recorded well splits and selected parameters, machine-readable results, and the subgroup/error-analysis scripts. [中文说明](revisions/2026-11-17/README.zh-CN.md)
+
+The full model achieves Weighted F1 **0.7495**, Boundary F1 **0.4618**, and Penalty **−0.6157** in this revision; `logs_only` achieves Weighted F1 **0.7039**. The six ablations inherit the fusion and decision parameters selected by the full model in the corresponding outer training fold, keeping these settings fixed during retraining. See the dated snapshot for the exact protocol, unrounded results, and uncertainty estimates.
+
+The original source tree and earlier reference results below are retained as a separate historical release. Use the dated directory to reproduce or cite the completed revision experiments.
+
+
 GeoMERIT is a CPU-friendly lithology prediction pipeline for real well-log data with non-random missingness, inter-well acquisition heterogeneity, long-tailed lithology labels, boundary ambiguity, and asymmetric geological error costs.
 
 The code accompanies the manuscript:
@@ -48,7 +57,7 @@ GeoMERIT is built around four robustness layers:
 3. **Structured posterior modeling**: LightGBM, XGBoost, and CatBoost posteriors are fused with a coarse-to-fine geological hierarchy and one-vs-rest tail experts.
 4. **Penalty-guided decision layer**: final lithology labels are selected by logit adjustment and Bayes-risk decoding over the FORCE 2020 geological penalty matrix, rather than plain posterior argmax.
 
-## Reported 10-Fold Results
+## Earlier Reference Results
 
 Strict 10-fold GroupKFold by well on the FORCE 2020 valid-label set:
 
@@ -73,7 +82,7 @@ Tail-class F1:
 
 Basement remains unresolved under strict held-out-well validation because its 141 labeled samples are concentrated in very few wells, and some GroupKFold training folds contain no supervised Basement examples.
 
-## Quick Start
+## Quick Start for the Earlier Reference Release
 
 Install dependencies:
 
@@ -125,9 +134,9 @@ https://doi.org/10.5281/zenodo.4351156
 
 Raw LAS files, large feature tables, model arrays, and full per-row OOF prediction tables are not included in this repository. This keeps the repository small and avoids redistributing the benchmark data.
 
-## Paper Figures
+## Earlier Reference Paper Figures
 
-The latest paper figures and plotting scripts are under `paper/`:
+The earlier reference paper figures and plotting scripts are under `paper/`:
 
 ```bash
 cd paper/scripts
@@ -147,5 +156,5 @@ The repository is provided as supplementary code and reproducibility material fo
 ## Reproducibility Notes
 
 - Validation is always grouped by well; random row-wise splits are not used for headline results because they leak local depth context and well-specific acquisition signatures.
-- The main experiments are CPU-only. The reported full 10-fold run used a 112-core CPU server with approximately 251 GB RAM.
+- The earlier reference experiments are CPU-only. The reported full 10-fold run used a 112-core CPU server with approximately 251 GB RAM.
 - The repository contains lightweight result summaries in `results/`. Full OOF predictions and probability tensors can be regenerated with the scripts above.

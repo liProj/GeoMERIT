@@ -1,0 +1,85 @@
+protocol: geomerit-revision-20261103-v1
+seed: 20261103
+outer_folds: 10
+inner_folds: 3
+threads: 14
+features:
+  curves: 20
+  context_gap_max_m: 1.0
+  rfe_window_radius: 2
+  rfe_unresolved_choices: "Within-well standard-z, radius=2, epsilon=1e-6; equation-based reimplementation."
+weights:
+  rho: 0.9995
+  cap: 8.0
+models:
+  lightgbm:
+    max_train_rows: null
+    params:
+      objective: multiclass
+      metric: multi_logloss
+      learning_rate: 0.04
+      num_leaves: 96
+      feature_fraction: 0.85
+      bagging_fraction: 0.85
+      bagging_freq: 1
+      min_data_in_leaf: 100
+      num_boost_round: 450
+      num_threads: 14
+      verbosity: -1
+  xgboost:
+    max_train_rows: 750000
+    params:
+      objective: multi:softprob
+      eval_metric: mlogloss
+      eta: 0.04
+      max_depth: 7
+      subsample: 0.85
+      colsample_bytree: 0.85
+      min_child_weight: 5
+      num_boost_round: 350
+      tree_method: hist
+      device: cpu
+      nthread: 14
+  catboost:
+    max_train_rows: 300000
+    params:
+      loss_function: MultiClass
+      iterations: 220
+      learning_rate: 0.04
+      depth: 6
+      l2_leaf_reg: 5
+      thread_count: 14
+      task_type: CPU
+selection:
+  ensemble_alpha:
+    - [1.0, 0.8, 0.8]
+    - [1.0, 1.0, 1.0]
+  hierarchy_mu: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+  blend_objective: macro_f1
+  tau: [0.0, 0.05, 0.1, 0.2, 0.3]
+  tail_gamma: [0.0, 0.5, 1.2, 2.0]
+  tail_threshold: [0.2, 0.35, 0.5]
+  dolomite_gamma: [0.0, 2.0, 4.0, 8.0]
+  dolomite_threshold: [0.01, 0.05, 0.1]
+  decision_objective: weighted_f1
+  tie_break: [penalty, macro_f1, first_grid_entry]
+  prior_smoothing: 1.0
+inference:
+  primary_unit: well
+  bootstrap_replicates: 5000
+  bootstrap_seed: 20261103
+  fold_test: wilcoxon_secondary_descriptive
+variants:
+  full: {family: geo, metadata: all}
+  rfe_xgb: {family: rfe, metadata: all}
+  raw_xgb: {family: raw, metadata: all}
+  no_missing: {family: geo, metadata: all, no_missing: true}
+  no_normalization: {family: geo, metadata: all, no_normalization: true}
+  no_context: {family: geo, metadata: all, no_context: true}
+  no_class_weight: {family: geo, metadata: all, no_class_weight: true}
+  no_boundary_weight: {family: geo, metadata: all, no_boundary_weight: true}
+  no_confidence_weight: {family: geo, metadata: all, no_confidence_weight: true}
+  logs_only: {family: geo, metadata: logs}
+  logs_spatial: {family: geo, metadata: spatial}
+  logs_strata: {family: geo, metadata: strata}
+queue: [full, rfe_xgb, raw_xgb, no_missing, no_normalization, no_context, no_class_weight, no_boundary_weight, no_confidence_weight, logs_only, logs_spatial, logs_strata]

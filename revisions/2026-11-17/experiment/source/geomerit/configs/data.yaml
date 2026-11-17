@@ -1,0 +1,63 @@
+paths:
+  las_dir: ../Force_2020_all_wells_train_test_blind_hidden_final
+  scoring_matrix: ../lithology scoring matrix cost function.xlsx
+  casing: ../NPD_Casing_depth_most_wells.xlsx
+  lithostrat_groups: ../NPD_Lithostratigraphy_groups_all_wells.xlsx
+  lithostrat_formations: ../NPD_Lithostratigraphy_member_formations_all_wells.xlsx
+
+columns:
+  well_id: well_id
+  depth: DEPTH_MD
+  lithology: FORCE_2020_LITHOFACIES_LITHOLOGY
+  confidence: FORCE_2020_LITHOFACIES_CONFIDENCE
+
+null_value: -999.25
+
+curves:
+  - GR
+  - SGR
+  - RHOB
+  - DRHO
+  - NPHI
+  - PEF
+  - DTC
+  - DTS
+  - RDEP
+  - RSHA
+  - RMED
+  - RXO
+  - RMIC
+  - SP
+  - CALI
+  - BS
+  - DCAL
+  - ROP
+  - ROPA
+  - MUDWEIGHT
+  - x_loc
+  - y_loc
+  - z_loc
+
+primary_curves:
+  - GR
+  - RHOB
+  - NPHI
+  - PEF
+  - DTC
+  - RDEP
+  - RMED
+  - SP
+
+label_codes:
+  0: 65000
+  1: 30000
+  2: 65030
+  3: 70000
+  4: 80000
+  5: 99000
+  6: 88000
+  7: 70032
+  8: 90000
+  9: 74000
+  10: 86000
+  11: 93000

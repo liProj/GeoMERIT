@@ -1,0 +1,36 @@
+{
+  "blend": {
+    "alpha": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "mu": 0.2,
+    "source": "inner OOF only",
+    "inner_score": {
+      "weighted_f1": 0.7426296609412066,
+      "macro_f1": 0.49801637811576455,
+      "tail_f1": 0.4679213103650188,
+      "penalty": -0.5969108418973437,
+      "accuracy": 0.7711468164863798
+    }
+  },
+  "decision": {
+    "tau": 0.3,
+    "tail_gamma": 2.0,
+    "tail_threshold": 0.2,
+    "dolomite_gamma": 0.0,
+    "dolomite_threshold": 0.01
+  },
+  "candidates": 0,
+  "source_candidate_count": 500,
+  "selected_before_outer_fit": true,
+  "evaluation_labels_used": false,
+  "independent_inner_reselection": false,
+  "selection_source": "experiment_v1/runs/full/outer_03/selected_parameters.json",
+  "source_selection_sha256": "65011d9c27593636c8e7c5c73897aad3fd47a7c72aabcc49b4673d54a767a606",
+  "source_full_fold": 3,
+  "parent_signature": "2b07090b2d6a520ad45fb241d0500633faac32a08cbd5fe8ec0e0b86c20f49c2",
+  "ablation_protocol": "fixed_parameters_outer_refit",
+  "signature": "758f1bb5ae1fea7c7bc382ba84615253932d7942cd1b411d1ec3b91b4afe4a89"
+}

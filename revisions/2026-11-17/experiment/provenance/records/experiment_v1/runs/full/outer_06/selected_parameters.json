@@ -1,0 +1,29 @@
+{
+  "blend": {
+    "alpha": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "mu": 0.0,
+    "source": "inner OOF only",
+    "inner_score": {
+      "weighted_f1": 0.7315493051447968,
+      "macro_f1": 0.4370531068781586,
+      "tail_f1": 0.3884799520135926,
+      "penalty": -0.6198221848293171,
+      "accuracy": 0.7643664594440553
+    }
+  },
+  "decision": {
+    "tau": 0.3,
+    "tail_gamma": 2.0,
+    "tail_threshold": 0.5,
+    "dolomite_gamma": 8.0,
+    "dolomite_threshold": 0.1
+  },
+  "candidates": 500,
+  "signature": "2b07090b2d6a520ad45fb241d0500633faac32a08cbd5fe8ec0e0b86c20f49c2",
+  "selected_before_outer_fit": true,
+  "evaluation_labels_used": false
+}

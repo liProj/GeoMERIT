@@ -1,0 +1,237 @@
+{
+  "signature": "2b07090b2d6a520ad45fb241d0500633faac32a08cbd5fe8ec0e0b86c20f49c2",
+  "config": {
+    "protocol": "geomerit-revision-20261103-v1",
+    "seed": 20261103,
+    "outer_folds": 10,
+    "inner_folds": 3,
+    "threads": 14,
+    "features": {
+      "curves": 20,
+      "context_gap_max_m": 1.0,
+      "rfe_window_radius": 2,
+      "rfe_unresolved_choices": "Within-well standard-z, radius=2, epsilon=1e-6; equation-based reimplementation."
+    },
+    "weights": {
+      "rho": 0.9995,
+      "cap": 8.0
+    },
+    "models": {
+      "lightgbm": {
+        "max_train_rows": null,
+        "params": {
+          "objective": "multiclass",
+          "metric": "multi_logloss",
+          "learning_rate": 0.04,
+          "num_leaves": 96,
+          "feature_fraction": 0.85,
+          "bagging_fraction": 0.85,
+          "bagging_freq": 1,
+          "min_data_in_leaf": 100,
+          "num_boost_round": 450,
+          "num_threads": 14,
+          "verbosity": -1
+        }
+      },
+      "xgboost": {
+        "max_train_rows": 750000,
+        "params": {
+          "objective": "multi:softprob",
+          "eval_metric": "mlogloss",
+          "eta": 0.04,
+          "max_depth": 7,
+          "subsample": 0.85,
+          "colsample_bytree": 0.85,
+          "min_child_weight": 5,
+          "num_boost_round": 350,
+          "tree_method": "hist",
+          "device": "cpu",
+          "nthread": 14
+        }
+      },
+      "catboost": {
+        "max_train_rows": 300000,
+        "params": {
+          "loss_function": "MultiClass",
+          "iterations": 220,
+          "learning_rate": 0.04,
+          "depth": 6,
+          "l2_leaf_reg": 5,
+          "thread_count": 14,
+          "task_type": "CPU"
+        }
+      }
+    },
+    "selection": {
+      "ensemble_alpha": [
+        [
+          1.0,
+          0.8,
+          0.8
+        ],
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "hierarchy_mu": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "blend_objective": "macro_f1",
+      "tau": [
+        0.0,
+        0.05,
+        0.1,
+        0.2,
+        0.3
+      ],
+      "tail_gamma": [
+        0.0,
+        0.5,
+        1.2,
+        2.0
+      ],
+      "tail_threshold": [
+        0.2,
+        0.35,
+        0.5
+      ],
+      "dolomite_gamma": [
+        0.0,
+        2.0,
+        4.0,
+        8.0
+      ],
+      "dolomite_threshold": [
+        0.01,
+        0.05,
+        0.1
+      ],
+      "decision_objective": "weighted_f1",
+      "tie_break": [
+        "penalty",
+        "macro_f1",
+        "first_grid_entry"
+      ],
+      "prior_smoothing": 1.0
+    },
+    "inference": {
+      "primary_unit": "well",
+      "bootstrap_replicates": 5000,
+      "bootstrap_seed": 20261103,
+      "fold_test": "wilcoxon_secondary_descriptive"
+    },
+    "variants": {
+      "full": {
+        "family": "geo",
+        "metadata": "all"
+      },
+      "rfe_xgb": {
+        "family": "rfe",
+        "metadata": "all"
+      },
+      "raw_xgb": {
+        "family": "raw",
+        "metadata": "all"
+      },
+      "no_missing": {
+        "family": "geo",
+        "metadata": "all",
+        "no_missing": true
+      },
+      "no_normalization": {
+        "family": "geo",
+        "metadata": "all",
+        "no_normalization": true
+      },
+      "no_context": {
+        "family": "geo",
+        "metadata": "all",
+        "no_context": true
+      },
+      "no_class_weight": {
+        "family": "geo",
+        "metadata": "all",
+        "no_class_weight": true
+      },
+      "no_boundary_weight": {
+        "family": "geo",
+        "metadata": "all",
+        "no_boundary_weight": true
+      },
+      "no_confidence_weight": {
+        "family": "geo",
+        "metadata": "all",
+        "no_confidence_weight": true
+      },
+      "logs_only": {
+        "family": "geo",
+        "metadata": "logs"
+      },
+      "logs_spatial": {
+        "family": "geo",
+        "metadata": "spatial"
+      },
+      "logs_strata": {
+        "family": "geo",
+        "metadata": "strata"
+      }
+    },
+    "queue": [
+      "full",
+      "rfe_xgb",
+      "raw_xgb",
+      "no_missing",
+      "no_normalization",
+      "no_context",
+      "no_class_weight",
+      "no_boundary_weight",
+      "no_confidence_weight",
+      "logs_only",
+      "logs_spatial",
+      "logs_strata"
+    ]
+  },
+  "code": {
+    "configs/data.yaml": "f840d6ba9c6d824db79dd731f6cf5a70df31cc4826e2e646a8482d8c0fa6407a",
+    "geomerit/__init__.py": "aba25bd77bf7aada77fab93825dd847129dd5e9da4f329117cd51462f636de61",
+    "geomerit/cv.py": "f37eef7de7c95c9ea08b7a1d05a13992e325a39083df5137d71fc40747125c80",
+    "geomerit/decode.py": "75186fd9783027aab3f1d5e3ef859401cd5a88918f9f8e4b0613e53392f0541e",
+    "geomerit/features.py": "489ec7080cb9d7dab8c2fe3c4883225109c372f20b3ce369707335d47063b14e",
+    "geomerit/io_las.py": "c1f6c84e1facdaf1348c8f36d7b62cd3c67001f22a943280039db9822c9b5515",
+    "geomerit/labels.py": "3cf023b88bbfdf8998d05859bda04c2e3f69ddf1866499d18c0ca49eb667ba66",
+    "geomerit/metrics.py": "806e8065c7596941b4041f3a77215f44c17c8278c2993fc47dad031e5fc88a18",
+    "geomerit/models.py": "0e3e70eaf9d1eee20ae026f545c44e9e58250a18dab01e9d575681828c415ab7",
+    "geomerit/revision_data.py": "1725f0d24d93b4964ef9e1b473b10e45ed157e891fbe56aa44d9ce58300963c8",
+    "geomerit/revision_decision.py": "429620469bd9d19dae061e3aded662e2595b3b1c17fe7e0c71244928b3a6d135",
+    "geomerit/revision_models.py": "077e27a6d2966ac711ff16b01c1eac5d71cb5f363b9238a6825b16e7e9dc7109",
+    "geomerit/weights.py": "dcc5d44bb5347d22f75305d76c5bb96c669f99160c53d8d2d15352f044f522e0",
+    "scripts/10_revision_train.py": "4fe01d7e664ff79dd9be1569b6f4eb7bace4544d3197b99e21e14ee11dc9ddb1",
+    "scripts/11_revision_report.py": "bb408c1bf9c0cd904f1fbc336f49e7702ca92052fc82b139885868374b8ea27f"
+  },
+  "smoke_only": false,
+  "packages": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "lightgbm": "4.6.0",
+    "xgboost": "3.2.0",
+    "catboost": "1.2.10",
+    "pyarrow": "23.0.1"
+  },
+  "host": "<hostname omitted>",
+  "platform": "Linux-6.17.0-1014-nvidia-aarch64-with-glibc2.39",
+  "python": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]"
+}

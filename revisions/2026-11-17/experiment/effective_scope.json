@@ -1,0 +1,42 @@
+{
+  "id": "effective_completed80_20261117_publication",
+  "scientific_scope": "8 variants x 10 outer folds; 140 training blocks",
+  "variants": [
+    "full",
+    "rfe_xgb",
+    "no_missing",
+    "no_normalization",
+    "no_class_weight",
+    "no_boundary_weight",
+    "no_confidence_weight",
+    "logs_only"
+  ],
+  "nested_variants": [
+    "full",
+    "rfe_xgb"
+  ],
+  "fixed_parameter_variants": [
+    "no_missing",
+    "no_normalization",
+    "no_class_weight",
+    "no_boundary_weight",
+    "no_confidence_weight",
+    "logs_only"
+  ],
+  "outer_folds": 10,
+  "inner_folds_for_nested": 3,
+  "logs_only_independently_tuned": false,
+  "fixed_parameter_rule": "Each removal inherits the same outer fold full-model blend and decision selections, then refits the outer training wells.",
+  "legacy_scope_note": "fixed_scope.json retains the earlier nested logs-only declaration. logs_only_fixed_scope.json documents its later fixed-parameter change; this file states the combined effective final scope.",
+  "excluded_legacy_variants": [
+    "raw_xgb",
+    "no_context",
+    "logs_spatial",
+    "logs_strata"
+  ],
+  "original_protocol_signatures": {
+    "nested": "2b07090b2d6a520ad45fb241d0500633faac32a08cbd5fe8ec0e0b86c20f49c2",
+    "fixed": "758f1bb5ae1fea7c7bc382ba84615253932d7942cd1b411d1ec3b91b4afe4a89",
+    "fixed_logs_only": "4bdf418af247f695f58b55d063bee251c329564c8325034f09fccf7b905faa71"
+  }
+}

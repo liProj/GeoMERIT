@@ -1,0 +1,24 @@
+{
+  "signature": "758f1bb5ae1fea7c7bc382ba84615253932d7942cd1b411d1ec3b91b4afe4a89",
+  "protocol_id": "fixed_parameters_outer_refit_20261104",
+  "parent_signature": "2b07090b2d6a520ad45fb241d0500633faac32a08cbd5fe8ec0e0b86c20f49c2",
+  "runner_sha256": "c052587cb7d8f146d3c2284172432ffaf17b6f6d2dfbb437a3219688e8885328",
+  "variants": [
+    "no_missing",
+    "no_normalization",
+    "no_class_weight",
+    "no_boundary_weight",
+    "no_confidence_weight"
+  ],
+  "outer_folds": 10,
+  "inner_fits_per_ablation_fold": 0,
+  "outer_fits_per_ablation_fold": 1,
+  "inherited_parameters": [
+    "blend",
+    "decision"
+  ],
+  "selection_source": "same_outer_fold/full/inner_only",
+  "full_architecture_retained": true,
+  "training_state_and_priors_refitted": true,
+  "smoke_only": false
+}
